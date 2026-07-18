@@ -25,7 +25,7 @@ const L = {
   },
 };
 
-const SITE_URL = 'https://ingrid-ascanio.vercel.app'; // swap for the real domain at launch
+const SITE_URL = process.env.SITE_URL || 'https://ingrid-ascanio.vercel.app'; // swap for the real domain at launch
 const V = Date.now().toString(36); // cache-buster: changes every build so browsers always fetch fresh CSS/JS
 
 const pages = [];
