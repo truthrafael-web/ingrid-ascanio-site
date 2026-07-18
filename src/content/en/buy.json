@@ -1,0 +1,36 @@
+{
+  "slug": "buy",
+  "meta": {
+    "title": "Buy a Home in Miami & South Florida — Start with One Call",
+    "description": "Buying a home in Miami, Hollywood, or anywhere in Florida? Start with a 15-minute call with broker Ingrid Ascanio — clear budget, fast pre-approval, 50+ lenders shopped."
+  },
+  "hero": {
+    "eyebrow": "Buying a home",
+    "title": "Know your real budget before you fall in love with a house.",
+    "body": "The buyers who win in South Florida are the ones whose financing is proven before the right listing appears. One short call with Ingrid gets you there — no documents needed, no obligation."
+  },
+  "points": {
+    "eyebrow": "Why buyers work with Ingrid",
+    "title": "What you get from the first call",
+    "items": [
+      { "name": "A number you can trust", "desc": "What you can comfortably afford — verified thinking, not an online estimate. So you shop with confidence, not anxiety." },
+      { "name": "A letter that wins offers", "desc": "Pre-approval in 24–48 hours once documents are in — refreshed same-day for every offer you write, weekends included." },
+      { "name": "Guidance in plain language", "desc": "First home or fifth, English or Español — every step explained before you're asked to decide anything." }
+    ]
+  },
+  "firstTime": {
+    "eyebrow": "First-time buyers",
+    "title": "Never done this before? Even better.",
+    "body": "First-time buyers are some of Ingrid's favorite clients. Low-down-payment programs exist to get you in the door — your exact number depends on your file, and she'll tell you honestly whether now is your moment or what gets you there.",
+    "points": [
+      { "big": "Low", "small": "down-payment programs built for first-timers" },
+      { "big": "24–48h", "small": "to a verified pre-approval letter" },
+      { "big": "$0", "small": "for the first call — no obligation" }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Start here",
+    "title": "The first conversation costs nothing — and changes everything after it.",
+    "body": "15 minutes. No documents, no commitment. Just clarity on what you can do and how to do it."
+  }
+}

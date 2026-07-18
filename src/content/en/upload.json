@@ -1,0 +1,51 @@
+{
+  "slug": "upload-documents",
+  "meta": {
+    "title": "Upload Your Documents — Ingrid Ascanio, Miami Mortgage",
+    "description": "Securely send your loan documents to Ingrid Ascanio's team: share a Google Drive, Dropbox, or file link with your details so your file moves faster."
+  },
+  "hero": {
+    "eyebrow": "Upload documents",
+    "title": "Send your documents. Keep your file moving.",
+    "body": "This is the fast lane between you and my team. Tell us whose file it is and what you're sending, share your documents, and everything lands organized on our side — no email chains, nothing lost."
+  },
+  "checklist": {
+    "title": "What we typically need",
+    "intro": "Every file is different — send what you have, and we'll tell you if anything's missing. The usual list:",
+    "items": [
+      "Government-issued ID (driver's license or passport)",
+      "Last 2 pay stubs — or business returns if self-employed",
+      "W-2s or 1099s for the last 2 years",
+      "Bank statements for the last 2 months, all pages",
+      "Your most recent mortgage statement (refinances)",
+      "Anything we specifically asked you for"
+    ],
+    "tip": "Tip: photos of documents are fine as long as all four corners are visible and the text is readable."
+  },
+  "form": {
+    "title": "Send your documents",
+    "name": "Borrower's full name",
+    "namePh": "Name exactly as it appears on the loan",
+    "email": "Email",
+    "emailPh": "you@email.com",
+    "phone": "Phone",
+    "phonePh": "(305) 555-0100",
+    "property": "Property address",
+    "propertyPh": "Address — or “not under contract yet”",
+    "filesLabel": "Attach your documents",
+    "filesDrop": "Drag files here — or tap to browse",
+    "filesHelp": "PDF, JPG, PNG, HEIC, ZIP, DOC, XLS · up to 20 MB total",
+    "filesSelected": "ready to send",
+    "filesRemove": "Remove",
+    "filesTooBig": "Those files total more than 20 MB — remove some, zip them, or share a link below instead.",
+    "orLink": "Prefer a link? Share one instead",
+    "link": "Link to your documents (optional)",
+    "linkPh": "Paste a Google Drive, Dropbox, or WeTransfer share link",
+    "linkHelp": "Put your files in a folder (or zip), get the share link, and paste it here. Make sure the link is set so anyone with it can view.",
+    "needSomething": "Attach at least one file or paste a share link so we have something to receive.",
+    "notes": "What are you sending?",
+    "notesPh": "e.g. “Bank statements and W-2s for the Hollywood purchase” — anything that helps us file it right.",
+    "submit": "Send to Ingrid's team",
+    "secureNote": "For highly sensitive items — full tax returns, complete bank records — we may invite you to our secure application portal instead. If you'd rather not use a share link, call us and we'll set that up."
+  }
+}

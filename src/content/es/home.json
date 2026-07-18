@@ -1,0 +1,79 @@
+{
+  "slug": "",
+  "meta": {
+    "title": "Ingrid Ascanio — Broker Hipotecaria en Miami | Pioneer Mortgage Funding",
+    "description": "Broker hipotecaria en Miami con más de 20 años en préstamos residenciales. Compra, refinanciamiento, FHA, VA, jumbo, inversionistas y extranjeros en toda la Florida."
+  },
+  "hero": {
+    "eyebrow": "Miami · Hollywood · Sur de la Florida",
+    "titleA": "Tu hipoteca, en manos de alguien que ha visto",
+    "titleEm": "todos los lados del negocio.",
+    "body": "Soy Ingrid Ascanio — 20+ años en préstamos residenciales, ex underwriter de banco, y tu aliada frente a más de 50 prestamistas. Una llamada corta y sabrás exactamente dónde estás parado.",
+    "withLabel": "Branch Manager y Oficial de Préstamos en",
+    "imageAlt": "Ingrid Ascanio, broker hipotecaria en Miami",
+    "captionMeta": "Sirviendo Miami · Hollywood · toda la Florida",
+    "aboutCta": "Quién soy — mi historia",
+    "trustLine": "Responde el mismo día · Fines de semana incluidos · Español y English"
+  },
+  "path": {
+    "eyebrow": "Cómo funciona",
+    "title": "Tres pasos. Sin misterio.",
+    "body": "Esta es toda la ruta — y en cada punto sabrás exactamente dónde va tu expediente.",
+    "steps": [
+      { "name": "Habla con Ingrid", "desc": "15 minutos sobre tus metas y tus números. Sin documentos todavía — sales sabiendo qué es realista." },
+      { "name": "Obtén tu pre-aprobación", "desc": "Documentos listos, números verificados, una carta real en 24–48 horas — de las que los agentes toman en serio." },
+      { "name": "Cierra con confianza", "desc": "Ella estructura tu expediente para el prestamista correcto y lo defiende hasta la mesa de cierre. Después: las llaves." }
+    ]
+  },
+  "programs": {
+    "eyebrow": "Tipos de préstamo",
+    "title": "Sea cual sea la forma de tu vida, hay un programa que le queda",
+    "body": "Empleado, independiente, inversionista, extranjero — la pregunta correcta no es “¿califico?”, sino “¿cuál de los 50+ prestamistas encaja con mi expediente?”",
+    "linkLabel": "Explorar",
+    "allLink": "Ver todos los tipos de préstamo"
+  },
+  "aboutTeaser": {
+    "eyebrow": "Sobre Ingrid",
+    "title": "Ella era la underwriter. Ahora es tu aliada.",
+    "body": "Underwriter en BankUnited, gerente de procesamiento y, desde 2016, Branch Manager en Pioneer Mortgage Funding — además de Vicepresidenta electa de FAMP Miami.",
+    "body2": "Sabe cómo piensa la persona que lee tu expediente, porque ella era esa persona. Y te acompaña como lo haría una vecina — en lenguaje claro, en español o en inglés.",
+    "chips": ["Ex underwriter de banco", "Vicepresidenta FAMP Miami", "Español e inglés", "Local de Miami · Hollywood"],
+    "link": "Su historia completa"
+  },
+  "split": {
+    "buy": {
+      "eyebrow": "Comprar",
+      "title": "Primera casa, la siguiente, o la que viene después",
+      "body": "Un presupuesto claro antes de enamorarte de una propiedad.",
+      "link": "Comprar con Ingrid"
+    },
+    "refi": {
+      "eyebrow": "Refinanciar",
+      "title": "Refinancia cuando los números te favorezcan",
+      "body": "Números honestos — incluida la versión en la que te quedas con tu préstamo actual.",
+      "link": "Las tres razones"
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas, respondidas",
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Qué hace un broker hipotecario que un banco no hace?",
+        "a": "Un banco solo ofrece sus propios productos. Como broker, Ingrid compara tu expediente entre más de 50 prestamistas — bancos, cooperativas y mayoristas — y te conecta con el que de verdad encaja. Tú recibes opciones; ella hace el trabajo."
+      },
+      {
+        "q": "¿Qué tan rápido puedo obtener mi pre-aprobación?",
+        "a": "Con los documentos en mano, normalmente 24 a 48 horas para una carta verificada. Si tienes fecha límite — un open house este fin de semana, una oferta por presentar — dilo y se mueve a esa velocidad."
+      },
+      {
+        "q": "¿Ayudan a compradores por primera vez en Miami y Hollywood?",
+        "a": "Todo el tiempo. Empieza con una conversación en lenguaje claro sobre lo que puedes pagar con comodidad, y de ahí FHA y opciones convencionales con poca entrada que abren la puerta."
+      },
+      {
+        "q": "¿Financian propiedades de inversión y a compradores extranjeros?",
+        "a": "Sí — ambos son parte central de su práctica en Miami. Los préstamos DSCR califican la renta de la propiedad, y los programas foreign national funcionan sin historial de crédito en EE.UU."
+      }
+    ]
+  }
+}

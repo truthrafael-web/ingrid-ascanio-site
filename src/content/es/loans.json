@@ -1,0 +1,223 @@
+{
+  "index": {
+    "slug": "opciones-de-prestamo",
+    "meta": {
+      "title": "Tipos de Préstamo en Florida — Convencional, FHA, VA, Jumbo, DSCR y más",
+      "description": "Explora los programas hipotecarios con la broker de Miami Ingrid Ascanio: convencional, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción en toda la Florida."
+    },
+    "eyebrow": "Tipos de préstamo",
+    "title": "Siete maneras de financiar una casa en la Florida",
+    "body": "Cada programa de abajo es un conjunto distinto de reglas sobre ingresos, crédito y pronto pago. Mi trabajo es conocerlas todas al detalle — y conectar tu expediente con el prestamista que busca exactamente a alguien como tú. Si no sabes dónde encajas, sáltate la lectura y simplemente llámame.",
+    "detailLabel": "Ver los detalles"
+  },
+  "detail": {
+    "whoTitle": "Suele quedarte si…",
+    "howTitle": "Cómo funciona conmigo",
+    "knowTitle": "Bueno saberlo",
+    "faqTitle": "Respuestas rápidas",
+    "othersTitle": "Otros tipos de préstamo",
+    "cta": {
+      "eyebrow": "Siguiente paso",
+      "title": "¿No estás seguro de que este sea el tuyo? Ese es mi trabajo, no el tuyo.",
+      "body": "Quince minutos por teléfono y te digo qué programa encaja de verdad con tu expediente — y qué se necesita para calificar."
+    }
+  },
+  "programs": [
+    {
+      "slug": "convencional",
+      "pairSlug": "conventional",
+      "name": "Convencional",
+      "tag": "El clásico — 30 años, 15 años y todo lo intermedio",
+      "cardBlurb": "La ruta estándar para compradores con ingresos estables y crédito de aceptable a fuerte. Un pronto pago más bajo de lo que la mayoría imagina para primeros compradores calificados.",
+      "intro": "El préstamo convencional es el que la mayoría imagina cuando piensa en “hipoteca” — y con razón. Ofrece la mayor variedad de plazos (30, 20, 15 años, tasa ajustable), precios competitivos según tu perfil de crédito y sin prima de seguro gubernamental por adelantado. Y es más flexible de lo que dice su fama: un primer comprador calificado suele necesitar mucho menos de entrada de lo que espera.",
+      "who": [
+        "Tienes ingresos estables y documentables — W-2, salario o negocio propio establecido",
+        "Tu crédito va de aceptable a fuerte (mejores perfiles, mejores precios)",
+        "Quieres que el seguro hipotecario desaparezca a medida que construyes plusvalía",
+        "Compras vivienda principal, segunda casa o una propiedad de inversión sencilla"
+      ],
+      "how": [
+        { "name": "Revisión de perfil", "desc": "Miramos juntos ingresos, crédito y ahorros, y elegimos el plazo que cabe cómodo en tu mes." },
+        { "name": "Match de prestamista", "desc": "Cotizo tu perfil exacto en todo mi panel — el mismo expediente puede tener precios muy distintos según el prestamista." },
+        { "name": "Lock y cierre", "desc": "Fijamos la tasa cuando el momento te conviene, y yo llevo el expediente por underwriting hasta la mesa de cierre." }
+      ],
+      "know": [
+        "El seguro hipotecario (PMI) aplica con entradas más pequeñas — pero a diferencia de FHA, puede eliminarse cuando construyes suficiente plusvalía.",
+        "El plazo de 15 años cambia una cuota más alta por muchísimo menos interés total; te modelo ambos para que veas los números reales.",
+        "Los límites de préstamo se fijan cada año por condado; por encima de ellos entramos en territorio jumbo — que también manejo."
+      ],
+      "faq": [
+        { "q": "¿Es obligatoria una entrada enorme?", "a": "No — ese es el mito más persistente de este negocio. Un comprador calificado suele empezar con mucho menos de lo que cree. Tu número exacto depende de tu perfil, e Ingrid te lo dice directo en una llamada corta." },
+        { "q": "¿30 años o 15 años?", "a": "Depende de qué sacrificarías para pagar la cuota más alta del plazo de 15. Te pongo los dos lado a lado — cuota, interés total, fecha de pago final — y eliges con números reales, no con corazonadas." }
+      ]
+    },
+    {
+      "slug": "fha",
+      "pairSlug": "fha",
+      "name": "FHA",
+      "tag": "El aliado del primer comprador",
+      "cardBlurb": "Asegurado por el gobierno, flexible con el crédito y con requisitos de entrada más bajos. La vía más común para entrar a tu primera casa en Miami.",
+      "intro": "Los préstamos FHA están asegurados por la Administración Federal de Vivienda, lo que permite a los prestamistas decir que sí a compradores que el mercado convencional rechazaría — crédito más corto, menos ahorros, deudas más altas. Si ser propietario se siente a uno o dos años de distancia, una conversación sobre FHA es muchas veces lo que lo convierte en este año.",
+      "who": [
+        "Compras por primera vez, o hace tiempo que no eres propietario",
+        "Tu crédito está en reconstrucción — FHA es más flexible que el mercado convencional",
+        "Cuentas con una entrada modesta (se permiten regalos de familia)",
+        "Tu relación deuda-ingreso es más alta de lo que acepta un convencional"
+      ],
+      "how": [
+        { "name": "Chequeo honesto", "desc": "Revisamos crédito e ingresos primero — si FHA es lo tuyo, lo sabrás; si el convencional te conviene más, también te lo diré." },
+        { "name": "Presupuesto completo", "desc": "FHA lleva seguro hipotecario; te muestro tu cuota real con todo incluido, sin sorpresas." },
+        { "name": "Carta lista para ofertar", "desc": "Recibes una pre-aprobación que te deja competir — ofertas FHA cierran todos los días en este mercado." }
+      ],
+      "know": [
+        "El seguro hipotecario de FHA normalmente dura toda la vida del préstamo — la jugada común es refinanciar a convencional cuando crecen tu plusvalía y tu crédito.",
+        "La propiedad debe pasar una tasación FHA, que revisa seguridad y habitabilidad, no cosmética.",
+        "Los límites FHA varían por condado; los de Miami-Dade y Broward alcanzan para casas de verdad, no solo condominios."
+      ],
+      "faq": [
+        { "q": "¿FHA es solo para primeros compradores?", "a": "No — cualquiera puede usar FHA para su vivienda principal. Es popular entre primeros compradores porque los requisitos de entrada son más suaves, pero no está restringido a ellos." },
+        { "q": "Mi crédito sufrió hace unos años. ¿Quedé fuera?", "a": "No necesariamente. FHA está diseñado precisamente para perdonar eventos pasados — y hay períodos de espera definidos tras una bancarrota o ejecución que quizás ya cumpliste. Revisemos antes de asumir." }
+      ]
+    },
+    {
+      "slug": "va",
+      "pairSlug": "va",
+      "name": "VA",
+      "tag": "Cero pronto pago para quienes sirvieron",
+      "cardBlurb": "Para veteranos, militares activos y cónyuges sobrevivientes elegibles: sin pronto pago y sin seguro hipotecario mensual.",
+      "intro": "El préstamo VA es el mejor beneficio del financiamiento de vivienda en Estados Unidos: sin pronto pago, sin seguro hipotecario mensual y precios competitivos — ganado con el servicio militar. Si tú o tu cónyuge sirvieron, este es casi siempre el primer programa que vale la pena revisar.",
+      "who": [
+        "Eres militar activo, veterano, o de la Guardia Nacional o Reserva con servicio calificado",
+        "Eres cónyuge sobreviviente elegible",
+        "Quieres comprar con poco o nada de entrada y conservar tus ahorros",
+        "Compras tu vivienda principal en la Florida"
+      ],
+      "how": [
+        { "name": "Certificado de Elegibilidad", "desc": "Te ayudo a obtener tu COE — el documento que prueba tu derecho. Suele tomar minutos, no semanas." },
+        { "name": "Precio con beneficio completo", "desc": "Cotizo con prestamistas expertos en VA, que valoran bien el beneficio y mueven estos expedientes rápido." },
+        { "name": "Cierra con tus ahorros intactos", "desc": "Cero de entrada y costos negociables significan que tus reservas quedan para la casa." }
+      ],
+      "know": [
+        "El funding fee de VA (un costo único que puede sumarse al préstamo) reemplaza el seguro mensual; los veteranos con discapacidad suelen estar exentos.",
+        "El beneficio VA es reutilizable — haberlo usado antes no significa haberlo gastado.",
+        "Algunos vendedores asumen, sin razón, que las ofertas VA son lentas o frágiles. Un expediente bien preparado cierra a tiempo — de eso me encargo yo."
+      ],
+      "faq": [
+        { "q": "Ya usé mi préstamo VA una vez. ¿Puedo usarlo de nuevo?", "a": "Muy probablemente sí. El derecho se restaura al vender y pagar el préstamo VA anterior, y el derecho parcial puede permitir incluso un segundo préstamo VA manteniendo el primero. Revisamos tus números exactos." },
+        { "q": "¿Cero de entrada es realmente cero?", "a": "Para el pronto pago, sí. Verás los costos de cierre normales, aunque parte puede negociarse al vendedor o sumarse al préstamo — te trazo el efectivo real necesario antes de que escribas una oferta." }
+      ]
+    },
+    {
+      "slug": "jumbo",
+      "pairSlug": "jumbo",
+      "name": "Jumbo",
+      "tag": "Para casas por encima del límite conforme",
+      "cardBlurb": "Financiamiento para propiedades del sur de la Florida por encima de los límites convencionales — con opciones que mantienen competitivos los préstamos grandes.",
+      "intro": "Cuando la compra supera el límite conforme del condado, entras en territorio jumbo — préstamo más grande, documentación más profunda y precios que varían enormemente entre prestamistas. Aquí es exactamente donde un broker se gana su lugar: jumbo no es un mercado sino docenas de apetitos distintos, y colocar tu perfil con el correcto vale dinero real.",
+      "who": [
+        "La casa que quieres supera el límite conforme de su condado",
+        "Tienes crédito fuerte e ingresos o activos documentables",
+        "Quieres que tu préstamo grande se compare, no que se quede en la ventanilla de un solo banco",
+        "Compras vivienda principal, segunda casa o una inversión de alto valor"
+      ],
+      "how": [
+        { "name": "Estructura primero", "desc": "El tamaño de la entrada, las reservas y el estilo de documentación mueven el precio jumbo — diseñamos el expediente antes de cotizarlo." },
+        { "name": "Match de apetito", "desc": "Hay prestamistas que aman los condominios, otros los independientes, otros las segundas casas. El tuyo va donde lo quieren." },
+        { "name": "Cierre de guante blanco", "desc": "Los expedientes grandes atraen más escrutinio; mantengo las condiciones en movimiento para que tus fechas de contrato se cumplan." }
+      ],
+      "know": [
+        "Las guías jumbo suelen pedir crédito más fuerte, entradas mayores y reservas de efectivo después del cierre.",
+        "Los condominios del sur de la Florida añaden una segunda capa — el edificio también se revisa. Sé qué prestamistas se sienten cómodos con qué tipos de edificio.",
+        "También existe documentación por activos o estados de cuenta en jumbo, para perfiles fuertes cuyas declaraciones subestiman la realidad."
+      ],
+      "faq": [
+        { "q": "¿Qué cuenta como jumbo en Miami?", "a": "Todo lo que supere el límite conforme del condado, que se ajusta cada año. En vez de citar aquí un número que envejecerá mal, te digo el límite vigente cuando hablemos — y si tu precio objetivo lo cruza." },
+        { "q": "¿Son más difíciles de conseguir?", "a": "Más documentados, sí; más difíciles, no necesariamente. Los expedientes fuertes muchas veces obtienen precios sorprendentemente buenos porque los prestamistas compiten por ellos. La clave es presentarlo donde las guías encajan." }
+      ]
+    },
+    {
+      "slug": "inversionista-dscr",
+      "pairSlug": "investor-dscr",
+      "name": "Inversionista / DSCR",
+      "tag": "Califica con la renta de la propiedad, no con tus impuestos",
+      "cardBlurb": "Para inversionistas de propiedades de renta: el flujo de caja de la propiedad es el que califica. Sin W-2, sin declaraciones, y escala más allá de cuatro puertas.",
+      "intro": "DSCR significa debt-service coverage ratio — la pregunta simple de si la renta de una propiedad cubre su cuota. Los préstamos DSCR califican el negocio, no tu salario: sin declaraciones de impuestos, sin W-2, sin cálculo de deuda-ingreso. Para inversionistas de Miami — sobre todo independientes cuyas declaraciones están optimizadas para pagar menos impuestos — es la herramienta que desbloquea la escala.",
+      "who": [
+        "Compras o refinancias una propiedad de renta — de largo o corto plazo",
+        "Tus declaraciones subestiman tu ingreso real (los buenos contadores se aseguran de eso)",
+        "Ya tienes varias propiedades financiadas y el crédito convencional te puso techo",
+        "Compras a través de una LLC y quieres que el préstamo lo refleje"
+      ],
+      "how": [
+        { "name": "Corre el ratio", "desc": "Renta de mercado versus cuota propuesta — te digo rápido si el negocio pasa los umbrales típicos de DSCR." },
+        { "name": "Estructura la entidad", "desc": "A tu nombre o vía LLC, renta corta o larga — cada opción tiene implicaciones con los prestamistas que te explico." },
+        { "name": "Cierra y repite", "desc": "Los prestamistas DSCR no cuentan puertas como el convencional. La jugada que cierra la propiedad tres funciona para la diez." }
+      ],
+      "know": [
+        "Espera una entrada mayor que en una vivienda propia — la cifra exacta depende del negocio y del prestamista.",
+        "El ingreso de renta corta (estilo Airbnb) sirve con algunos prestamistas y con otros no; ese match es exactamente lo que yo hago.",
+        "Ratios por debajo de 1.0 (la renta no cubre toda la cuota) aún pueden cerrar con ciertos prestamistas en términos ajustados."
+      ],
+      "faq": [
+        { "q": "¿Verifican mi empleo?", "a": "El underwriting DSCR se centra en el ingreso de la propiedad, tu crédito y tus activos para la entrada y las reservas — no en tu empleo ni en la documentación de tu ingreso personal." },
+        { "q": "¿Puedo usar ingresos proyectados de Airbnb?", "a": "Algunos prestamistas aceptan proyecciones de renta corta o ingresos históricos; otros solo usan renta de mercado de largo plazo. Cambia mucho los números, así que cuéntame tu estrategia desde el inicio y busco el match correcto." }
+      ]
+    },
+    {
+      "slug": "extranjero",
+      "pairSlug": "foreign-national",
+      "name": "Foreign National",
+      "tag": "Propiedad en EE.UU. sin historial de crédito en EE.UU.",
+      "cardBlurb": "Para compradores internacionales que invierten en la Florida: programas hechos para quienes no tienen crédito, ingresos ni residencia en EE.UU.",
+      "intro": "Miami es una ciudad internacional y mi práctica lo refleja. Los programas foreign national existen precisamente para quienes viven y ganan en el exterior: sin historial de crédito en EE.UU., con ingresos documentados desde tu país, y cierres que pueden coordinarse a distancia. Todo el proceso puede ser en tu idioma — este sitio, y cada llamada, también.",
+      "who": [
+        "Vives fuera de EE.UU. y quieres propiedad en la Florida — inversión, casa de vacaciones o un futuro punto de aterrizaje",
+        "No tienes historial de crédito en EE.UU. (o es muy corto)",
+        "Tus ingresos y activos están documentados en tu país",
+        "Quizás compras a través de una entidad, o a distancia"
+      ],
+      "how": [
+        { "name": "Mapa de documentos", "desc": "Te doy una lista precisa de lo que tu expediente necesita — cartas de referencia bancaria, documentación de ingresos, pasaporte/visa — para que no reúnas nada dos veces." },
+        { "name": "Match de programa", "desc": "Las guías foreign national varían mucho entre prestamistas: entrada, reservas, países elegibles. Coloco tu expediente donde encaja." },
+        { "name": "Cierre a distancia", "desc": "Poder notarial, notarización en embajada, cierre por correo — comprar desde el exterior es rutina cuando el equipo ya lo ha hecho. El mío, sí." }
+      ],
+      "know": [
+        "Los programas foreign national piden entradas mayores que los préstamos domésticos, con reservas después del cierre — el requisito exacto varía según el prestamista.",
+        "El ITIN (número de identificación fiscal de EE.UU.) es necesario en algunos programas y en otros no — lo resolvemos temprano.",
+        "Condominios y construcción nueva — la clásica compra internacional en Miami — son terreno bien conocido para estos programas."
+      ],
+      "faq": [
+        { "q": "¿De verdad puedo obtener una hipoteca en EE.UU. sin crédito en EE.UU.?", "a": "Sí. Los programas foreign national reemplazan el reporte de crédito estadounidense con alternativas — reportes internacionales cuando existen, cartas de referencia bancaria y entradas mayores. Es un camino establecido, no una excepción." },
+        { "q": "Can we do the whole process in English?", "a": "Of course — the entire process works in English or Spanish, whichever is comfortable for you. Switch the site with the EN button above." }
+      ]
+    },
+    {
+      "slug": "construccion",
+      "pairSlug": "construction",
+      "name": "Construcción",
+      "tag": "Financia la obra, y luego la casa",
+      "cardBlurb": "Financiamiento construction-to-permanent para obra nueva y renovaciones mayores — una sola calificación, del terreno a las llaves.",
+      "intro": "Construir en vez de comprar significa que tu financiamiento tiene dos vidas: la fase de construcción, donde los fondos se liberan conforme avanza la obra, y la hipoteca permanente que sigue. Los préstamos construction-to-permanent cubren ambas con una sola calificación — y en un mercado donde el terreno correcto le gana al listing correcto, esa es una opción poderosa.",
+      "who": [
+        "Tienes un terreno (o quieres uno) y planeas construir desde cero",
+        "Planeas una renovación tan grande que necesita fondos por etapas",
+        "Tienes un constructor licenciado y planos — o quieres guía para llegar ahí",
+        "Quieres un solo cierre, no dos rondas de calificación y costos"
+      ],
+      "how": [
+        { "name": "Viabilidad primero", "desc": "Presupuesto, constructor, planos, calendario — sometemos el proyecto a presión como lo hará el prestamista, antes de que te comprometas." },
+        { "name": "Una sola calificación", "desc": "Construction-to-perm significa una aprobación que cubre ambas fases; los fondos se liberan por hitos de inspección." },
+        { "name": "Conversión a permanente", "desc": "Cuando llega el certificado de ocupación, el préstamo se convierte en hipoteca estándar sin recalificar." }
+      ],
+      "know": [
+        "Los prestamistas evaluarán a tu constructor — licencia, seguros, historial. Un buen expediente del constructor acelera todo.",
+        "Durante la obra normalmente pagas interés solo sobre lo desembolsado, no sobre el préstamo completo.",
+        "Menos prestamistas participan en construcción que en compra estándar — lo que hace genuinamente valioso el acceso de un broker a los que sí."
+      ],
+      "faq": [
+        { "q": "¿Necesito ser dueño del terreno primero?", "a": "No — la compra del lote muchas veces puede entrar en el mismo préstamo de construcción. Si ya es tuyo, su plusvalía puede contar como parte de tu entrada." },
+        { "q": "¿Y si la obra se pasa del presupuesto?", "a": "La estructura del préstamo incluye reservas de contingencia exactamente para esto. Las dimensionamos con realismo desde el inicio — los presupuestos optimistas son la razón por la que estos préstamos se vuelven estresantes." }
+      ]
+    }
+  ]
+}

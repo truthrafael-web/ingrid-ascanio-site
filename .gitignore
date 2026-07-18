@@ -1,0 +1,5 @@
+dist/
+.backups/
+node_modules/
+.vercel/
+assets/img/ingrid-headshot*.jpg

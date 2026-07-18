@@ -1,0 +1,47 @@
+{
+  "slug": "contacto",
+  "meta": {
+    "title": "Contacta a Ingrid Ascanio — Broker Hipotecaria en Miami",
+    "description": "Llama, escribe, envía correo o agenda una llamada con la broker hipotecaria de Miami Ingrid Ascanio. Respuesta el mismo día a nuevas consultas."
+  },
+  "hero": {
+    "eyebrow": "Contacto",
+    "title": "Empieza la conversación.",
+    "body": "Cuéntame un poco dónde estás, y te respondo dentro de un día hábil — normalmente mucho antes. ¿Prefieres hablar ahora mismo? Llama o escribe y sáltate el formulario."
+  },
+  "form": {
+    "title": "Envía un mensaje",
+    "name": "Nombre completo",
+    "namePh": "Tu nombre",
+    "email": "Correo",
+    "emailPh": "tu@correo.com",
+    "phone": "Teléfono",
+    "phonePh": "(305) 555-0100",
+    "interest": "¿Qué te trae por aquí?",
+    "interestOptions": [
+      "Comprar mi primera casa",
+      "Comprar mi siguiente casa",
+      "Refinanciar",
+      "Propiedad de inversión",
+      "Compro desde fuera de EE.UU.",
+      "Construir una casa",
+      "Otra cosa"
+    ],
+    "message": "¿Algo que quieras contarme?",
+    "messagePh": "Tu calendario, tus preguntas, la situación como la ves — todo ayuda.",
+    "consent": "Acepto ser contactado por teléfono, mensaje de texto o correo sobre mi consulta. Pueden aplicar tarifas de mensajes y datos. El consentimiento no es condición de compra.",
+    "submit": "Enviar mensaje"
+  },
+  "direct": {
+    "title": "O contáctame directo",
+    "callTitle": "Llama o escribe",
+    "callDesc": "Lo más rápido para cualquier urgencia — fechas límite de ofertas, cartas de pre-aprobación el mismo día.",
+    "emailTitle": "Correo",
+    "emailDesc": "Lo mejor para documentos y preguntas detalladas.",
+    "visitTitle": "Oficina",
+    "visitDesc": "Con cita previa.",
+    "bookTitle": "Agenda una llamada",
+    "bookDesc": "Elige la hora que te convenga — 15 minutos, sin preparación necesaria.",
+    "bookButton": "Abrir el calendario"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "lang": "en",
+  "langLabel": "English",
+  "otherLangLabel": "Español",
+  "otherLangName": "Español",
+  "siteName": "Ingrid Ascanio · Miami Mortgage",
+  "person": {
+    "name": "Ingrid Ascanio",
+    "title": "Branch Manager & Loan Officer",
+    "company": "Pioneer Mortgage Funding, Inc.",
+    "nmls": "1030712",
+    "companyNmls": "1980",
+    "phone": "(786) 554-8830",
+    "phoneHref": "tel:+17865548830",
+    "email": "ingrid.ascanio@pmfmortgage.com",
+    "address": "3325 Hollywood Blvd, Ste 402, Hollywood, FL 33021",
+    "serving": "Miami · Hollywood · all of Florida"
+  },
+  "microbar": {
+    "hablamos": "Hablo Español",
+    "switchHint": "Cambiar a Español"
+  },
+  "nav": [
+    { "label": "Buy a home", "path": "/buy/", "desc": "Know your real budget before you shop" },
+    { "label": "Refinance", "path": "/refinance/", "desc": "Honest math on lowering your payment" },
+    { "label": "Loan options", "path": "/loan-options/", "desc": "Seven programs, one right fit" },
+    { "label": "About Ingrid", "path": "/about/", "desc": "20+ years on every side of the desk" },
+    { "label": "Upload documents", "path": "/upload-documents/", "desc": "Send your files securely in minutes" },
+    { "label": "Contact", "path": "/contact/", "desc": "Call, text, or write — same-day answers" }
+  ],
+  "menu": {
+    "label": "Menu",
+    "close": "Close",
+    "contactTitle": "Reach Ingrid directly"
+  },
+  "cta": {
+    "primary": "Start your pre-approval",
+    "secondary": "Book a call with Ingrid",
+    "callback": "Request a callback"
+  },
+  "credentials": [
+    { "big": "20+", "small": "years in residential lending" },
+    { "big": "50+", "small": "lenders shopped for you" },
+    { "big": "24–48h", "small": "to a verified pre-approval letter" },
+    { "big": "FAMP", "small": "Miami Vice President, 2025–26" }
+  ],
+  "contactPanel": {
+    "eyebrow": "The next step",
+    "title": "15 minutes with Ingrid beats a week of googling.",
+    "body": "No obligation, no pressure. Tell her where you are — she'll tell you exactly what's possible and what happens next.",
+    "phoneLabel": "Call or text",
+    "emailLabel": "Email"
+  },
+  "newsletter": {
+    "title": "South Florida market notes, a few times a year",
+    "body": "Rate moves, first-time-buyer programs, and timing insights for the Miami market. No spam — just what's worth knowing.",
+    "placeholder": "your@email.com",
+    "button": "Subscribe",
+    "success": "You're in. Talk soon.",
+    "error": "That didn't go through — check the email and try again."
+  },
+  "form": {
+    "loading": "Sending…",
+    "success": "Got it — Ingrid's team will be in touch within one business day.",
+    "error": "Something went wrong sending your message. Call or text (786) 554-8830 instead."
+  },
+  "footer": {
+    "blurb": "Local mortgage guidance for Miami, Hollywood, and all of Florida — with access to 50+ lenders under one roof.",
+    "loanOptionsTitle": "Loan options",
+    "companyTitle": "Pages",
+    "getStartedTitle": "Get started",
+    "legalLine": "Pioneer Mortgage Funding, Inc. · Company NMLS #1980 · Ingrid Ascanio NMLS #1030712 · Licensed in FL. Company licensed in AL, CT, FL, GA, KY, MI, NC, OH, SC, TN, TX & VA.",
+    "brokerLine": "Mortgage broker only — not a mortgage lender or mortgage correspondent lender.",
+    "equalHousing": "Equal Housing Opportunity. This is not a commitment to lend. All loans are subject to credit approval, income verification, and program guidelines. Rates and programs change without notice.",
+    "nmlsAccess": "NMLS Consumer Access",
+    "nmlsAccessUrl": "https://www.nmlsconsumeraccess.org/",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer"
+  },
+  "roxy": {
+    "name": "Roxy",
+    "buttonLabel": "Chat with Roxy",
+    "teaser": "Hey, my name's Roxy 👋 If you have a question about anything — mortgages, documents, working with Ingrid — feel free to ask me right here.",
+    "header": "Roxy — Ingrid's assistant",
+    "agentTag": "AI Agent",
+    "meta": "Roxy · AI Agent · Just now",
+    "greeting": "Hey! I'm Roxy, Ingrid's AI assistant 👋 I can help with questions about mortgages, documents, loan options — whatever you need. And anything I can't answer, Ingrid's team confirms for you, usually same-day. What can I help you with today?",
+    "tabs": { "home": "Home", "messages": "Messages", "help": "Help" },
+    "home": {
+      "hi": "Hi, how can we help?",
+      "sendTitle": "Send us a message",
+      "sendSub": "Roxy replies instantly",
+      "bookRow": "Book a 15-minute call with Ingrid",
+      "uploadRow": "Send your documents securely",
+      "searchTitle": "Search for help",
+      "searchPh": "Search"
+    },
+    "helpTitle": "Help",
+    "helpBack": "Back",
+    "helpMore": "Still not sure? It's a 15-minute call.",
+    "articles": [
+      { "q": "What does a mortgage broker do that a bank doesn't?", "a": "A bank can only offer its own products. As a broker, Ingrid shops your file across 50+ lenders — banks, credit unions, and wholesale lenders — and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork." },
+      { "q": "How fast can I get pre-approved?", "a": "With documents in hand, typically 24–48 hours for a verified letter. On a deadline — an open house this weekend, an offer you want to write — tell her and she moves at that speed." },
+      { "q": "What documents will I need?", "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. You can send everything through the Upload documents page.", "link": "upload", "linkLabel": "Upload documents" },
+      { "q": "I'm a first-time buyer — where do I start?", "a": "With one short call. Low-down-payment programs exist to get you in the door — your exact number depends on your file, and Ingrid will tell you honestly whether now is your moment or what gets you there." },
+      { "q": "Can you tell me today's rates?", "a": "Rates change daily and depend on your credit, down payment, and program — anyone quoting a number without looking at your file is guessing. Ingrid prices your exact profile across 50+ lenders and shows you real numbers on a quick call." },
+      { "q": "Do you work with investors and foreign nationals?", "a": "Yes — both are core to Ingrid's Miami practice. DSCR loans qualify a rental on its income, and foreign-national programs work without U.S. credit history.", "link": "loans", "linkLabel": "See loan options" },
+      { "q": "Does talking to Ingrid cost anything?", "a": "No — the first call is free, no obligation. Broker compensation is disclosed transparently as part of any loan you choose to move forward with." },
+      { "q": "¿Hablan español?", "a": "¡Claro! Ingrid atiende todo el proceso en español — y este sitio también. Tap 'Español' at the top to switch the whole site." }
+    ],
+    "placeholder": "Message…",
+    "send": "Send",
+    "bookCta": "Book a call with Ingrid",
+    "chips": [
+      { "label": "Book a call", "action": "book" },
+      { "label": "Get pre-approved", "action": "preapproval" },
+      { "label": "What documents do I need?", "action": "documents" },
+      { "label": "Loan options", "action": "loans" },
+      { "label": "Send my documents", "action": "upload" }
+    ],
+    "fallback": "Good question — that's exactly the kind of thing Ingrid answers best on a quick 15-minute call. She's usually same-day on responses. Want to grab a time?",
+    "kb": [
+      { "k": ["book", "call", "appointment", "schedule", "meet", "talk"], "a": "Easy — Ingrid keeps 15-minute slots open, and you don't need any documents to talk. Tap below to pick a time that suits you." },
+      { "k": ["pre-approv", "preapprov", "approve", "qualify", "start", "begin", "how much"], "a": "Pre-approval with Ingrid usually takes 24–48 hours once your documents are in. She verifies real numbers — not an online estimate — so your letter carries weight with listing agents. The fastest way to start is a quick call." },
+      { "k": ["document", "paperwork", "need", "papers", "checklist"], "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. You can send everything through the Upload documents page — or ask me to take you there." },
+      { "k": ["upload", "send file", "attach", "submit"], "a": "You can send your documents securely on the Upload documents page — attach files directly or paste a Drive/Dropbox link, and it lands organized with Ingrid's team." },
+      { "k": ["rate", "interest", "apr", "percent"], "a": "Rates change daily and depend on your credit, down payment, and program — anyone quoting you a number without looking at your file is guessing. Ingrid prices your exact profile across 50+ lenders and shows you real numbers. That's a 15-minute conversation." },
+      { "k": ["fha"], "a": "FHA is the friendliest door for first-time buyers — lower down-payment requirements and more forgiving on credit than most programs. Your exact numbers depend on your file, and Ingrid closes FHA loans all the time in Miami-Dade and Broward. Want the details page, or a call?" },
+      { "k": ["va", "veteran", "military"], "a": "If you or your spouse served, the VA loan is almost always worth checking first: zero down, no monthly mortgage insurance. Ingrid works with VA-experienced lenders who move these fast." },
+      { "k": ["jumbo"], "a": "Above the county loan limit you're in jumbo territory — and that's where a broker matters most, because pricing varies hugely between lenders. Ingrid structures the file first, then shops it where it's wanted." },
+      { "k": ["invest", "dscr", "rental", "airbnb"], "a": "For rental properties, DSCR loans qualify the property on its rent — no tax returns or W-2s. Ingrid runs the ratio quickly and can tell you if a deal clears typical thresholds." },
+      { "k": ["foreign", "international", "extranjero", "itin", "no credit"], "a": "No U.S. credit history? No problem — foreign-national programs exist exactly for that, with income documented from your home country and remote closings. Ingrid handles these routinely, in English or Spanish." },
+      { "k": ["construc", "build", "lot", "land"], "a": "Construction-to-permanent financing covers the build and the mortgage with one qualification. Ingrid pressure-tests the project the way lenders will — before you're committed." },
+      { "k": ["refinanc", "refi", "cash out", "equity", "lower payment"], "a": "A refinance is math, not marketing: Ingrid models your new payment, costs, and the honest break-even point — and if keeping your current loan wins, she'll say so. Bring your statement to a quick call and you'll know." },
+      { "k": ["credit", "score", "bad credit", "repair"], "a": "Don't assume you're out — Ingrid has seen files at every credit level, and if yours needs work first, she'll tell you honestly with a plan attached, not false hope." },
+      { "k": ["first time", "first-time", "never bought"], "a": "First-time buyers are Ingrid's favorite files. She'll walk you through what you can comfortably afford — in plain language, English or Spanish — before you ever tour a home." },
+      { "k": ["spanish", "español", "espanol", "habla"], "a": "¡Claro! Ingrid atiende todo el proceso en español — y este sitio también. Toca 'Español' arriba para cambiar el idioma." },
+      { "k": ["who", "ingrid", "about", "experience", "trust"], "a": "Ingrid Ascanio has 20+ years in residential lending — former bank underwriter, processing manager, and since 2016 Branch Manager at Pioneer Mortgage Funding. She's also Vice President of FAMP Miami. Short version: she knows how the person reading your file thinks, because she used to be that person." },
+      { "k": ["phone", "email", "contact", "reach", "number"], "a": "You can call or text Ingrid's office at (786) 554-8830, email ingrid.ascanio@pmfmortgage.com — or book a 15-minute call directly, which is usually fastest." },
+      { "k": ["cost", "fee", "charge", "pay you", "commission"], "a": "Talking to Ingrid costs nothing — the first call is free, no obligation. Broker compensation is disclosed transparently as part of any loan you choose to move forward with." }
+    ]
+  },
+  "nudge": {
+    "delaySeconds": 16,
+    "cta": "Book a 15-minute call",
+    "dismiss": "Maybe later",
+    "byPage": {
+      "home": { "title": "Not sure where to start?", "body": "That's what the first call is for. 15 minutes with Ingrid and you'll know exactly what's possible." },
+      "buy": { "title": "Wondering what you could afford?", "body": "Ingrid will tell you in one short call — before you ever tour a home." },
+      "refinance": { "title": "Curious if refinancing pays off?", "body": "Bring your statement — Ingrid runs the honest math in 15 minutes." },
+      "loans": { "title": "Not sure which program fits?", "body": "That's Ingrid's job, not yours. One quick call and you'll know." },
+      "about": { "title": "Like what you're reading?", "body": "Twenty years of lending knowledge, 15 minutes of your time." },
+      "upload": { "title": "Questions about your documents?", "body": "Ingrid's team answers same-day. Or ask Roxy right here." }
+    }
+  },
+  "meta": {
+    "ogLocale": "en_US",
+    "titleSuffix": " · Ingrid Ascanio, Miami Mortgage Broker"
+  }
+}

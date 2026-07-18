@@ -1,0 +1,47 @@
+{
+  "slug": "refinanciar",
+  "meta": {
+    "title": "Refinancia en Florida — Baja tu Cuota, Acorta el Plazo o Saca Plusvalía",
+    "description": "Refinancia con la broker de Miami Ingrid Ascanio: números honestos para bajar tu cuota, acortar el plazo o poner tu plusvalía a trabajar. Si te conviene no moverte, te lo dirá."
+  },
+  "hero": {
+    "eyebrow": "Refinanciar",
+    "title": "Un refinanciamiento es matemática, no marketing.",
+    "body": "Sea cual sea tu meta, yo modelo los números reales — el cambio mensual verdadero, el costo real y el punto de equilibrio honesto. Si la matemática dice que te quedes con tu préstamo actual, eso es exactamente lo que te voy a decir."
+  },
+  "reasons": {
+    "eyebrow": "Tres razones inteligentes",
+    "title": "Por qué refinancian en el sur de la Florida",
+    "items": [
+      {
+        "name": "Bajar la cuota mensual",
+        "desc": "Cuando las tasas se mueven o tu crédito mejoró desde que cerraste, la misma casa puede costar menos cada mes. La pregunta es si el ahorro supera el costo de refinanciar — te muestro el mes de equilibrio, no solo la cuota nueva.",
+        "detail": "Conviene cuando: las tasas bajaron desde tu préstamo, tu puntaje subió, o te quitas el seguro de FHA pasándote a convencional."
+      },
+      {
+        "name": "Acortar el plazo",
+        "desc": "Cambiar un plazo de 30 años por uno de 15 o 20 suele subir un poco la cuota y recortar muchísimo el interés total. Si tus ingresos crecieron, la matemática de largo plazo puede ser dramática.",
+        "detail": "Conviene cuando: ganas más que cuando compraste, tu retiro ya tiene fecha, o la columna de intereses de tu estado de cuenta te molesta."
+      },
+      {
+        "name": "Poner la plusvalía a trabajar",
+        "desc": "Los propietarios del sur de la Florida suelen estar sentados sobre una plusvalía seria. Un cash-out puede consolidar deudas caras, financiar una renovación o sembrar una inversión — contra el valor de tu casa, a precio de hipoteca.",
+        "detail": "Conviene cuando: cargas deudas de interés alto, financias un proyecto con retorno real, o compras tu siguiente propiedad. No es para: vacaciones. En eso también seré honesta."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "El proceso",
+    "title": "Más simple que tu compra",
+    "items": [
+      { "name": "La llamada de números", "desc": "Saldo actual, cuota, meta. Diez minutos y sé si un refi merece una mirada más profunda." },
+      { "name": "El modelo honesto", "desc": "Cuota nueva, costos de cierre, mes de equilibrio, interés de por vida — lado a lado con no hacer nada." },
+      { "name": "Cierre en semanas", "desc": "Sin búsqueda de casa, sin vendedores. Un refi limpio suele ir de solicitud a cierre en tres a cinco semanas." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Corre los números",
+    "title": "Diez minutos te dicen si la matemática funciona.",
+    "body": "Trae tu estado de cuenta actual. Yo traigo el modelo honesto — incluida la versión en la que no cambias nada."
+  }
+}

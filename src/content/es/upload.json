@@ -1,0 +1,51 @@
+{
+  "slug": "subir-documentos",
+  "meta": {
+    "title": "Sube tus Documentos — Ingrid Ascanio, Hipotecas Miami",
+    "description": "Envía tus documentos del préstamo al equipo de Ingrid Ascanio de forma segura: comparte un enlace de Google Drive, Dropbox o tus archivos con tus datos para que tu expediente avance más rápido."
+  },
+  "hero": {
+    "eyebrow": "Subir documentos",
+    "title": "Envía tus documentos. Mantén tu expediente en movimiento.",
+    "body": "Este es el carril rápido entre tú y mi equipo. Dinos de quién es el expediente y qué estás enviando, comparte tus documentos, y todo llega organizado de nuestro lado — sin cadenas de correos, sin nada perdido."
+  },
+  "checklist": {
+    "title": "Lo que normalmente necesitamos",
+    "intro": "Cada expediente es distinto — envía lo que tengas y te decimos si falta algo. La lista habitual:",
+    "items": [
+      "Identificación oficial (licencia de conducir o pasaporte)",
+      "Últimos 2 talones de pago — o declaraciones del negocio si eres independiente",
+      "W-2 o 1099 de los últimos 2 años",
+      "Estados de cuenta bancarios de los últimos 2 meses, todas las páginas",
+      "Tu estado de cuenta hipotecario más reciente (refinanciamientos)",
+      "Cualquier cosa que te hayamos pedido específicamente"
+    ],
+    "tip": "Consejo: las fotos de documentos sirven, siempre que se vean las cuatro esquinas y el texto sea legible."
+  },
+  "form": {
+    "title": "Envía tus documentos",
+    "name": "Nombre completo del solicitante",
+    "namePh": "El nombre exactamente como aparece en el préstamo",
+    "email": "Correo",
+    "emailPh": "tu@correo.com",
+    "phone": "Teléfono",
+    "phonePh": "(305) 555-0100",
+    "property": "Dirección de la propiedad",
+    "propertyPh": "La dirección — o “todavía sin contrato”",
+    "filesLabel": "Adjunta tus documentos",
+    "filesDrop": "Arrastra tus archivos aquí — o toca para buscarlos",
+    "filesHelp": "PDF, JPG, PNG, HEIC, ZIP, DOC, XLS · hasta 20 MB en total",
+    "filesSelected": "listo(s) para enviar",
+    "filesRemove": "Quitar",
+    "filesTooBig": "Los archivos superan 20 MB en total — quita algunos, comprímelos en zip, o comparte un enlace abajo.",
+    "orLink": "¿Prefieres un enlace? Compártelo aquí",
+    "link": "Enlace a tus documentos (opcional)",
+    "linkPh": "Pega un enlace de Google Drive, Dropbox o WeTransfer",
+    "linkHelp": "Pon tus archivos en una carpeta (o zip), genera el enlace para compartir y pégalo aquí. Asegúrate de que cualquiera con el enlace pueda ver.",
+    "needSomething": "Adjunta al menos un archivo o pega un enlace para que tengamos algo que recibir.",
+    "notes": "¿Qué estás enviando?",
+    "notesPh": "p. ej. “Estados de cuenta y W-2 para la compra en Hollywood” — cualquier detalle nos ayuda a archivarlo bien.",
+    "submit": "Enviar al equipo de Ingrid",
+    "secureNote": "Para lo más delicado — declaraciones de impuestos completas, expedientes bancarios enteros — puede que te invitemos a nuestro portal seguro de solicitud. Si prefieres no usar un enlace compartido, llámanos y lo preparamos."
+  }
+}

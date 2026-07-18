@@ -1,0 +1,36 @@
+{
+  "slug": "comprar",
+  "meta": {
+    "title": "Compra Casa en Miami y el Sur de la Florida — Empieza con Una Llamada",
+    "description": "¿Comprando casa en Miami, Hollywood o cualquier parte de la Florida? Empieza con una llamada de 15 minutos con la broker Ingrid Ascanio — presupuesto claro y pre-aprobación rápida."
+  },
+  "hero": {
+    "eyebrow": "Comprar casa",
+    "title": "Conoce tu presupuesto real antes de enamorarte de una casa.",
+    "body": "En el sur de la Florida ganan los compradores que ya tienen el financiamiento comprobado cuando aparece la propiedad correcta. Una llamada corta con Ingrid te lleva ahí — sin documentos y sin compromiso."
+  },
+  "points": {
+    "eyebrow": "Por qué compran con Ingrid",
+    "title": "Lo que te llevas de la primera llamada",
+    "items": [
+      { "name": "Un número confiable", "desc": "Lo que puedes pagar con comodidad — criterio verificado, no un estimado de internet. Para buscar con confianza, no con ansiedad." },
+      { "name": "Una carta que gana ofertas", "desc": "Pre-aprobación en 24–48 horas con los documentos listos — actualizada el mismo día para cada oferta, fines de semana incluidos." },
+      { "name": "Guía en lenguaje claro", "desc": "Primera casa o quinta, en español o English — cada paso explicado antes de pedirte decidir nada." }
+    ]
+  },
+  "firstTime": {
+    "eyebrow": "Primeros compradores",
+    "title": "¿Nunca lo has hecho? Mejor todavía.",
+    "body": "Los primeros compradores son de los clientes favoritos de Ingrid. Existen programas de entrada baja para abrirte la puerta — tu número exacto depende de tu perfil, y ella te dirá con honestidad si tu momento es ahora o qué te lleva ahí.",
+    "points": [
+      { "big": "Baja", "small": "entrada en programas para primeros compradores" },
+      { "big": "24–48h", "small": "para una carta de pre-aprobación verificada" },
+      { "big": "$0", "small": "cuesta la primera llamada — sin compromiso" }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Empieza aquí",
+    "title": "La primera conversación no cuesta nada — y cambia todo lo que viene después.",
+    "body": "15 minutos. Sin documentos y sin compromiso. Solo claridad sobre lo que puedes hacer y cómo hacerlo."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "refinance",
+  "meta": {
+    "title": "Refinance in Florida — Lower Payment, Shorter Term, or Cash Out",
+    "description": "Refinance with Miami broker Ingrid Ascanio: honest math on lowering your payment, shortening your term, or putting equity to work. If staying put wins, she'll say so."
+  },
+  "hero": {
+    "eyebrow": "Refinancing",
+    "title": "A refinance is math, not marketing.",
+    "body": "Whatever your goal, I'll model the real numbers — the true monthly change, the actual cost, and the honest break-even point. If the math says keep your current loan, that's exactly what I'll tell you."
+  },
+  "reasons": {
+    "eyebrow": "Three smart reasons",
+    "title": "Why South Floridians refinance",
+    "items": [
+      {
+        "name": "Lower the monthly payment",
+        "desc": "When rates move or your credit has improved since you closed, the same house can cost less every month. The question is whether savings outrun the cost of refinancing — I'll show you the break-even month, not just the new payment.",
+        "detail": "Best when: rates have dropped since your loan, your credit score has climbed, or you're shedding FHA mortgage insurance by moving to conventional."
+      },
+      {
+        "name": "Shorten the term",
+        "desc": "Trading a 30-year for a 15- or 20-year usually raises the payment a little and cuts total interest a lot. If your income has grown into the higher payment, the long-term math can be dramatic.",
+        "detail": "Best when: your income is stronger than when you bought, retirement has a date on it, or the interest column of your statement bothers you."
+      },
+      {
+        "name": "Put equity to work",
+        "desc": "South Florida owners are often sitting on serious equity. A cash-out refinance can consolidate expensive debt, fund a renovation, or seed an investment — against your home's value, at mortgage pricing.",
+        "detail": "Best when: you're carrying high-interest debt, funding a project with real return, or buying your next property. Not for: vacations. I'll be honest about that too."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "The process",
+    "title": "Simpler than your purchase was",
+    "items": [
+      { "name": "The numbers call", "desc": "Current balance, payment, goal. Ten minutes and I'll know whether a refi deserves a deeper look." },
+      { "name": "The honest model", "desc": "New payment, closing costs, break-even month, lifetime interest — side by side with doing nothing." },
+      { "name": "Close in weeks", "desc": "No house hunt, no sellers. A clean refi typically moves from application to closing in three to five weeks." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Run the numbers",
+    "title": "Ten minutes tells you if the math works.",
+    "body": "Bring your current statement. I'll bring the honest model — including the version where you change nothing."
+  }
+}

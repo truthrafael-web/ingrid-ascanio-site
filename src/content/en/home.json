@@ -1,0 +1,79 @@
+{
+  "slug": "",
+  "meta": {
+    "title": "Ingrid Ascanio — Miami Mortgage Broker | Pioneer Mortgage Funding",
+    "description": "Miami mortgage broker with 20+ years in residential lending. Purchase, refinance, FHA, VA, jumbo, investor and foreign-national loans across Florida. Hablo Español."
+  },
+  "hero": {
+    "eyebrow": "Miami · Hollywood · South Florida",
+    "titleA": "Your mortgage, handled by someone who's seen",
+    "titleEm": "every side of the deal.",
+    "body": "I'm Ingrid Ascanio — 20+ years in residential lending, former bank underwriter, and your advocate with 50+ lenders. One quick call and you'll know exactly where you stand.",
+    "withLabel": "Branch Manager & Loan Officer at",
+    "imageAlt": "Ingrid Ascanio, mortgage broker in Miami",
+    "captionMeta": "Serving Miami · Hollywood · all of Florida",
+    "aboutCta": "Who I am — my story",
+    "trustLine": "Answers same-day · Weekends included · English y Español"
+  },
+  "path": {
+    "eyebrow": "How it works",
+    "title": "Three steps. No mystery.",
+    "body": "This is the whole route — and at every point you'll know exactly where your file stands.",
+    "steps": [
+      { "name": "Talk to Ingrid", "desc": "15 minutes on your goals and numbers. No documents needed yet — you leave knowing what's realistic." },
+      { "name": "Get pre-approved", "desc": "Documents in, numbers verified, a real letter in 24–48 hours — the kind listing agents take seriously." },
+      { "name": "Close with confidence", "desc": "She structures your file for the right lender and defends it to the closing table. Then: keys." }
+    ]
+  },
+  "programs": {
+    "eyebrow": "Loan options",
+    "title": "Whatever shape your life is in, there's a program for it",
+    "body": "Salaried, self-employed, investor, foreign national — the right question isn't “do I qualify?” It's “which of 50+ lenders fits my file?”",
+    "linkLabel": "Explore",
+    "allLink": "See all loan options"
+  },
+  "aboutTeaser": {
+    "eyebrow": "About Ingrid",
+    "title": "She was the underwriter. Now she's your advocate.",
+    "body": "BankUnited underwriter, processing manager, and since 2016, Branch Manager at Pioneer Mortgage Funding — plus elected Vice President of FAMP Miami.",
+    "body2": "She knows how the person reading your file thinks, because she used to be that person. And she'll walk you through it the way a neighbor would — in plain language, in English or en español.",
+    "chips": ["Former bank underwriter", "FAMP Miami Vice President", "English y Español", "Miami · Hollywood local"],
+    "link": "Her full story"
+  },
+  "split": {
+    "buy": {
+      "eyebrow": "Buying",
+      "title": "First home, next home, or the one after that",
+      "body": "A clear budget before you ever fall in love with a listing.",
+      "link": "Buying with Ingrid"
+    },
+    "refi": {
+      "eyebrow": "Refinancing",
+      "title": "Refinance when the math serves you",
+      "body": "Honest numbers — including the version where you keep your current loan.",
+      "link": "See the three reasons"
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions, answered",
+    "title": "Common questions",
+    "items": [
+      {
+        "q": "What does a mortgage broker do that a bank doesn't?",
+        "a": "A bank can only offer its own products. As a broker, Ingrid shops your file across 50+ lenders — banks, credit unions, and wholesale lenders — and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork."
+      },
+      {
+        "q": "How fast can I get pre-approved?",
+        "a": "With documents in hand, typically 24–48 hours for a verified letter. On a deadline — an open house this weekend, an offer you want to write — tell her and she moves at that speed."
+      },
+      {
+        "q": "Do you help first-time buyers in Miami and Hollywood?",
+        "a": "All the time. It starts with a plain-language conversation about what you can comfortably afford, then FHA and low-down-payment conventional options that get first-timers in the door."
+      },
+      {
+        "q": "Can you finance investment properties and foreign nationals?",
+        "a": "Yes — both are core to her Miami practice. DSCR loans qualify a rental on its income, and foreign-national programs work without U.S. credit history. Neither needs tax returns the traditional way."
+      }
+    ]
+  }
+}

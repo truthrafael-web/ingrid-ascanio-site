@@ -1,0 +1,76 @@
+{
+  "slug": "about",
+  "meta": {
+    "title": "About Ingrid Ascanio — 20+ Years in Residential Lending",
+    "description": "From BankUnited underwriter to Pioneer Mortgage Funding branch manager: Ingrid Ascanio's 20+ years on every side of the lending desk, now working for Miami borrowers."
+  },
+  "hero": {
+    "eyebrow": "About Ingrid",
+    "title": "I know how the person reading your file thinks. I used to be her.",
+    "body": "Most loan officers learned lending from the sales side. I learned it from the inside — underwriting files, running processing teams, and defending homeowners in loss mitigation — before I ever originated a loan.",
+    "body2": "That order matters: it's why my files are structured to be approved, not just submitted."
+  },
+  "timeline": {
+    "eyebrow": "The road here",
+    "title": "Every side of the lending desk",
+    "items": [
+      {
+        "era": "The bank years",
+        "name": "Underwriter, BankUnited",
+        "desc": "The person who says yes or no. I learned exactly what makes a file fundable — and the small, fixable things that sink applications that should have closed."
+      },
+      {
+        "era": "The operations years",
+        "name": "Processing Manager, Globex Lending",
+        "desc": "Running the machinery between application and closing table. Speed, in this business, is operations — and I ran the operation."
+      },
+      {
+        "era": "The advocacy years",
+        "name": "Loss Mitigation Specialist, Legal Save",
+        "desc": "Foreclosure defense and loan modifications — fighting for homeowners on the worst day of their financial lives. It permanently changed how seriously I take the phrase “the right loan.”"
+      },
+      {
+        "era": "2016 — today",
+        "name": "Branch Manager & Loan Officer, Pioneer Mortgage Funding",
+        "desc": "All of it, working for you: banker's discipline, operator's speed, advocate's loyalty — with a broker's freedom to shop 50+ lenders instead of defending one bank's menu."
+      }
+    ]
+  },
+  "pull": "“My goal is to think outside the box — within the guidelines — and structure the deal with a win for all.”",
+  "values": {
+    "eyebrow": "How I work",
+    "title": "What you can hold me to",
+    "items": [
+      {
+        "name": "Structured, not submitted",
+        "desc": "Anyone can forward your documents to a lender. Structuring means choosing the lender whose guidelines fit your file, presenting income the way that lender reads best, and answering underwriting's questions before they're asked."
+      },
+      {
+        "name": "The truth, early",
+        "desc": "If your file needs six months of credit work before it's ready, you'll hear it in our first call — with a plan attached. False hope wastes your time; a real map doesn't."
+      },
+      {
+        "name": "In your language",
+        "desc": "The whole process happens in English or en español — not just the small talk, but the documents, the explanations, and the closing. Miami deserves nothing less."
+      },
+      {
+        "name": "Reachable, humanly",
+        "desc": "Offers get written on Sunday afternoons. Deadlines land on holidays. My clients have my cell, and 20 years in, I still answer it."
+      }
+    ]
+  },
+  "recognition": {
+    "eyebrow": "Recognition & leadership",
+    "title": "Trusted by the industry, too",
+    "items": [
+      { "name": "FAMP Miami — Vice President, 2025–2026", "desc": "Elected leadership in the Florida Association of Mortgage Professionals, Miami chapter." },
+      { "name": "FAMP Tradeshow Co-Chair, 2025–2026", "desc": "Co-chairing the chapter's flagship industry event." },
+      { "name": "Top Producer, 2019", "desc": "Pioneer Mortgage Funding production recognition." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Work with Ingrid",
+    "title": "Twenty years of lending knowledge. Fifteen minutes of your time.",
+    "body": "Tell me where you are — dreaming, shopping, or under contract and nervous. I'll tell you exactly what happens next."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "contact",
+  "meta": {
+    "title": "Contact Ingrid Ascanio — Miami Mortgage Broker",
+    "description": "Call, text, email, or book a call with Miami mortgage broker Ingrid Ascanio. Same-day response on new inquiries. Se habla español."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Start the conversation.",
+    "body": "Tell me a little about where you are, and I'll come back to you within one business day — usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
+  },
+  "form": {
+    "title": "Send a message",
+    "name": "Full name",
+    "namePh": "Your name",
+    "email": "Email",
+    "emailPh": "you@email.com",
+    "phone": "Phone",
+    "phonePh": "(305) 555-0100",
+    "interest": "What brings you here?",
+    "interestOptions": [
+      "Buying my first home",
+      "Buying my next home",
+      "Refinancing",
+      "Investment property",
+      "I'm buying from outside the U.S.",
+      "Building a home",
+      "Something else"
+    ],
+    "message": "Anything you'd like me to know?",
+    "messagePh": "Timeline, questions, the situation as you see it — anything helps.",
+    "consent": "I agree to be contacted by phone, text, or email about my inquiry. Message and data rates may apply. Consent is not a condition of purchase.",
+    "submit": "Send message"
+  },
+  "direct": {
+    "title": "Or reach me directly",
+    "callTitle": "Call or text",
+    "callDesc": "Fastest for anything urgent — offer deadlines, same-day pre-approval letters.",
+    "emailTitle": "Email",
+    "emailDesc": "Best for documents and detailed questions.",
+    "visitTitle": "Office",
+    "visitDesc": "By appointment.",
+    "bookTitle": "Book a call",
+    "bookDesc": "Pick a time that suits you — 15 minutes, no preparation needed.",
+    "bookButton": "Open the calendar"
+  }
+}

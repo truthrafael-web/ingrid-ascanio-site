@@ -1,0 +1,216 @@
+{
+  "index": {
+    "slug": "loan-options",
+    "meta": {
+      "title": "Loan Options in Florida — Conventional, FHA, VA, Jumbo, DSCR & More",
+      "description": "Explore mortgage programs with Miami broker Ingrid Ascanio: conventional, FHA, VA, jumbo, investor DSCR, foreign national, and construction loans across Florida."
+    },
+    "eyebrow": "Loan options",
+    "title": "Seven ways to finance a Florida home",
+    "body": "Every program below is a different set of rules about income, credit, and down payment. My job is knowing all of them cold — and matching your file to the lender who wants exactly your kind of borrower. If you're not sure where you fit, skip the reading and just call me.",
+    "detailLabel": "See the details"
+  },
+  "detail": {
+    "whoTitle": "This tends to fit you if…",
+    "howTitle": "How it works with me",
+    "knowTitle": "Good to know",
+    "faqTitle": "Quick answers",
+    "othersTitle": "Other loan options",
+    "cta": {
+      "eyebrow": "Next step",
+      "title": "Not sure this is the one? That's my job, not yours.",
+      "body": "Fifteen minutes on the phone and I'll tell you which program actually fits your file — and what it takes to qualify."
+    }
+  },
+  "programs": [
+    {
+      "slug": "conventional",
+      "name": "Conventional",
+      "tag": "The workhorse — 30-year, 15-year, and everything between",
+      "cardBlurb": "The standard route for buyers with steady income and fair-to-strong credit. Lower down payments than most people assume for qualified first-time buyers.",
+      "intro": "The conventional loan is the one most people picture when they think “mortgage” — and for good reason. It offers the widest choice of terms (30-year, 20-year, 15-year, adjustable), competitive pricing tied to your credit profile, and no upfront government insurance premium. It's also more flexible than its reputation: qualified first-time buyers often need far less down than they expect.",
+      "who": [
+        "You have steady, documentable income — W-2, salaried, or established self-employment",
+        "Your credit is fair to strong (stronger profiles unlock better pricing)",
+        "You want mortgage insurance to drop off as you build equity",
+        "You're buying a primary home, second home, or simple investment property"
+      ],
+      "how": [
+        { "name": "Profile review", "desc": "We look at income, credit, and savings together and pick the term that fits your monthly comfort zone." },
+        { "name": "Lender match", "desc": "I price your exact profile across my lender panel — the same file can price very differently lender to lender." },
+        { "name": "Lock and close", "desc": "We lock when the timing is right for you, and I manage the file through underwriting to the closing table." }
+      ],
+      "know": [
+        "Mortgage insurance (PMI) applies on smaller down payments — but unlike FHA, it can be removed once you build enough equity.",
+        "The 15-year term trades a higher payment for dramatically less interest over the life of the loan; I'll model both so you see the real numbers.",
+        "Loan limits are set annually by county; above them, we're in jumbo territory — which I also handle."
+      ],
+      "faq": [
+        { "q": "Is a huge down payment required?", "a": "No — that's the most persistent myth in this business. Qualified buyers can often start with far less than they assume. Your exact number depends on your file, and Ingrid will give it to you straight on a short call." },
+        { "q": "30-year or 15-year?", "a": "It depends on what the higher 15-year payment would crowd out of your life. I'll put both side by side — payment, total interest, payoff date — and you'll pick with real numbers, not vibes." }
+      ]
+    },
+    {
+      "slug": "fha",
+      "name": "FHA",
+      "tag": "The first-time buyer's friend",
+      "cardBlurb": "Government-insured, forgiving on credit, with lower down-payment requirements. The most common way first-time Miami buyers get in the door.",
+      "intro": "FHA loans are insured by the Federal Housing Administration, which lets lenders say yes to buyers the conventional market would turn away — thinner credit, smaller savings, higher debt-to-income. If homeownership feels a year or two away, an FHA conversation is often what turns it into this year.",
+      "who": [
+        "You're a first-time buyer, or it's been a while since you owned",
+        "Your credit is rebuilding — FHA is more forgiving than the conventional market",
+        "You're working with a modest down payment (gift funds from family are allowed)",
+        "Your debt-to-income ratio is higher than conventional loans like to see"
+      ],
+      "how": [
+        { "name": "Honest pre-check", "desc": "We review credit and income first — if FHA is the fit, you'll know; if conventional beats it, I'll tell you that too." },
+        { "name": "Budget with all costs in", "desc": "FHA carries mortgage insurance; I show your true monthly payment with everything included, no surprises." },
+        { "name": "Offer-ready letter", "desc": "You get a pre-approval letter that lets you compete — FHA offers close every day in this market." }
+      ],
+      "know": [
+        "FHA mortgage insurance typically stays for the life of the loan — the common play is to refinance into conventional once your equity and credit grow.",
+        "The property has to pass an FHA appraisal, which checks safety and livability, not cosmetics.",
+        "FHA loan limits vary by county; Miami-Dade and Broward limits are healthy enough for real homes, not just condos."
+      ],
+      "faq": [
+        { "q": "Is FHA only for first-time buyers?", "a": "No — anyone can use FHA for a primary residence. It's popular with first-timers because the entry requirements are gentler, but it's not restricted to them." },
+        { "q": "My credit took a hit a few years ago. Am I out?", "a": "Not necessarily. FHA is specifically designed to be forgiving of past events — and there are defined waiting periods after bankruptcy or foreclosure that may already be behind you. Let's look before you assume." }
+      ]
+    },
+    {
+      "slug": "va",
+      "name": "VA",
+      "tag": "Zero down for those who served",
+      "cardBlurb": "For veterans, active-duty service members, and eligible surviving spouses: no down payment, no monthly mortgage insurance.",
+      "intro": "The VA loan is the strongest benefit in American home finance: no down payment, no monthly mortgage insurance, and competitive pricing — earned through military service. If you or your spouse served, this is almost always the first program worth checking.",
+      "who": [
+        "You're active duty, a veteran, or in the National Guard or Reserves with qualifying service",
+        "You're an eligible surviving spouse",
+        "You want to buy with little or nothing down and keep your savings intact",
+        "You're buying a primary residence in Florida"
+      ],
+      "how": [
+        { "name": "Certificate of Eligibility", "desc": "I help you pull your COE — the document that proves your entitlement. It usually takes minutes, not weeks." },
+        { "name": "Full-benefit pricing", "desc": "I shop VA-experienced lenders who price the benefit properly and know how to move VA files fast." },
+        { "name": "Close with savings intact", "desc": "Zero down and negotiable costs mean you keep your reserves for the house itself." }
+      ],
+      "know": [
+        "The VA funding fee (a one-time cost that can roll into the loan) replaces monthly mortgage insurance; disabled veterans are often exempt.",
+        "VA loans are reusable — using the benefit before doesn't mean you've spent it.",
+        "Sellers sometimes wrongly assume VA offers are slow or fragile. A well-prepared file with an experienced team closes on schedule — that's my job."
+      ],
+      "faq": [
+        { "q": "I already used my VA loan once. Can I use it again?", "a": "Very likely yes. Entitlement restores when you sell and pay off the prior VA loan, and partial entitlement can even allow a second VA loan while keeping the first. We'll check your exact numbers." },
+        { "q": "Is zero down really zero down?", "a": "For the down payment, yes. You'll still see standard closing costs, though some can be negotiated to the seller or rolled in — I'll map the true cash-to-close before you write an offer." }
+      ]
+    },
+    {
+      "slug": "jumbo",
+      "name": "Jumbo",
+      "tag": "For homes above the conforming limit",
+      "cardBlurb": "Financing for South Florida properties priced beyond conventional loan limits — with lender options that keep large loans competitive.",
+      "intro": "When a purchase rises above the county's conforming loan limit, you're in jumbo territory — larger loan, deeper documentation, and pricing that varies enormously between lenders. This is exactly where a broker earns their keep: jumbo is not one market but dozens of lender appetites, and matching your profile to the right one is worth real money.",
+      "who": [
+        "The home you want is priced above the conforming limit for its county",
+        "You have strong credit and documentable income or assets",
+        "You want your large loan shopped, not taken to a single bank's window",
+        "You're buying a primary, second home, or high-value investment property"
+      ],
+      "how": [
+        { "name": "Structure first", "desc": "Down payment size, reserves, and documentation style all shift jumbo pricing — we design the file before we shop it." },
+        { "name": "Appetite match", "desc": "Some lenders love condos, some love self-employed files, some love second homes. I send yours where it's wanted." },
+        { "name": "White-glove close", "desc": "Bigger files draw more underwriting scrutiny; I keep conditions moving so your contract dates hold." }
+      ],
+      "know": [
+        "Jumbo guidelines usually ask for stronger credit, larger down payments, and cash reserves after closing.",
+        "South Florida condos add a second layer — the building itself gets reviewed. I know which lenders are comfortable with which building types.",
+        "Asset-based and bank-statement documentation exists in jumbo too, for strong borrowers whose tax returns understate reality."
+      ],
+      "faq": [
+        { "q": "What counts as jumbo in Miami?", "a": "Anything above the conforming loan limit for the county, which adjusts every year. Rather than quote a number that will age badly here, I'll tell you the current limit when we talk — and whether your target price crosses it." },
+        { "q": "Are jumbo loans harder to get?", "a": "More documented, yes; harder, not necessarily. Strong files often price surprisingly well because lenders compete for them. The key is presenting the file to the lender whose guidelines fit it." }
+      ]
+    },
+    {
+      "slug": "investor-dscr",
+      "name": "Investor / DSCR",
+      "tag": "Qualify on the property's rent, not your tax returns",
+      "cardBlurb": "For rental-property investors: the property's cash flow does the qualifying. No W-2s, no tax returns, scale past four doors.",
+      "intro": "DSCR stands for debt-service coverage ratio — the simple question of whether a property's rent covers its mortgage payment. DSCR loans qualify the deal, not your paycheck: no tax returns, no W-2s, no debt-to-income math. For Miami investors — especially self-employed ones whose returns are optimized for taxes — it's the tool that unlocks scale.",
+      "who": [
+        "You're buying or refinancing a rental property — long-term or short-term",
+        "Your tax returns understate your real income (most good accountants make sure they do)",
+        "You already own several financed properties and conventional lending has capped you out",
+        "You're buying through an LLC and want the loan to match"
+      ],
+      "how": [
+        { "name": "Run the ratio", "desc": "Market rent versus proposed payment — I'll tell you quickly whether the deal clears typical DSCR thresholds." },
+        { "name": "Structure the entity", "desc": "Personal name or LLC, short-term or long-term rental — each has lender implications I'll walk you through." },
+        { "name": "Close and repeat", "desc": "DSCR lenders don't count doors the way conventional does. The playbook that closes property three works for property ten." }
+      ],
+      "know": [
+        "Expect a larger down payment than an owner-occupied loan — the exact figure depends on the deal and the lender.",
+        "Short-term-rental income (Airbnb-style) is usable with some lenders and not others; this is exactly the kind of matching I do.",
+        "Ratios below 1.0 (rent doesn't fully cover the payment) can still close with some lenders at adjusted terms."
+      ],
+      "faq": [
+        { "q": "Do you verify my employment at all?", "a": "DSCR underwriting centers on the property's income, your credit, and your assets for the down payment and reserves — not your employment or personal income documentation." },
+        { "q": "Can I use projected Airbnb income?", "a": "Some lenders accept short-term-rental projections or trailing revenue; others only use long-term market rent. It changes the math significantly, so tell me your strategy up front and I'll match accordingly." }
+      ]
+    },
+    {
+      "slug": "foreign-national",
+      "name": "Foreign National",
+      "tag": "U.S. property without U.S. credit history",
+      "cardBlurb": "For international buyers investing in Florida: programs built for buyers without U.S. credit, income, or residency.",
+      "intro": "Miami is an international city and my practice reflects it. Foreign-national programs exist precisely for buyers who live and earn abroad: no U.S. credit history required, income documented from your home country, and closings that can be coordinated remotely. Se habla español — y todo el proceso puede ser en tu idioma.",
+      "who": [
+        "You live outside the U.S. and want Florida property — investment, vacation home, or a future landing spot",
+        "You have no U.S. credit history (or a thin one)",
+        "Your income and assets are documented in your home country",
+        "You may be buying through an entity, or remotely"
+      ],
+      "how": [
+        { "name": "Document mapping", "desc": "I'll give you a precise list of what your file needs — bank reference letters, income documentation, passport/visa — before you gather anything twice." },
+        { "name": "Program match", "desc": "Foreign-national guidelines vary widely by lender: down payment, reserve requirements, eligible countries. I place your file where it fits." },
+        { "name": "Remote-friendly close", "desc": "Power of attorney, embassy notarization, mail-away closings — buying from abroad is routine when the team has done it before. Mine has." }
+      ],
+      "know": [
+        "Foreign-national programs ask for larger down payments than domestic loans, with reserves after closing — the exact requirement varies by lender.",
+        "An ITIN (U.S. tax ID) is required for some programs and not others — we'll sort that early.",
+        "Condo and new-construction purchases — the classic Miami international buy — are well-trodden ground for these programs."
+      ],
+      "faq": [
+        { "q": "Can I really get a U.S. mortgage with no U.S. credit?", "a": "Yes. Foreign-national programs replace the U.S. credit report with alternatives — international credit reports where available, bank reference letters, and larger down payments. It's a well-established lane, not an exception." },
+        { "q": "¿Podemos hacer todo el proceso en español?", "a": "Sí — absolutamente. Toda la conversación, la explicación de cada documento y cada paso del proceso puede ser en español. Cambia el sitio a español con el botón ES arriba." }
+      ]
+    },
+    {
+      "slug": "construction",
+      "name": "Construction",
+      "tag": "Finance the build, then the home",
+      "cardBlurb": "Construction-to-permanent financing for ground-up builds and major renovations — one qualifying process, from lot to keys.",
+      "intro": "Building instead of buying means your financing has two lives: the construction phase, where funds draw down as work completes, and the permanent mortgage that follows. Construction-to-permanent loans handle both with a single qualification — and in a market where the right lot beats the right listing, that's a powerful option.",
+      "who": [
+        "You own a lot (or want one) and plan a ground-up build",
+        "You're planning a renovation substantial enough to need staged funding",
+        "You have a licensed builder and plans — or want guidance getting there",
+        "You want one close, not two rounds of qualifying and fees"
+      ],
+      "how": [
+        { "name": "Feasibility first", "desc": "Budget, builder, plans, timeline — we pressure-test the project the way the lender will, before you're committed." },
+        { "name": "One qualification", "desc": "Construction-to-perm means one approval covering both phases; funds release on inspection milestones as the build progresses." },
+        { "name": "Convert to permanent", "desc": "When the certificate of occupancy lands, the loan converts to a standard mortgage without re-qualifying." }
+      ],
+      "know": [
+        "Lenders will vet your builder — licensing, insurance, track record. A strong builder file speeds everything.",
+        "During construction you typically pay interest only on funds drawn so far, not the full loan amount.",
+        "Fewer lenders play in construction than in standard purchase lending, which makes broker access to the ones who do genuinely valuable."
+      ],
+      "faq": [
+        { "q": "Do I need to own the land first?", "a": "No — the lot purchase can often roll into the construction loan itself. If you already own it, its equity can count toward your down payment." },
+        { "q": "What if the build runs over budget?", "a": "Contingency reserves are built into the loan structure for exactly this. We'll size them realistically up front — optimistic budgets are how construction loans get stressful." }
+      ]
+    }
+  ]
+}
