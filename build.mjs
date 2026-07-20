@@ -15,12 +15,14 @@ const L = {
     global: read('en/global.json'), home: read('en/home.json'), buy: read('en/buy.json'),
     refinance: read('en/refinance.json'), about: read('en/about.json'),
     contact: read('en/contact.json'), upload: read('en/upload.json'), loans: read('en/loans.json'),
+    legal: read('en/legal.json'),
     prefix: '',
   },
   es: {
     global: read('es/global.json'), home: read('es/home.json'), buy: read('es/buy.json'),
     refinance: read('es/refinance.json'), about: read('es/about.json'),
     contact: read('es/contact.json'), upload: read('es/upload.json'), loans: read('es/loans.json'),
+    legal: read('es/legal.json'),
     prefix: '/es',
   },
 };
@@ -163,7 +165,11 @@ function footer(g, loans, pageType) {
       <img src="/assets/img/equal-housing-white.png" alt="Equal Housing Opportunity" width="44" height="47" loading="lazy">
       <p>${esc(g.footer.legalLine)}<br>${esc(g.footer.brokerLine)}<br>${esc(g.footer.equalHousing)}</p>
     </div>
-    <p class="footer-links"><a href="${g.footer.nmlsAccessUrl}" rel="noopener" target="_blank">${esc(g.footer.nmlsAccess)}</a></p>
+    <p class="footer-links">
+      <a href="${L[g.lang].prefix}/${L[g.lang].legal.privacy.slug}/">${esc(g.footer.privacy)}</a>
+      <a href="${L[g.lang].prefix}/${L[g.lang].legal.terms.slug}/">${esc(g.footer.terms)}</a>
+      <a href="${g.footer.nmlsAccessUrl}" rel="noopener" target="_blank">${esc(g.footer.nmlsAccess)}</a>
+    </p>
   </div>
 </footer>
 <script>window.SITE_I18N = ${JSON.stringify(i18n)};</script>
@@ -460,6 +466,24 @@ function renderContact(lang) {
 </section>`;
 }
 
+function renderLegal(lang, doc) {
+  const body = doc.blocks.map((b) => {
+    if (b.t === 'ul') return `<ul class="legal-list">${b.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`;
+    if (b.t === 'h2') return `<h2 class="legal-h2">${esc(b.text)}</h2>`;
+    if (b.t === 'h3') return `<h3 class="legal-h3">${esc(b.text)}</h3>`;
+    return `<p>${esc(b.text)}</p>`;
+  }).join('\n');
+  return `
+<section class="page-hero legal-hero">
+  <p class="eyebrow reveal">${esc(doc.eyebrow)}</p>
+  <h1 class="reveal">${esc(doc.title)}</h1>
+  <p class="legal-updated reveal">${esc(doc.updatedLabel)} ${esc(doc.updated)}</p>
+</section>
+<section class="section legal-section">
+  <div class="legal-prose reveal">${body}</div>
+</section>`;
+}
+
 function renderUpload(lang) {
   const { global: g, upload: u } = L[lang];
   return `
@@ -544,6 +568,8 @@ for (const lang of ['en', 'es']) {
   emit(lang, c.about.slug, o.about.slug, c.about.meta.title, c.about.meta.description, renderAbout(lang), 'about');
   emit(lang, c.upload.slug, o.upload.slug, c.upload.meta.title, c.upload.meta.description, renderUpload(lang), 'upload');
   emit(lang, c.contact.slug, o.contact.slug, c.contact.meta.title, c.contact.meta.description, renderContact(lang), 'contact');
+  emit(lang, c.legal.privacy.slug, o.legal.privacy.slug, c.legal.privacy.metaTitle, c.legal.privacy.metaDesc, renderLegal(lang, c.legal.privacy), 'legal');
+  emit(lang, c.legal.terms.slug, o.legal.terms.slug, c.legal.terms.metaTitle, c.legal.terms.metaDesc, renderLegal(lang, c.legal.terms), 'legal');
 }
 
 writeFileSync(join(DIST, 'sitemap.xml'),

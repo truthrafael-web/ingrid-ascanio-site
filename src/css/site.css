@@ -768,6 +768,30 @@ h3 { font-size: 1.25rem; }
 .link-alt summary { cursor: pointer; font-size: .9rem; font-weight: 600; color: var(--gold); }
 .link-alt .field { margin-top: .9rem; }
 
+/* ---------- legal pages (privacy / terms) ---------- */
+.legal-hero { max-width: 46rem; padding-bottom: .3rem; }
+.legal-updated { margin-top: .9rem; font-size: .85rem; color: var(--ink-soft); }
+.legal-section { max-width: 46rem; margin: 0 auto; padding: clamp(1.2rem, 3vw, 2rem) var(--pad) clamp(2.6rem, 6vw, 4rem); }
+.legal-prose { color: var(--ink-soft); }
+.legal-prose > p { margin: 0 0 1.05rem; line-height: 1.75; }
+.legal-h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.58rem); color: var(--ink);
+  margin: 2.4rem 0 .9rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+}
+.legal-prose > .legal-h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.legal-h3 { font-size: 1.06rem; color: var(--ink); margin: 1.6rem 0 .6rem; }
+.legal-list { list-style: none; margin: 0 0 1.15rem; padding: 0; }
+.legal-list li { position: relative; padding-left: 1.25rem; margin-bottom: .55rem; line-height: 1.7; }
+.legal-list li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: .4rem; height: .4rem; border-radius: 50%; background: var(--gold);
+}
+
+/* footer legal links */
+.footer-links a { margin-right: 1.4rem; text-decoration: none; }
+.footer-links a:last-child { margin-right: 0; }
+.footer-links a:hover { color: var(--gold-bright); }
+
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .hero, .about-hero { grid-template-columns: 1fr; }
