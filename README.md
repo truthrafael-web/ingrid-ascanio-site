@@ -1,7 +1,8 @@
 # Ingrid Ascanio · Miami Mortgage — Website
 
 Bilingual (EN/ES) static site for Ingrid Ascanio, Pioneer Mortgage Funding.
-28 pages, no framework, GoHighLevel-ready. Built 2026-07-17 by MPower.
+30 pages (incl. Privacy Policy + Terms & Conditions, EN/ES), no framework,
+GoHighLevel-ready. Built 2026-07-17 by MPower; live on https://miamipmf.com.
 
 ## Structure
 
@@ -19,8 +20,10 @@ Website/
 ```
 
 Pages: `/` `/buy/` `/refinance/` `/loan-options/` + 7 program pages `/about/`
-`/upload-documents/` `/contact/` — and the full Spanish mirror under `/es/…`
-(translated URLs, hreflang-linked, language switcher in the top bar).
+`/upload-documents/` `/contact/` `/privacy/` `/terms/` — and the full Spanish
+mirror under `/es/…` (translated URLs, hreflang-linked, language switcher in the
+top bar). Legal-page content lives in `src/content/{en,es}/legal.json`, rendered
+by `renderLegal()`; footer links to them site-wide.
 
 ## Editing content
 
@@ -40,10 +43,18 @@ Every CRM link plugs in there (then rebuild + redeploy):
 | `chatWidgetSrc` + `chatWidgetId` | Chat widget snippet values | Floating AI chat on every page |
 | `ga4Id` / `gtmId` / `metaPixelId` | Tracking IDs | GA4 / Tag Manager / Meta Pixel on every page |
 
-**Fallbacks until links are provided (working today):** CTA buttons route to the
-contact form; form submissions open a pre-filled email to Ingrid so no lead is
-ever dropped. Webhook payloads include `type` (contact / document-upload /
-newsletter), `page`, `language`, and all form fields.
+**Status (2026-07-20): `webhookUrl` is SET and live** — contact/newsletter/upload
+forms POST every submission to the GHL inbound webhook (verified: real live form
+fill → HTTP 200 + success message). ⚠️ **But a submission only becomes a CRM
+contact if the GHL inbound-webhook *workflow* creates/updates a contact from the
+payload AND is published.** As of launch, the webhook returns 200 but no contact
+was created (her workflows are still draft) — that's a GHL-side workflow fix, not
+a website fix.
+
+**Fallbacks until the other links are provided (working today):** CTA buttons route
+to the contact form; if `webhookUrl` were ever cleared, submissions open a
+pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
+(contact / document-upload / newsletter), `page`, `language`, and all form fields.
 
 ## Roxy (the chat assistant)
 
