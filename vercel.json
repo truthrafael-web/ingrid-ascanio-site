@@ -1,4 +1,8 @@
 {
   "buildCommand": "node build.mjs",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/v2", "destination": "https://miamipmf-site.vercel.app", "permanent": false },
+    { "source": "/v2/:path*", "destination": "https://miamipmf-site.vercel.app/:path*", "permanent": false }
+  ]
 }
