@@ -34,6 +34,81 @@ const pages = [];
 function pagePath(lang, slug) { return slug ? `${L[lang].prefix}/${slug}/` : (lang === 'en' ? '/' : '/es/'); }
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Structured data (JSON-LD): the machine-readable fact sheet Google reads to understand that
+// this site is Ingrid — a real loan officer at a real Hollywood, FL branch — rather than just
+// a website. Every value below is sourced from global.json or verified externally; nothing invented.
+// Geo coordinates verified against the street address via OpenStreetMap (2026-07-21).
+function schemaJsonLd(g, lang) {
+  const p = g.person;
+  const BIZ = `${SITE_URL}/#business`;
+  const PERSON = `${SITE_URL}/#ingrid`;
+  const sameAs = [
+    'https://www.linkedin.com/in/ingrid-ascanio-8914959',
+    'https://www.facebook.com/IngridAscanioTheMortgageOriginator',
+  ];
+  const address = {
+    '@type': 'PostalAddress',
+    streetAddress: '3325 Hollywood Blvd, Ste 402',
+    addressLocality: 'Hollywood',
+    addressRegion: 'FL',
+    postalCode: '33021',
+    addressCountry: 'US',
+  };
+  const graph = [
+    {
+      '@type': 'FinancialService',
+      '@id': BIZ,
+      name: `${p.company} — ${p.name}`,
+      description: g.footer.blurb,
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
+      logo: `${SITE_URL}/assets/img/pmf-logo-transparent.png`,
+      telephone: '+1-786-554-8830',
+      email: p.email,
+      address,
+      geo: { '@type': 'GeoCoordinates', latitude: 26.0108783, longitude: -80.1750192 },
+      areaServed: ['Miami, FL', 'Hollywood, FL', 'Miami-Dade County, FL', 'Broward County, FL', 'Florida'],
+      availableLanguage: ['English', 'Spanish'],
+      currenciesAccepted: 'USD',
+      priceRange: '$$',
+      identifier: `NMLS #${p.companyNmls}`,
+      parentOrganization: {
+        '@type': 'Organization',
+        name: p.company,
+        identifier: `NMLS #${p.companyNmls}`,
+      },
+      employee: { '@id': PERSON },
+      sameAs,
+    },
+    {
+      '@type': 'Person',
+      '@id': PERSON,
+      name: p.name,
+      jobTitle: p.title,
+      telephone: '+1-786-554-8830',
+      email: p.email,
+      image: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
+      url: `${SITE_URL}/about/`,
+      identifier: `NMLS #${p.nmls}`,
+      knowsLanguage: ['en', 'es'],
+      worksFor: { '@id': BIZ },
+      workLocation: address,
+      sameAs,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: `${p.name} — ${p.company}`,
+      inLanguage: lang,
+      publisher: { '@id': BIZ },
+    },
+  ];
+  const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
+    .replace(/</g, '\\u003c'); // never let a stray "<" break out of the script tag
+  return `<script type="application/ld+json">${json}</script>`;
+}
+
 function head({ g, title, desc, path, altPath, lang }) {
   const url = SITE_URL + path;
   return `<!DOCTYPE html>
@@ -59,6 +134,7 @@ function head({ g, title, desc, path, altPath, lang }) {
 <link rel="stylesheet" href="/assets/site.css?v=${V}">
 <script src="/ghl-config.js?v=${V}" defer></script>
 <script src="/assets/main.js?v=${V}" defer></script>
+${schemaJsonLd(g, lang)}
 </head>
 <body>`;
 }

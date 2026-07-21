@@ -3,6 +3,51 @@
   "outputDirectory": "dist",
   "redirects": [
     { "source": "/v2", "destination": "https://miamipmf-site.vercel.app", "permanent": false },
-    { "source": "/v2/:path*", "destination": "https://miamipmf-site.vercel.app/:path*", "permanent": false }
+    { "source": "/v2/:path*", "destination": "https://miamipmf-site.vercel.app/:path*", "permanent": false },
+
+    { "source": "/ingrid-ascanio/", "destination": "/about/", "permanent": true },
+    { "source": "/our-team.html", "destination": "/about/", "permanent": true },
+    { "source": "/category/our-team/", "destination": "/about/", "permanent": true },
+    { "source": "/expert-mortgage-broker/", "destination": "/about/", "permanent": true },
+    { "source": "/25-years-mortgage-brokerage/", "destination": "/about/", "permanent": true },
+    { "source": "/robert-j-perea/", "destination": "/about/", "permanent": true },
+
+    { "source": "/contact.html", "destination": "/contact/", "permanent": true },
+    { "source": "/contact-us/", "destination": "/contact/", "permanent": true },
+
+    { "source": "/mortgage-services/", "destination": "/loan-options/", "permanent": true },
+    { "source": "/fha-loan/", "destination": "/loan-options/fha/", "permanent": true },
+    { "source": "/fha-loans-comprehensive-guide/", "destination": "/loan-options/fha/", "permanent": true },
+    { "source": "/fha-loans-comprehensive-guide-2/", "destination": "/loan-options/fha/", "permanent": true },
+    { "source": "/unpacking-the-mystery-of-fha-loans-a-comprehensive-guide-for-first-time-home-buyers/", "destination": "/loan-options/fha/", "permanent": true },
+    { "source": "/va-loan/", "destination": "/loan-options/va/", "permanent": true },
+    { "source": "/va-loans-for-miami-vets/", "destination": "/loan-options/va/", "permanent": true },
+    { "source": "/jumbo-loan/", "destination": "/loan-options/jumbo/", "permanent": true },
+    { "source": "/jumbo-loans-in-miami/", "destination": "/loan-options/jumbo/", "permanent": true },
+    { "source": "/foreign-national-loans/", "destination": "/loan-options/foreign-national/", "permanent": true },
+    { "source": "/foreign-investors-miami-real-estate/", "destination": "/loan-options/foreign-national/", "permanent": true },
+    { "source": "/investor-loan-services/", "destination": "/loan-options/investor-dscr/", "permanent": true },
+    { "source": "/mortgage-broker-real-estate-investment/", "destination": "/loan-options/investor-dscr/", "permanent": true },
+    { "source": "/construction-loan-services/", "destination": "/loan-options/construction/", "permanent": true },
+    { "source": "/commercial-real-estate-loans/", "destination": "/loan-options/", "permanent": true },
+    { "source": "/reverse-mortgages/", "destination": "/loan-options/", "permanent": true },
+    { "source": "/15-year-fixed/", "destination": "/loan-options/conventional/", "permanent": true },
+    { "source": "/30-year-fixed/", "destination": "/loan-options/conventional/", "permanent": true },
+    { "source": "/15-year-vs-30-year-fixed-rate-mortage-loans/", "destination": "/loan-options/conventional/", "permanent": true },
+    { "source": "/understanding-the-significance-of-pmi-in-your-mortgage-journey-insights-from-a-miami-broker/", "destination": "/loan-options/conventional/", "permanent": true },
+
+    { "source": "/cash-out-refinance/", "destination": "/refinance/", "permanent": true },
+
+    { "source": "/miami-hotspot-first-home-buyer/", "destination": "/buy/", "permanent": true },
+    { "source": "/top-5-things-you-need-to-know-about-applying-for-a-mortgage-in-south-florida/", "destination": "/buy/", "permanent": true },
+    { "source": "/confronting-high-interest-rates-effective-strategies-for-miami-home-buyers/", "destination": "/buy/", "permanent": true },
+
+    { "source": "/soluciones-hipotecarias-espanol/", "destination": "/es/", "permanent": true },
+    { "source": "/solucoes-hipotecarias-portugues/", "destination": "/es/", "permanent": true },
+
+    { "source": "/category/blog/", "destination": "/", "permanent": true },
+    { "source": "/capitalizing-miami-real-estate-market/", "destination": "/", "permanent": true },
+    { "source": "/investing-in-miamis-real-estate-market-an-in-depth-look-at-the-pros-and-cons-of-different-mortgage-types/", "destination": "/", "permanent": true },
+    { "source": "/homeowners-insruance-miami/", "destination": "/", "permanent": true }
   ]
 }
