@@ -9,7 +9,7 @@ window.GHL = {
   // Inbound webhook that receives ALL site form submissions as JSON
   // (contact form, upload form, newsletter). From GHL:
   // Automation → Workflow → Inbound Webhook trigger → copy URL.
-  webhookUrl: "https://services.leadconnectorhq.com/hooks/cpmixVyQPia8RJXe7Ukw/webhook-trigger/74ad788c-7036-49c0-8d69-327d6893cc5a",
+  webhookUrl: "https://services.leadconnectorhq.com/hooks/cpmixVyQPia8RJXe7Ukw/webhook-trigger/1d5b0053-9df3-4616-91f7-d95e3f28b13d",
 
   // Full URL of the GHL form for "Start your pre-approval" CTAs.
   // Opens in a new tab. Leave "" to send clicks to the contact form.
