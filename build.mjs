@@ -350,7 +350,7 @@ ${schemaJsonLd(g, lang, { ...ctx, path, title, desc })}
 <body>`;
 }
 
-function header(g, path, altPath) {
+function header(g, path, altPath, ctaHref = '#contact-panel') {
   const menuLinks = g.nav.map((n, i) => {
     const current = path === n.path ? ' aria-current="page"' : '';
     return `<a class="menu-link" href="${n.path}"${current} style="--i:${i}">
@@ -375,7 +375,7 @@ function header(g, path, altPath) {
     </span>
   </a>
   <div class="header-actions">
-    <a class="btn btn-gold" href="#contact-panel" data-ghl="calendar">${esc(g.cta.secondary)}</a>
+    <a class="btn btn-gold" href="${ctaHref}" data-ghl="calendar">${esc(g.cta.secondary)}</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
       <span class="menu-btn-glyph" aria-hidden="true"><span></span><span></span></span>${esc(g.menu.label)}
     </button>
@@ -872,8 +872,12 @@ function emit(lang, slug, altSlugOrPath, title, desc, bodyHtml, pageType, ctx = 
     ? altSlugOrPath : pagePath(altLang, altSlugOrPath);
   const lastmod = lastmodOf(...[`src/content/${lang}/global.json`, 'build.mjs', ...(ctx.src ? [ctx.src] : [])]);
   const fullCtx = { ...ctx, kind: ctx.kind || pageType, lastmod };
+  // Header CTA must target an anchor that exists on THIS page: the contact page has the
+  // form but no contact-panel section; legal pages have neither → send them to /contact/.
+  const ctaHref = pageType === 'contact' ? '#contact-form'
+    : pageType === 'legal' ? g.nav[5].path : '#contact-panel';
   const html = head({ g, title, desc, path, altPath, lang, ctx: fullCtx }) +
-    header(g, path, altPath) + bodyHtml + footer(g, L[lang].loans, pageType);
+    header(g, path, altPath, ctaHref) + bodyHtml + footer(g, L[lang].loans, pageType);
   const dir = join(DIST, path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), html);
@@ -931,7 +935,7 @@ for (const lang of ['en', 'es']) {
 </section>`;
   const html = head({ g, title: nf.metaTitle, desc: nf.metaDesc, path: '/404/', altPath: '/404/', lang: 'en', ctx: { kind: 'notfound' } })
       .replace('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">', '<meta name="robots" content="noindex, follow">')
-    + header(g, '/404/', '/es/') + body + footer(g, L.en.loans, 'home');
+    + header(g, '/404/', '/es/', g.nav[5].path) + body + footer(g, L.en.loans, 'home');
   writeFileSync(join(DIST, '404.html'), html);
 }
 
