@@ -27,7 +27,11 @@ const L = {
   },
 };
 
-const SITE_URL = process.env.SITE_URL || 'https://miamipmf.com'; // real launch domain (set 2026-07-20); override via SITE_URL env if needed
+// Vercel serves www.miamipmf.com as the PRIMARY hostname — the bare apex 308-redirects to it.
+// So canonical tags, the sitemap, hreflang and JSON-LD must all say www: a canonical pointing at
+// a URL that redirects is a self-contradiction to Google and wastes crawl budget on every page.
+// The .replace() coerces a non-www SITE_URL env override to www so the two can't drift apart again.
+const SITE_URL = (process.env.SITE_URL || 'https://www.miamipmf.com').replace('://miamipmf.com', '://www.miamipmf.com');
 const V = Date.now().toString(36); // cache-buster: changes every build so browsers always fetch fresh CSS/JS
 
 const pages = [];
