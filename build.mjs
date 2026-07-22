@@ -102,6 +102,10 @@ function schemaJsonLd(g, lang, ctx) {
     'https://www.linkedin.com/in/ingrid-ascanio-8914959',
     'https://www.facebook.com/IngridAscanioTheMortgageOriginator',
     'https://www.instagram.com/ingridcleartoclose/',
+    // Her profile on Pioneer's site (verified 200, 2026-07-22) — an employer page about the
+    // same person strengthens entity reconciliation. NMLS Consumer Access deliberately NOT
+    // listed: it 403s all crawlers (anti-bot wall), so the link would be unverifiable to Google.
+    'https://yourkey.com/ingrid-ascanio/',
   ];
   const address = {
     '@type': 'PostalAddress',
@@ -957,7 +961,37 @@ writeFileSync(join(DIST, 'sitemap.xml'),
       `    <xhtml:link rel="alternate" hreflang="x-default" href="${en}"/>\n` +
       `  </url>`;
   }).join('\n') + '\n</urlset>');
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+// AI crawlers are explicitly welcomed (they don't execute JS, so this static site is natively
+// readable to them). The wildcard already allows everything; the named stanzas make the intent
+// durable if a future edit tightens the wildcard.
+writeFileSync(join(DIST, 'robots.txt'), `User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`);
+
+// IndexNow key file — lets us push URL changes straight into Bing's index (which ChatGPT
+// leans on) with no webmaster account. The key is permanent; the ping happens post-deploy.
+const INDEXNOW_KEY = '7a4accb7237ec7676422eed0b8e764d5';
+writeFileSync(join(DIST, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 
 cpSync(join(ROOT, 'assets'), join(DIST, 'assets'), { recursive: true });
 cpSync(join(ROOT, 'src/css/site.css'), join(DIST, 'assets/site.css'));
