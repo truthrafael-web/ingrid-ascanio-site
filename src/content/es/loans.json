@@ -2,8 +2,8 @@
   "index": {
     "slug": "opciones-de-prestamo",
     "meta": {
-      "title": "Tipos de Préstamo en Florida — Convencional, FHA, VA, Jumbo, DSCR y más",
-      "description": "Explora los programas hipotecarios con la broker de Miami Ingrid Ascanio: convencional, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción en toda la Florida."
+      "title": "Tipos de Préstamo en Florida | Ingrid Ascanio",
+      "description": "Siete programas hipotecarios con la broker de Miami Ingrid Ascanio: convencional, FHA, VA, jumbo, DSCR, extranjeros y construcción en toda la Florida."
     },
     "eyebrow": "Tipos de préstamo",
     "title": "Siete maneras de financiar una casa en la Florida",
@@ -25,6 +25,9 @@
   "programs": [
     {
       "slug": "convencional",
+      "h1": "Préstamos Convencionales en Miami y el Sur de la Florida",
+      "metaTitle": "Préstamos Convencionales en Miami | Ingrid Ascanio",
+      "metaDesc": "Hipotecas convencionales en Miami, Hollywood y toda la Florida — a menudo con menos enganche del que imaginas. Ingrid Ascanio compara más de 50 prestamistas.",
       "pairSlug": "conventional",
       "name": "Convencional",
       "tag": "El clásico — 30 años, 15 años y todo lo intermedio",
@@ -53,6 +56,9 @@
     },
     {
       "slug": "fha",
+      "h1": "Préstamos FHA en Miami y el Sur de la Florida",
+      "metaTitle": "Préstamos FHA en Miami y Hollywood | Ingrid Ascanio",
+      "metaDesc": "Préstamos FHA para compradores primerizos en Miami y Hollywood: menos enganche y requisitos de crédito más flexibles. Ingrid Ascanio, NMLS #1030712.",
       "pairSlug": "fha",
       "name": "FHA",
       "tag": "El aliado del primer comprador",
@@ -81,6 +87,9 @@
     },
     {
       "slug": "va",
+      "h1": "Préstamos VA en Miami y el Sur de la Florida",
+      "metaTitle": "Préstamos VA en Miami y la Florida | Ingrid Ascanio",
+      "metaDesc": "Préstamos VA para veteranos, militares en servicio activo y cónyuges elegibles en Miami y toda la Florida: cero enganche y sin seguro hipotecario mensual.",
       "pairSlug": "va",
       "name": "VA",
       "tag": "Cero pronto pago para quienes sirvieron",
@@ -109,6 +118,9 @@
     },
     {
       "slug": "jumbo",
+      "h1": "Préstamos Jumbo en Miami y el Sur de la Florida",
+      "metaTitle": "Préstamos Jumbo en Miami | Ingrid Ascanio",
+      "metaDesc": "Hipotecas jumbo para casas del Sur de la Florida sobre el límite convencional. Ingrid Ascanio estructura tu expediente y lo lleva al prestamista correcto.",
       "pairSlug": "jumbo",
       "name": "Jumbo",
       "tag": "Para casas por encima del límite conforme",
@@ -137,6 +149,9 @@
     },
     {
       "slug": "inversionista-dscr",
+      "h1": "Préstamos DSCR para Inversionistas en Miami",
+      "metaTitle": "Préstamos DSCR para Inversionistas en Miami | Ingrid Ascanio",
+      "metaDesc": "Préstamos DSCR para inversionistas en Miami: la renta de la propiedad califica el préstamo — sin W-2 ni declaraciones de impuestos. Con Ingrid Ascanio.",
       "pairSlug": "investor-dscr",
       "name": "Inversionista / DSCR",
       "tag": "Califica con la renta de la propiedad, no con tus impuestos",
@@ -165,6 +180,9 @@
     },
     {
       "slug": "extranjero",
+      "h1": "Hipotecas para Extranjeros en Miami y la Florida",
+      "metaTitle": "Hipotecas para Extranjeros en Miami | Ingrid Ascanio",
+      "metaDesc": "Compra propiedad en la Florida sin crédito ni residencia en EE. UU. Programas para extranjeros con la broker de Miami Ingrid Ascanio. Cierres remotos, en español.",
       "pairSlug": "foreign-national",
       "name": "Foreign National",
       "tag": "Propiedad en EE.UU. sin historial de crédito en EE.UU.",
@@ -193,6 +211,9 @@
     },
     {
       "slug": "construccion",
+      "h1": "Préstamos de Construcción en Miami y la Florida",
+      "metaTitle": "Préstamos de Construcción en Miami | Ingrid Ascanio",
+      "metaDesc": "Financiamiento de construcción a permanente en la Florida: una sola calificación cubre la obra y la hipoteca. Ingrid Ascanio, broker hipotecaria en Miami.",
       "pairSlug": "construction",
       "name": "Construcción",
       "tag": "Financia la obra, y luego la casa",

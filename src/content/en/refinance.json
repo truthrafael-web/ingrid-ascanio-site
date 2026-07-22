@@ -1,8 +1,8 @@
 {
   "slug": "refinance",
   "meta": {
-    "title": "Refinance in Florida — Lower Payment, Shorter Term, or Cash Out",
-    "description": "Refinance with Miami broker Ingrid Ascanio: honest math on lowering your payment, shortening your term, or putting equity to work. If staying put wins, she'll say so."
+    "title": "Refinance in Miami & Florida | Ingrid Ascanio",
+    "description": "Refinance with Miami broker Ingrid Ascanio: honest math on a lower payment, a shorter term, or cash out. If keeping your current loan wins, she says so."
   },
   "hero": {
     "eyebrow": "Refinancing",
@@ -43,5 +43,9 @@
     "eyebrow": "Run the numbers",
     "title": "Ten minutes tells you if the math works.",
     "body": "Bring your current statement. I'll bring the honest model — including the version where you change nothing."
+  },
+  "related": {
+    "title": "Programs people refinance into",
+    "allLink": "All loan options"
   }
 }

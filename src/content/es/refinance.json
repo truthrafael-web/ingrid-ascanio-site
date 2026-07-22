@@ -1,8 +1,8 @@
 {
   "slug": "refinanciar",
   "meta": {
-    "title": "Refinancia en Florida — Baja tu Cuota, Acorta el Plazo o Saca Plusvalía",
-    "description": "Refinancia con la broker de Miami Ingrid Ascanio: números honestos para bajar tu cuota, acortar el plazo o poner tu plusvalía a trabajar. Si te conviene no moverte, te lo dirá."
+    "title": "Refinancia en Miami y la Florida | Ingrid Ascanio",
+    "description": "Refinancia con la broker de Miami Ingrid Ascanio: números honestos para bajar la cuota, acortar el plazo o sacar plusvalía. Si no te conviene, te lo dirá."
   },
   "hero": {
     "eyebrow": "Refinanciar",
@@ -43,5 +43,9 @@
     "eyebrow": "Corre los números",
     "title": "Diez minutos te dicen si la matemática funciona.",
     "body": "Trae tu estado de cuenta actual. Yo traigo el modelo honesto — incluida la versión en la que no cambias nada."
+  },
+  "related": {
+    "title": "Programas hacia los que más se refinancia",
+    "allLink": "Todas las opciones"
   }
 }

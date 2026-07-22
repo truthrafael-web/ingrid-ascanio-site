@@ -5,6 +5,8 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { execSync } from 'node:child_process';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DIST = join(ROOT, 'dist');
@@ -32,7 +34,35 @@ const L = {
 // a URL that redirects is a self-contradiction to Google and wastes crawl budget on every page.
 // The .replace() coerces a non-www SITE_URL env override to www so the two can't drift apart again.
 const SITE_URL = (process.env.SITE_URL || 'https://www.miamipmf.com').replace('://miamipmf.com', '://www.miamipmf.com');
-const V = Date.now().toString(36); // cache-buster: changes every build so browsers always fetch fresh CSS/JS
+
+// Cache-busters keyed to FILE CONTENT, not build time. A timestamp changes on every deploy and
+// forces every returning visitor to re-download CSS/JS they already have — a self-inflicted
+// Core Web Vitals hit. A content hash only changes when the file actually changes.
+const hashOf = (p) => createHash('sha1').update(readFileSync(join(ROOT, p))).digest('hex').slice(0, 8);
+const V = { css: hashOf('src/css/site.css'), js: hashOf('src/js/main.js'), ghl: hashOf('src/js/ghl-config.js') };
+
+// Real last-modified dates, from git. Google treats <lastmod> as a recrawl hint but ignores it
+// site-wide once it catches you lying — so this is best-effort-accurate or absent, never invented.
+// Vercel builds from a shallow clone; if git can't answer for a file we fall back to HEAD, then omit.
+const HEAD_DATE = (() => {
+  try { return execSync('git log -1 --format=%cI', { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || null; }
+  catch { return null; }
+})();
+const lastmodCache = new Map();
+function lastmodOf(...files) {
+  const key = files.join('|');
+  if (lastmodCache.has(key)) return lastmodCache.get(key);
+  let newest = null;
+  for (const f of files) {
+    let d = null;
+    try { d = execSync(`git log -1 --format=%cI -- "${f}"`, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || null; }
+    catch { d = null; }
+    if (d && (!newest || d > newest)) newest = d;
+  }
+  const out = newest || HEAD_DATE;
+  lastmodCache.set(key, out);
+  return out;
+}
 
 const pages = [];
 function pagePath(lang, slug) { return slug ? `${L[lang].prefix}/${slug}/` : (lang === 'en' ? '/' : '/es/'); }
@@ -42,13 +72,36 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 // this site is Ingrid — a real loan officer at a real Hollywood, FL branch — rather than just
 // a website. Every value below is sourced from global.json or verified externally; nothing invented.
 // Geo coordinates verified against the street address via OpenStreetMap (2026-07-21).
-function schemaJsonLd(g, lang) {
+//
+// WHY IT IS BUILT AS ONE @graph WITH STABLE @ids:
+// The query we have to win is a PERSON'S NAME. Against LinkedIn/Instagram/ZoomInfo, this domain
+// only wins if Google is certain that miamipmf.com is the *entity home* for the person
+// "Ingrid Ascanio". That certainty comes from one connected graph — Person ↔ business ↔ employer
+// ↔ page ↔ image — repeated identically on all 32 pages, plus sameAs pointing at every profile
+// that currently outranks her. Loose per-page snippets do not consolidate; a graph does.
+//
+// NOT MARKED UP, DELIBERATELY: aggregateRating/review (no verified reviews exist — fabricating
+// them is a manual-action risk and a lie on a client's site) and openingHours (unknown; asking
+// beats guessing). Both are on Ingrid's request list instead.
+function schemaJsonLd(g, lang, ctx) {
   const p = g.person;
+  const s = g.seo;
+  const loans = L[lang].loans;
   const BIZ = `${SITE_URL}/#business`;
   const PERSON = `${SITE_URL}/#ingrid`;
+  const WEBSITE = `${SITE_URL}/#website`;
+  const PIONEER = `${SITE_URL}/#pioneer`;
+  const PORTRAIT = `${SITE_URL}/#portrait`;
+  const url = SITE_URL + ctx.path;
+  const PAGE = `${url}#webpage`;
+  const loanId = (slug) => `${SITE_URL}${L[lang].prefix}/${loans.index.slug}/${slug}/#product`;
+
+  // Verified live 2026-07-21. Instagram added this pass: it is currently the #2 result for her
+  // name, so declaring it as the same entity is the strongest consolidation signal available.
   const sameAs = [
     'https://www.linkedin.com/in/ingrid-ascanio-8914959',
     'https://www.facebook.com/IngridAscanioTheMortgageOriginator',
+    'https://www.instagram.com/ingridcleartoclose/',
   ];
   const address = {
     '@type': 'PostalAddress',
@@ -58,63 +111,204 @@ function schemaJsonLd(g, lang) {
     postalCode: '33021',
     addressCountry: 'US',
   };
-  const graph = [
-    {
-      '@type': 'FinancialService',
-      '@id': BIZ,
-      name: `${p.company} — ${p.name}`,
-      description: g.footer.blurb,
-      url: `${SITE_URL}/`,
-      image: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
-      logo: `${SITE_URL}/assets/img/pmf-logo-transparent.png`,
+  const graph = [];
+
+  // One image entity every other node points at, so Google resolves one portrait — not five.
+  graph.push({
+    '@type': 'ImageObject',
+    '@id': PORTRAIT,
+    url: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
+    contentUrl: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
+    width: 694,
+    height: 800,
+    caption: s.portraitAlt,
+  });
+
+  // The employer as its own entity. pmfmortgage.com does not resolve; yourkey.com is Pioneer's
+  // live site (verified 2026-07-21) — naming it correctly ties her to a company Google already knows.
+  graph.push({
+    '@type': 'Organization',
+    '@id': PIONEER,
+    name: p.company,
+    url: 'https://yourkey.com/',
+    identifier: [{ '@type': 'PropertyValue', propertyID: 'NMLS', name: 'NMLS ID', value: p.companyNmls }],
+  });
+
+  graph.push({
+    '@type': ['FinancialService', 'LocalBusiness'],
+    '@id': BIZ,
+    name: `${p.name} — ${p.company}`,
+    alternateName: s.businessAlternateName,
+    description: g.footer.blurb,
+    url: `${SITE_URL}/`,
+    image: { '@id': PORTRAIT },
+    logo: `${SITE_URL}/assets/img/pmf-logo-transparent.png`,
+    telephone: '+1-786-554-8830',
+    email: p.email,
+    address,
+    geo: { '@type': 'GeoCoordinates', latitude: 26.0108783, longitude: -80.1750192 },
+    areaServed: s.areaServed,
+    availableLanguage: ['English', 'Spanish'],
+    knowsLanguage: ['en', 'es'],
+    currenciesAccepted: 'USD',
+    priceRange: '$$',
+    identifier: [{ '@type': 'PropertyValue', propertyID: 'NMLS', name: 'NMLS ID', value: p.companyNmls }],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
       telephone: '+1-786-554-8830',
       email: p.email,
-      address,
-      geo: { '@type': 'GeoCoordinates', latitude: 26.0108783, longitude: -80.1750192 },
-      areaServed: ['Miami, FL', 'Hollywood, FL', 'Miami-Dade County, FL', 'Broward County, FL', 'Florida'],
       availableLanguage: ['English', 'Spanish'],
-      currenciesAccepted: 'USD',
-      priceRange: '$$',
-      identifier: `NMLS #${p.companyNmls}`,
-      parentOrganization: {
-        '@type': 'Organization',
-        name: p.company,
-        identifier: `NMLS #${p.companyNmls}`,
+      areaServed: 'US-FL',
+    },
+    parentOrganization: { '@id': PIONEER },
+    employee: { '@id': PERSON },
+    founder: { '@id': PERSON },
+    // Ties the business entity to the seven programs that have their own pages — so the
+    // branch reads as "a lender that offers these products", not a bare address.
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: loans.index.title,
+      itemListElement: loans.programs.map((prog) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@id': loanId(prog.slug),
+          '@type': 'LoanOrCredit',
+          name: prog.h1 || prog.name,
+          url: `${SITE_URL}${L[lang].prefix}/${loans.index.slug}/${prog.slug}/`,
+        },
+      })),
+    },
+    sameAs,
+  });
+
+  graph.push({
+    '@type': 'Person',
+    '@id': PERSON,
+    name: p.name,
+    givenName: 'Ingrid',
+    familyName: 'Ascanio',
+    jobTitle: p.title,
+    description: s.bio,
+    telephone: '+1-786-554-8830',
+    email: p.email,
+    image: { '@id': PORTRAIT },
+    url: `${SITE_URL}${L[lang].prefix}/${L[lang].about.slug}/`,
+    mainEntityOfPage: `${SITE_URL}${L[lang].prefix}/${L[lang].about.slug}/`,
+    identifier: [{ '@type': 'PropertyValue', propertyID: 'NMLS', name: 'NMLS ID', value: p.nmls }],
+    // A government-registry licence number is the single strongest disambiguator a loan officer
+    // has: it distinguishes THIS Ingrid Ascanio from every other person with the name.
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      name: s.credentialName,
+      identifier: p.nmls,
+      recognizedBy: { '@type': 'Organization', name: 'Nationwide Multistate Licensing System & Registry (NMLS)', url: 'https://www.nmlsconsumeraccess.org/' },
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: s.occupationName,
+      occupationalCategory: '13-2072.00', // O*NET-SOC: Loan Officers
+    },
+    memberOf: { '@type': 'Organization', name: s.membership, url: 'https://www.famp.org/' },
+    award: s.awards,
+    knowsAbout: s.knowsAbout,
+    knowsLanguage: ['en', 'es'],
+    worksFor: { '@id': BIZ },
+    workLocation: { '@id': BIZ },
+    areaServed: s.areaServed,
+    sameAs,
+  });
+
+  graph.push({
+    '@type': 'WebSite',
+    '@id': WEBSITE,
+    url: `${SITE_URL}/`,
+    name: `${p.name} — ${p.company}`,
+    description: g.footer.blurb,
+    inLanguage: lang,
+    publisher: { '@id': BIZ },
+    about: { '@id': PERSON },
+  });
+
+  // The page node. /about/ is typed ProfilePage — schema.org's explicit "this page IS the
+  // person" declaration, which is exactly the claim we need Google to accept.
+  const isProfile = ctx.kind === 'about';
+  const types = isProfile ? ['ProfilePage'] : ['WebPage'];
+  if (ctx.faq && ctx.faq.length) types.push('FAQPage');
+  const page = {
+    '@type': types.length === 1 ? types[0] : types,
+    '@id': PAGE,
+    url,
+    name: ctx.title,
+    description: ctx.desc,
+    inLanguage: lang,
+    isPartOf: { '@id': WEBSITE },
+    primaryImageOfPage: { '@id': PORTRAIT },
+    about: { '@id': ctx.loan ? loanId(ctx.loan.slug) : (isProfile ? PERSON : BIZ) },
+  };
+  if (ctx.lastmod) page.dateModified = ctx.lastmod;
+  if (isProfile) page.mainEntity = { '@id': PERSON };
+  if (ctx.faq && ctx.faq.length) {
+    page.mainEntity = ctx.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    }));
+  }
+  if (ctx.crumbs && ctx.crumbs.length) page.breadcrumb = { '@id': `${url}#breadcrumb` };
+  graph.push(page);
+
+  // BreadcrumbList still earns a real rich result in 2026 (unlike FAQ): it replaces the raw URL
+  // in the search listing with a readable Home › Loan options › FHA trail.
+  if (ctx.crumbs && ctx.crumbs.length) {
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: ctx.crumbs.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: SITE_URL + c.path,
+      })),
+    });
+  }
+
+  // Loan-detail pages describe an actual financial product. No rate, term or amount is asserted
+  // anywhere — those change daily and depend on the borrower's file, so claiming one would be false.
+  if (ctx.loan) {
+    graph.push({
+      '@type': ['LoanOrCredit', 'FinancialProduct'],
+      '@id': loanId(ctx.loan.slug),
+      name: ctx.loan.h1 || ctx.loan.name,
+      alternateName: ctx.loan.name,
+      description: ctx.loan.intro,
+      url,
+      category: 'Mortgage',
+      loanType: ctx.loan.name,
+      provider: { '@id': BIZ },
+      areaServed: s.areaServed,
+      availableChannel: {
+        '@type': 'ServiceChannel',
+        serviceUrl: url,
+        servicePhone: '+1-786-554-8830',
+        availableLanguage: ['English', 'Spanish'],
       },
-      employee: { '@id': PERSON },
-      sameAs,
-    },
-    {
-      '@type': 'Person',
-      '@id': PERSON,
-      name: p.name,
-      jobTitle: p.title,
-      telephone: '+1-786-554-8830',
-      email: p.email,
-      image: `${SITE_URL}/assets/img/ingrid-portrait.jpg`,
-      url: `${SITE_URL}/about/`,
-      identifier: `NMLS #${p.nmls}`,
-      knowsLanguage: ['en', 'es'],
-      worksFor: { '@id': BIZ },
-      workLocation: address,
-      sameAs,
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
-      name: `${p.name} — ${p.company}`,
-      inLanguage: lang,
-      publisher: { '@id': BIZ },
-    },
-  ];
+    });
+  }
+
   const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
     .replace(/</g, '\\u003c'); // never let a stray "<" break out of the script tag
   return `<script type="application/ld+json">${json}</script>`;
 }
 
-function head({ g, title, desc, path, altPath, lang }) {
+function head({ g, title, desc, path, altPath, lang, ctx }) {
   const url = SITE_URL + path;
+  const isProfile = ctx.kind === 'about';
+  // The share card is the first impression every time this link is posted to Instagram, Facebook
+  // or LinkedIn — which is precisely the action that will move the name query. A 1200×630 designed
+  // card renders as a full-width banner; the raw portrait renders as a cropped thumbnail.
+  const ogImage = `${SITE_URL}/assets/img/og-card.jpg`;
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -123,22 +317,35 @@ function head({ g, title, desc, path, altPath, lang }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="alternate" hreflang="${lang}" href="${url}">
 <link rel="alternate" hreflang="${lang === 'en' ? 'es' : 'en'}" href="${SITE_URL}${altPath}">
 <link rel="alternate" hreflang="x-default" href="${SITE_URL}${lang === 'en' ? path : altPath}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${isProfile ? 'profile' : 'website'}">
+<meta property="og:site_name" content="${esc(g.siteName)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${SITE_URL}/assets/img/ingrid-portrait.jpg">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(g.seo.portraitAlt)}">
 <meta property="og:locale" content="${g.meta.ogLocale}">
+<meta property="og:locale:alternate" content="${lang === 'en' ? 'es_US' : 'en_US'}">
+${isProfile ? `<meta property="profile:first_name" content="Ingrid">
+<meta property="profile:last_name" content="Ascanio">
+` : ''}<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${ogImage}">
+<meta name="twitter:image:alt" content="${esc(g.seo.portraitAlt)}">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=${V}">
-<script src="/ghl-config.js?v=${V}" defer></script>
-<script src="/assets/main.js?v=${V}" defer></script>
-${schemaJsonLd(g, lang)}
+<link rel="stylesheet" href="/assets/site.css?v=${V.css}">
+<script src="/ghl-config.js?v=${V.ghl}" defer></script>
+<script src="/assets/main.js?v=${V.js}" defer></script>
+${schemaJsonLd(g, lang, { ...ctx, path, title, desc })}
 </head>
 <body>`;
 }
@@ -160,7 +367,7 @@ function header(g, path, altPath) {
 </div>
 <header class="site-header">
   <a class="nameplate" href="${g.lang === 'en' ? '/' : '/es/'}">
-    <img class="nameplate-logo" src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="150" height="47">
+    <img class="nameplate-logo" src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="150" height="58">
     <span class="nameplate-divider" aria-hidden="true"></span>
     <span class="nameplate-person">
       <span class="nameplate-name">Ingrid Ascanio</span>
@@ -179,7 +386,7 @@ function header(g, path, altPath) {
   <button class="menu-close" aria-label="${esc(g.menu.close)}">×</button>
   <nav class="menu-links">${menuLinks}</nav>
   <div class="menu-foot">
-    <span class="menu-logo-chip"><img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="104" loading="lazy"></span>
+    <span class="menu-logo-chip"><img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="104" height="40" loading="lazy"></span>
     <div class="menu-foot-contact">
       <a href="${g.person.phoneHref}">${esc(g.person.phone)}</a>
       <a href="mailto:${g.person.email}">${esc(g.person.email)}</a>
@@ -219,13 +426,14 @@ function footer(g, loans, pageType) {
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-chip"><img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="180" loading="lazy"></span>
+      <span class="footer-logo-chip"><img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="180" height="69" loading="lazy"></span>
       <p>${esc(g.footer.blurb)}</p>
       <p class="footer-contact">
         <a href="${g.person.phoneHref}">${esc(g.person.phone)}</a><br>
         <a href="mailto:${g.person.email}">${esc(g.person.email)}</a><br>
         ${esc(g.person.address)}
       </p>
+      <p class="footer-areas">${esc(g.seo.areasLine)}</p>
     </div>
     <nav class="footer-col" aria-label="${esc(g.footer.loanOptionsTitle)}"><h3>${esc(g.footer.loanOptionsTitle)}</h3>${loanLinks}</nav>
     <nav class="footer-col" aria-label="${esc(g.footer.companyTitle)}"><h3>${esc(g.footer.companyTitle)}</h3>${pageLinks}</nav>
@@ -260,6 +468,25 @@ function footer(g, loans, pageType) {
 const btn = (label, cls, ghl, fallback) =>
   `<a class="btn ${cls}" href="#" data-ghl="${ghl}" data-fallback="${fallback}">${esc(label)}</a>`;
 
+// Programs are index-aligned across languages (the emit loop already relies on this), so a set
+// chosen once by EN slug resolves to the correct translated page and label in both languages.
+function relatedPrograms(lang, enSlugs) {
+  const c = L[lang].loans;
+  return enSlugs.map((sl) => {
+    const i = L.en.loans.programs.findIndex((x) => x.slug === sl);
+    const prog = c.programs[i];
+    return `<a href="${L[lang].prefix}/${c.index.slug}/${prog.slug}/">${esc(prog.name)}</a>`;
+  }).join('');
+}
+
+function relatedBlock(lang, block, enSlugs) {
+  return `
+<section class="section related-block reveal">
+  <nav class="others"><span>${esc(block.title)}:</span> ${relatedPrograms(lang, enSlugs)}
+    <a href="${L[lang].prefix}/${L[lang].loans.index.slug}/">${esc(block.allLink)}</a></nav>
+</section>`;
+}
+
 // ---------- page renderers ----------
 function renderHome(lang) {
   const { global: g, home: h, loans } = L[lang];
@@ -279,12 +506,11 @@ function renderHome(lang) {
   return `
 <section class="hero">
   <div class="hero-text">
-    <p class="eyebrow">${esc(h.hero.eyebrow)}</p>
-    <h1>${esc(h.hero.titleA)} <em>${esc(h.hero.titleEm)}</em></h1>
+    <h1><span class="eyebrow h1-kicker">${esc(h.hero.eyebrow)}</span>${esc(h.hero.titleA)} <em>${esc(h.hero.titleEm)}</em></h1>
     <p class="hero-body">${esc(h.hero.body)}</p>
     <div class="hero-with">
       <span>${esc(h.hero.withLabel)}</span>
-      <img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="170" loading="eager">
+      <img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="170" height="65" loading="eager">
     </div>
     <div class="hero-ctas">
       ${btn(g.cta.secondary, 'btn-gold btn-xl', 'calendar', 'contact')}
@@ -334,7 +560,7 @@ function renderHome(lang) {
     ${h.aboutTeaser.chips ? `<div class="persona-chips">${h.aboutTeaser.chips.map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>` : ''}
     <a class="text-link" href="${g.nav[3].path}">${esc(h.aboutTeaser.link)} →</a>
   </div>
-  <figure class="about-photo"><img src="/assets/img/ingrid-portrait-sm.jpg" alt="${esc(h.hero.imageAlt)}" width="300" height="346" loading="lazy"></figure>
+  <figure class="about-photo"><img src="/assets/img/ingrid-portrait-sm.jpg" alt="${esc(g.seo.portraitAltAlt)}" width="300" height="346" loading="lazy"></figure>
 </section>
 <section class="faq-band">
   <div class="section faq-section">
@@ -377,6 +603,7 @@ function renderBuy(lang) {
   </div>
   <div class="first-time-points">${stats}</div>
 </section>
+${relatedBlock(lang, b.related, ['fha', 'conventional', 'va'])}
 ${contactPanel(g)}`;
 }
 
@@ -402,6 +629,7 @@ function renderRefinance(lang) {
   <div class="section-head reveal"><p class="eyebrow">${esc(r.reasons.eyebrow)}</p><h2>${esc(r.reasons.title)}</h2></div>
   <div class="reasons">${reasons}</div>
 </section>
+${relatedBlock(lang, r.related, ['conventional', 'fha', 'jumbo'])}
 ${contactPanel(g)}`;
 }
 
@@ -431,7 +659,7 @@ function renderLoanDetail(lang, p) {
   return `
 <section class="page-hero page-hero-loan">
   <p class="eyebrow reveal"><a class="crumb" href="${L[lang].prefix}/${loans.index.slug}/">${esc(loans.index.eyebrow)}</a></p>
-  <h1 class="reveal">${esc(p.name)}</h1>
+  <h1 class="reveal">${esc(p.h1 || p.name)}</h1>
   <p class="loan-tagline reveal">${esc(p.tag)}</p>
   <p class="page-hero-body dropcap reveal">${esc(p.intro)}</p>
 </section>
@@ -475,14 +703,13 @@ function renderAbout(lang) {
   return `
 <section class="about-hero">
   <div class="about-hero-text">
-    <p class="eyebrow reveal">${esc(a.hero.eyebrow)}</p>
-    <h1 class="reveal">${esc(a.hero.title)}</h1>
+    <h1 class="reveal"><span class="eyebrow h1-kicker">${esc(a.hero.eyebrow)}</span>${esc(a.hero.title)}</h1>
     <p class="page-hero-body reveal">${esc(a.hero.body)}</p>
     ${a.hero.body2 ? `<p class="page-hero-body reveal">${esc(a.hero.body2)}</p>` : ''}
     <div class="page-hero-ctas reveal">${btn(g.cta.secondary, 'btn-gold btn-xl', 'calendar', 'contact')}</div>
   </div>
   <figure class="about-hero-photo reveal">
-    <div class="hero-arch hero-arch-sm"><img src="/assets/img/ingrid-portrait.jpg" alt="${esc(g.person.name)}" width="380" height="438"></div>
+    <div class="hero-arch hero-arch-sm"><img src="/assets/img/ingrid-portrait.jpg" alt="${esc(g.seo.portraitAlt)}" width="380" height="438"></div>
     <figcaption class="hero-caption id-card">
       <strong>${esc(g.person.name)}</strong>
       <span class="id-rule" aria-hidden="true"></span>
@@ -618,44 +845,115 @@ ${contactPanel(g)}`;
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });
 
-function emit(lang, slug, altSlugOrPath, title, desc, bodyHtml, pageType) {
+// Breadcrumb trails mirror the real URL hierarchy — Home › Loan options › FHA. `kind` is the
+// nav index of the section (or null for pages that sit outside the menu, like the legal pages).
+function crumbsFor(lang, { navIndex = null, label = null, path = null, parentNavIndex = null } = {}) {
+  const g = L[lang].global;
+  const home = { name: g.seo.homeCrumb, path: pagePath(lang, '') };
+  const crumbs = [home];
+  if (parentNavIndex !== null) {
+    const parent = g.nav[parentNavIndex];
+    crumbs.push({ name: parent.label, path: parent.path });
+  }
+  if (navIndex !== null) {
+    const n = g.nav[navIndex];
+    crumbs.push({ name: n.label, path: n.path });
+  } else if (label && path) {
+    crumbs.push({ name: label, path });
+  }
+  return crumbs.length > 1 ? crumbs : [];
+}
+
+function emit(lang, slug, altSlugOrPath, title, desc, bodyHtml, pageType, ctx = {}) {
   const g = L[lang].global;
   const path = pagePath(lang, slug);
   const altLang = lang === 'en' ? 'es' : 'en';
   const altPath = typeof altSlugOrPath === 'string' && altSlugOrPath.startsWith('/')
     ? altSlugOrPath : pagePath(altLang, altSlugOrPath);
-  const html = head({ g, title, desc, path, altPath, lang }) +
+  const lastmod = lastmodOf(...[`src/content/${lang}/global.json`, 'build.mjs', ...(ctx.src ? [ctx.src] : [])]);
+  const fullCtx = { ...ctx, kind: ctx.kind || pageType, lastmod };
+  const html = head({ g, title, desc, path, altPath, lang, ctx: fullCtx }) +
     header(g, path, altPath) + bodyHtml + footer(g, L[lang].loans, pageType);
   const dir = join(DIST, path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), html);
-  pages.push({ path, lang });
+  pages.push({ path, lang, altPath, lastmod });
 }
 
 for (const lang of ['en', 'es']) {
   const o = L[lang === 'en' ? 'es' : 'en'];
   const c = L[lang];
-  emit(lang, '', '', c.home.meta.title, c.home.meta.description, renderHome(lang), 'home');
-  emit(lang, c.buy.slug, o.buy.slug, c.buy.meta.title, c.buy.meta.description, renderBuy(lang), 'buy');
-  emit(lang, c.refinance.slug, o.refinance.slug, c.refinance.meta.title, c.refinance.meta.description, renderRefinance(lang), 'refinance');
-  emit(lang, c.loans.index.slug, o.loans.index.slug, c.loans.index.meta.title, c.loans.index.meta.description, renderLoanIndex(lang), 'loans');
+  const src = (f) => `src/content/${lang}/${f}.json`;
+  emit(lang, '', '', c.home.meta.title, c.home.meta.description, renderHome(lang), 'home',
+    { src: src('home'), faq: c.home.faq.items });
+  emit(lang, c.buy.slug, o.buy.slug, c.buy.meta.title, c.buy.meta.description, renderBuy(lang), 'buy',
+    { src: src('buy'), crumbs: crumbsFor(lang, { navIndex: 0 }) });
+  emit(lang, c.refinance.slug, o.refinance.slug, c.refinance.meta.title, c.refinance.meta.description, renderRefinance(lang), 'refinance',
+    { src: src('refinance'), crumbs: crumbsFor(lang, { navIndex: 1 }) });
+  emit(lang, c.loans.index.slug, o.loans.index.slug, c.loans.index.meta.title, c.loans.index.meta.description, renderLoanIndex(lang), 'loans',
+    { src: src('loans'), crumbs: crumbsFor(lang, { navIndex: 2 }) });
   for (let i = 0; i < c.loans.programs.length; i++) {
     const p = c.loans.programs[i];
     const altP = o.loans.programs[i];
+    const detailPath = `${L[lang].prefix}/${c.loans.index.slug}/${p.slug}/`;
     emit(lang, `${c.loans.index.slug}/${p.slug}`, `${o.loans.index.slug}/${altP.slug}`,
-      `${p.name}${c.global.meta.titleSuffix}`, p.cardBlurb, renderLoanDetail(lang, p), 'loans');
+      p.metaTitle || `${p.name}${c.global.meta.titleSuffix}`, p.metaDesc || p.cardBlurb,
+      renderLoanDetail(lang, p), 'loans',
+      { src: src('loans'), loan: p, faq: p.faq, crumbs: crumbsFor(lang, { parentNavIndex: 2, label: p.h1 || p.name, path: detailPath }) });
   }
-  emit(lang, c.about.slug, o.about.slug, c.about.meta.title, c.about.meta.description, renderAbout(lang), 'about');
-  emit(lang, c.upload.slug, o.upload.slug, c.upload.meta.title, c.upload.meta.description, renderUpload(lang), 'upload');
-  emit(lang, c.contact.slug, o.contact.slug, c.contact.meta.title, c.contact.meta.description, renderContact(lang), 'contact');
-  emit(lang, c.legal.privacy.slug, o.legal.privacy.slug, c.legal.privacy.metaTitle, c.legal.privacy.metaDesc, renderLegal(lang, c.legal.privacy), 'legal');
-  emit(lang, c.legal.terms.slug, o.legal.terms.slug, c.legal.terms.metaTitle, c.legal.terms.metaDesc, renderLegal(lang, c.legal.terms), 'legal');
+  emit(lang, c.about.slug, o.about.slug, c.about.meta.title, c.about.meta.description, renderAbout(lang), 'about',
+    { src: src('about'), crumbs: crumbsFor(lang, { navIndex: 3 }) });
+  emit(lang, c.upload.slug, o.upload.slug, c.upload.meta.title, c.upload.meta.description, renderUpload(lang), 'upload',
+    { src: src('upload'), crumbs: crumbsFor(lang, { navIndex: 4 }) });
+  emit(lang, c.contact.slug, o.contact.slug, c.contact.meta.title, c.contact.meta.description, renderContact(lang), 'contact',
+    { src: src('contact'), crumbs: crumbsFor(lang, { navIndex: 5 }) });
+  emit(lang, c.legal.privacy.slug, o.legal.privacy.slug, c.legal.privacy.metaTitle, c.legal.privacy.metaDesc, renderLegal(lang, c.legal.privacy), 'legal',
+    { src: src('legal'), crumbs: crumbsFor(lang, { label: c.legal.privacy.title, path: pagePath(lang, c.legal.privacy.slug) }) });
+  emit(lang, c.legal.terms.slug, o.legal.terms.slug, c.legal.terms.metaTitle, c.legal.terms.metaDesc, renderLegal(lang, c.legal.terms), 'legal',
+    { src: src('legal'), crumbs: crumbsFor(lang, { label: c.legal.terms.title, path: pagePath(lang, c.legal.terms.slug) }) });
 }
 
+// Custom 404. The old WordPress site had far more URLs than the 38 we mapped by hand; anything we
+// missed lands here instead of on Vercel's blank default, keeping the visitor (and the crawler)
+// inside the site. noindex, because an error page must never compete in search.
+{
+  const g = L.en.global;
+  const nf = g.notFound;
+  const body = `
+<section class="page-hero">
+  <p class="eyebrow reveal">${esc(nf.eyebrow)}</p>
+  <h1 class="reveal">${esc(nf.title)}</h1>
+  <p class="page-hero-body reveal">${esc(nf.body)}</p>
+  <div class="page-hero-ctas reveal">${btn(g.cta.secondary, 'btn-gold btn-xl', 'calendar', 'contact')}</div>
+</section>
+<section class="section cta-block reveal">
+  <nav class="others"><span>${esc(nf.linksTitle)}:</span> ${g.nav.map(n => `<a href="${n.path}">${esc(n.label)}</a>`).join('')}</nav>
+</section>`;
+  const html = head({ g, title: nf.metaTitle, desc: nf.metaDesc, path: '/404/', altPath: '/404/', lang: 'en', ctx: { kind: 'notfound' } })
+      .replace('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">', '<meta name="robots" content="noindex, follow">')
+    + header(g, '/404/', '/es/') + body + footer(g, L.en.loans, 'home');
+  writeFileSync(join(DIST, '404.html'), html);
+}
+
+// Sitemap. <lastmod> comes from real git commit dates (see lastmodOf) — a recrawl hint Google
+// only honours while it stays truthful. The xhtml:link alternates are Google's documented way to
+// declare the EN↔ES pairing inside the sitemap itself, reinforcing the hreflang tags in each head.
+const XHTML_NS = 'http://www.w3.org/1999/xhtml';
 writeFileSync(join(DIST, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  pages.map(p => `  <url><loc>${SITE_URL}${p.path}</loc></url>`).join('\n') + '\n</urlset>');
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="${XHTML_NS}">\n` +
+  pages.map(p => {
+    const self = `${SITE_URL}${p.path}`;
+    const alt = `${SITE_URL}${p.altPath}`;
+    const en = p.lang === 'en' ? self : alt;
+    const es = p.lang === 'es' ? self : alt;
+    return `  <url>\n    <loc>${self}</loc>\n` +
+      (p.lastmod ? `    <lastmod>${p.lastmod}</lastmod>\n` : '') +
+      `    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>\n` +
+      `    <xhtml:link rel="alternate" hreflang="es" href="${es}"/>\n` +
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${en}"/>\n` +
+      `  </url>`;
+  }).join('\n') + '\n</urlset>');
+writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
 cpSync(join(ROOT, 'assets'), join(DIST, 'assets'), { recursive: true });
 cpSync(join(ROOT, 'src/css/site.css'), join(DIST, 'assets/site.css'));

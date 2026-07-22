@@ -54,6 +54,10 @@ h3 { font-size: 1.25rem; }
 }
 .eyebrow-gold { color: var(--gold-bright); }
 .eyebrow a.crumb { text-decoration: none; border-bottom: 1px solid var(--gold); }
+/* The eyebrow, moved INSIDE the <h1> so her name sits in the page's primary heading without
+   changing what the reader sees. .eyebrow already supplies size/tracking/weight/colour/margin;
+   these three reset what would otherwise be inherited from the h1's serif display styling. */
+.h1-kicker { display: block; font-family: var(--sans); line-height: 1.4; }
 
 /* ---------- microbar + header ---------- */
 .microbar {
@@ -492,6 +496,10 @@ h3 { font-size: 1.25rem; }
 /* ---------- cta block ---------- */
 .cta-block { text-align: left; }
 .cta-block .panel-ctas { margin-top: 1.6rem; }
+/* Related-programs row on /buy/ and /refinance/ — reuses the .others treatment already used at
+   the foot of every loan page, so it reads as part of the system rather than a bolted-on SEO block. */
+.related-block { padding-top: 2.6rem; padding-bottom: 0; }
+.related-block .others { margin-top: 0; }
 
 /* ---------- contact + upload ---------- */
 .contact-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
@@ -537,6 +545,7 @@ h3 { font-size: 1.25rem; }
 .footer-brand p { font-size: .92rem; }
 .footer-contact { margin-top: 1rem; line-height: 1.9; }
 .footer-contact a { color: var(--gold-bright); text-decoration: none; }
+.footer-areas { margin-top: .9rem; font-size: .78rem; color: #8FA0B8; line-height: 1.7; }
 .footer-col h3 { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: #8FA0B8; margin-bottom: .9rem; font-family: var(--sans); }
 .footer-col a { display: block; color: #C9CFDC; text-decoration: none; font-size: .93rem; padding: .22rem 0; }
 .footer-col a:hover { color: var(--gold-bright); }

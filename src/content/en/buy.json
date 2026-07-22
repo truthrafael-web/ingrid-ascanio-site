@@ -1,8 +1,8 @@
 {
   "slug": "buy",
   "meta": {
-    "title": "Buy a Home in Miami & South Florida — Start with One Call",
-    "description": "Buying a home in Miami, Hollywood, or anywhere in Florida? Start with a 15-minute call with broker Ingrid Ascanio — clear budget, fast pre-approval, 50+ lenders shopped."
+    "title": "Buy a Home in Miami & South Florida | Ingrid Ascanio",
+    "description": "Buying in Miami, Hollywood or anywhere in Florida? One 15-minute call with broker Ingrid Ascanio: a clear budget, fast pre-approval, 50+ lenders shopped."
   },
   "hero": {
     "eyebrow": "Buying a home",
@@ -32,5 +32,9 @@
     "eyebrow": "Start here",
     "title": "The first conversation costs nothing — and changes everything after it.",
     "body": "15 minutes. No documents, no commitment. Just clarity on what you can do and how to do it."
+  },
+  "related": {
+    "title": "Programs most buyers start with",
+    "allLink": "All loan options"
   }
 }

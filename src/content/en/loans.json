@@ -2,8 +2,8 @@
   "index": {
     "slug": "loan-options",
     "meta": {
-      "title": "Loan Options in Florida — Conventional, FHA, VA, Jumbo, DSCR & More",
-      "description": "Explore mortgage programs with Miami broker Ingrid Ascanio: conventional, FHA, VA, jumbo, investor DSCR, foreign national, and construction loans across Florida."
+      "title": "Loan Options in Florida — FHA, VA, Jumbo, DSCR & More",
+      "description": "Seven mortgage programs with Miami broker Ingrid Ascanio: conventional, FHA, VA, jumbo, investor DSCR, foreign national and construction, across Florida."
     },
     "eyebrow": "Loan options",
     "title": "Seven ways to finance a Florida home",
@@ -25,6 +25,9 @@
   "programs": [
     {
       "slug": "conventional",
+      "h1": "Conventional Loans in Miami & South Florida",
+      "metaTitle": "Conventional Loans in Miami & South Florida | Ingrid Ascanio",
+      "metaDesc": "Conventional mortgages in Miami, Hollywood and across Florida — often with a smaller down payment than buyers expect. Broker Ingrid Ascanio shops 50+ lenders.",
       "name": "Conventional",
       "tag": "The workhorse — 30-year, 15-year, and everything between",
       "cardBlurb": "The standard route for buyers with steady income and fair-to-strong credit. Lower down payments than most people assume for qualified first-time buyers.",
@@ -52,6 +55,9 @@
     },
     {
       "slug": "fha",
+      "h1": "FHA Loans in Miami & South Florida",
+      "metaTitle": "FHA Loans in Miami & South Florida | Ingrid Ascanio",
+      "metaDesc": "FHA loans for first-time buyers in Miami and Hollywood — lower down payments and more forgiving credit rules. Ingrid Ascanio, NMLS #1030712. Hablo Español.",
       "name": "FHA",
       "tag": "The first-time buyer's friend",
       "cardBlurb": "Government-insured, forgiving on credit, with lower down-payment requirements. The most common way first-time Miami buyers get in the door.",
@@ -79,6 +85,9 @@
     },
     {
       "slug": "va",
+      "h1": "VA Loans in Miami & South Florida",
+      "metaTitle": "VA Loans in Miami & South Florida | Ingrid Ascanio",
+      "metaDesc": "VA home loans for veterans, active-duty service members and eligible surviving spouses in Miami and across Florida: zero down, no monthly mortgage insurance.",
       "name": "VA",
       "tag": "Zero down for those who served",
       "cardBlurb": "For veterans, active-duty service members, and eligible surviving spouses: no down payment, no monthly mortgage insurance.",
@@ -106,6 +115,9 @@
     },
     {
       "slug": "jumbo",
+      "h1": "Jumbo Loans in Miami & South Florida",
+      "metaTitle": "Jumbo Loans in Miami & South Florida | Ingrid Ascanio",
+      "metaDesc": "Jumbo mortgages for South Florida homes priced above the conforming limit. Broker Ingrid Ascanio structures the file first, then shops it where it is wanted.",
       "name": "Jumbo",
       "tag": "For homes above the conforming limit",
       "cardBlurb": "Financing for South Florida properties priced beyond conventional loan limits — with lender options that keep large loans competitive.",
@@ -133,6 +145,9 @@
     },
     {
       "slug": "investor-dscr",
+      "h1": "DSCR & Investor Loans in Miami & South Florida",
+      "metaTitle": "DSCR Investor Loans in Miami | Ingrid Ascanio",
+      "metaDesc": "DSCR loans for Miami rental-property investors: the property's rent does the qualifying — no W-2s, no tax returns, no four-property cap. Ingrid Ascanio.",
       "name": "Investor / DSCR",
       "tag": "Qualify on the property's rent, not your tax returns",
       "cardBlurb": "For rental-property investors: the property's cash flow does the qualifying. No W-2s, no tax returns, scale past four doors.",
@@ -160,6 +175,9 @@
     },
     {
       "slug": "foreign-national",
+      "h1": "Foreign National Mortgages in Miami & South Florida",
+      "metaTitle": "Foreign National Mortgages in Miami | Ingrid Ascanio",
+      "metaDesc": "Buy Florida property without U.S. credit or residency. Foreign-national mortgage programs with Miami broker Ingrid Ascanio — remote closings, English y Español.",
       "name": "Foreign National",
       "tag": "U.S. property without U.S. credit history",
       "cardBlurb": "For international buyers investing in Florida: programs built for buyers without U.S. credit, income, or residency.",
@@ -187,6 +205,9 @@
     },
     {
       "slug": "construction",
+      "h1": "Construction Loans in Miami & South Florida",
+      "metaTitle": "Construction Loans in Miami & South Florida | Ingrid Ascanio",
+      "metaDesc": "Construction-to-permanent financing for Florida ground-up builds and major renovations — one qualification covers the build and the mortgage. Ingrid Ascanio.",
       "name": "Construction",
       "tag": "Finance the build, then the home",
       "cardBlurb": "Construction-to-permanent financing for ground-up builds and major renovations — one qualifying process, from lot to keys.",

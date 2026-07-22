@@ -1,8 +1,8 @@
 {
   "slug": "comprar",
   "meta": {
-    "title": "Compra Casa en Miami y el Sur de la Florida — Empieza con Una Llamada",
-    "description": "¿Comprando casa en Miami, Hollywood o cualquier parte de la Florida? Empieza con una llamada de 15 minutos con la broker Ingrid Ascanio — presupuesto claro y pre-aprobación rápida."
+    "title": "Compra Casa en Miami y la Florida | Ingrid Ascanio",
+    "description": "¿Compras casa en Miami, Hollywood o la Florida? Una llamada de 15 minutos con la broker Ingrid Ascanio: presupuesto claro y pre-aprobación rápida."
   },
   "hero": {
     "eyebrow": "Comprar casa",
@@ -32,5 +32,9 @@
     "eyebrow": "Empieza aquí",
     "title": "La primera conversación no cuesta nada — y cambia todo lo que viene después.",
     "body": "15 minutos. Sin documentos y sin compromiso. Solo claridad sobre lo que puedes hacer y cómo hacerlo."
+  },
+  "related": {
+    "title": "Programas con los que empieza la mayoría",
+    "allLink": "Todas las opciones"
   }
 }

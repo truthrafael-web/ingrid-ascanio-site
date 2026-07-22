@@ -157,5 +157,60 @@
   "meta": {
     "ogLocale": "en_US",
     "titleSuffix": " · Ingrid Ascanio, Miami Mortgage Broker"
+  },
+  "seo": {
+    "homeCrumb": "Home",
+    "bio": "Ingrid Ascanio is a Branch Manager and licensed mortgage loan officer at Pioneer Mortgage Funding in Hollywood, Florida (NMLS #1030712). A former BankUnited underwriter and processing manager with more than 20 years in residential lending, she arranges purchase, refinance, FHA, VA, jumbo, investor DSCR, foreign-national and construction financing for clients across Miami-Dade, Broward and all of Florida — in English and Spanish. She serves as Vice President of the Miami chapter of the Florida Association of Mortgage Professionals for 2025–2026.",
+    "portraitAlt": "Ingrid Ascanio, Branch Manager and mortgage loan officer at Pioneer Mortgage Funding in Hollywood, Florida",
+    "portraitAltAlt": "Ingrid Ascanio, Miami mortgage broker and former bank underwriter",
+    "businessAlternateName": "Ingrid Ascanio Mortgage — Pioneer Mortgage Funding, Hollywood Branch",
+    "credentialName": "Mortgage Loan Originator License (NMLS)",
+    "occupationName": "Mortgage Loan Officer",
+    "membership": "Florida Association of Mortgage Professionals (FAMP) — Miami Chapter",
+    "awards": [
+      "Vice President, FAMP Miami Chapter (2025–2026)",
+      "Tradeshow Co-Chair, FAMP Miami Chapter (2025–2026)",
+      "Top Producer, Pioneer Mortgage Funding (2019)"
+    ],
+    "knowsAbout": [
+      "Mortgage brokerage",
+      "FHA loans",
+      "VA loans",
+      "Jumbo mortgages",
+      "Conventional mortgages",
+      "DSCR investor loans",
+      "Foreign national mortgages",
+      "Construction-to-permanent loans",
+      "Mortgage refinancing",
+      "First-time homebuyer programs",
+      "Mortgage underwriting",
+      "Miami real estate financing"
+    ],
+    "areaServed": [
+      "Miami, FL",
+      "Hollywood, FL",
+      "Miami-Dade County, FL",
+      "Broward County, FL",
+      "Fort Lauderdale, FL",
+      "Aventura, FL",
+      "Miami Beach, FL",
+      "Coral Gables, FL",
+      "Doral, FL",
+      "Kendall, FL",
+      "Pembroke Pines, FL",
+      "Hallandale Beach, FL",
+      "Weston, FL",
+      "Davie, FL",
+      "Florida"
+    ],
+    "areasLine": "Serving Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie and Fort Lauderdale — and all of Florida."
+  },
+  "notFound": {
+    "metaTitle": "Page not found · Ingrid Ascanio, Miami Mortgage Broker",
+    "metaDesc": "That page has moved or no longer exists. Here is where to go instead.",
+    "eyebrow": "Error 404",
+    "title": "That page has moved.",
+    "body": "The old site had a different map. Whatever you came for is almost certainly one of these — or one short call with Ingrid.",
+    "linksTitle": "Try one of these"
   }
 }

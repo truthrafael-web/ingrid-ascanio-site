@@ -157,5 +157,52 @@
   "meta": {
     "ogLocale": "es_US",
     "titleSuffix": " · Ingrid Ascanio, Broker Hipotecaria en Miami"
+  },
+  "seo": {
+    "homeCrumb": "Inicio",
+    "bio": "Ingrid Ascanio es Branch Manager y oficial de préstamos hipotecarios con licencia en Pioneer Mortgage Funding, en Hollywood, Florida (NMLS #1030712). Ex underwriter de BankUnited y gerente de procesamiento, con más de 20 años en préstamos residenciales, gestiona financiamiento de compra, refinanciamiento, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción para clientes en Miami-Dade, Broward y toda la Florida — en inglés y español. Es Vicepresidenta del capítulo de Miami de la Florida Association of Mortgage Professionals para 2025–2026.",
+    "portraitAlt": "Ingrid Ascanio, Branch Manager y oficial de préstamos hipotecarios en Pioneer Mortgage Funding, Hollywood, Florida",
+    "portraitAltAlt": "Ingrid Ascanio, broker hipotecaria en Miami y ex underwriter de banco",
+    "businessAlternateName": "Ingrid Ascanio Hipotecas — Pioneer Mortgage Funding, Sucursal Hollywood",
+    "credentialName": "Licencia de Originador de Préstamos Hipotecarios (NMLS)",
+    "occupationName": "Oficial de Préstamos Hipotecarios",
+    "membership": "Florida Association of Mortgage Professionals (FAMP) — Capítulo de Miami",
+    "awards": [
+      "Vicepresidenta, Capítulo FAMP Miami (2025–2026)",
+      "Co-Chair del Tradeshow, Capítulo FAMP Miami (2025–2026)",
+      "Top Producer, Pioneer Mortgage Funding (2019)"
+    ],
+    "knowsAbout": [
+      "Corretaje hipotecario",
+      "Préstamos FHA",
+      "Préstamos VA",
+      "Hipotecas jumbo",
+      "Hipotecas convencionales",
+      "Préstamos DSCR para inversionistas",
+      "Hipotecas para extranjeros",
+      "Préstamos de construcción a permanente",
+      "Refinanciamiento hipotecario",
+      "Programas para compradores primerizos",
+      "Underwriting hipotecario",
+      "Financiamiento de bienes raíces en Miami"
+    ],
+    "areaServed": [
+      "Miami, FL",
+      "Hollywood, FL",
+      "Miami-Dade County, FL",
+      "Broward County, FL",
+      "Fort Lauderdale, FL",
+      "Aventura, FL",
+      "Miami Beach, FL",
+      "Coral Gables, FL",
+      "Doral, FL",
+      "Kendall, FL",
+      "Pembroke Pines, FL",
+      "Hallandale Beach, FL",
+      "Weston, FL",
+      "Davie, FL",
+      "Florida"
+    ],
+    "areasLine": "Sirviendo Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie y Fort Lauderdale — y toda la Florida."
   }
 }
