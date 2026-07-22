@@ -100,7 +100,7 @@
     "helpBack": "Back",
     "helpMore": "Still not sure? It's a 15-minute call.",
     "articles": [
-      { "q": "What does a mortgage broker do that a bank doesn't?", "a": "A bank can only offer its own products. As a broker, Ingrid shops your file across 50+ lenders — banks, credit unions, and wholesale lenders — and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork." },
+      { "q": "What does a mortgage broker do that a bank doesn't?", "a": "A bank can only offer its own products. Through Pioneer Mortgage Funding, Ingrid shops your file across 50+ lenders — banks, credit unions, and wholesale lenders — and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork." },
       { "q": "How fast can I get pre-approved?", "a": "With documents in hand, typically 24–48 hours for a verified letter. On a deadline — an open house this weekend, an offer you want to write — tell her and she moves at that speed." },
       { "q": "What documents will I need?", "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. You can send everything through the Upload documents page.", "link": "upload", "linkLabel": "Upload documents" },
       { "q": "I'm a first-time buyer — where do I start?", "a": "With one short call. Low-down-payment programs exist to get you in the door — your exact number depends on your file, and Ingrid will tell you honestly whether now is your moment or what gets you there." },
@@ -128,7 +128,7 @@
       { "k": ["rate", "interest", "apr", "percent"], "a": "Rates change daily and depend on your credit, down payment, and program — anyone quoting you a number without looking at your file is guessing. Ingrid prices your exact profile across 50+ lenders and shows you real numbers. That's a 15-minute conversation." },
       { "k": ["fha"], "a": "FHA is the friendliest door for first-time buyers — lower down-payment requirements and more forgiving on credit than most programs. Your exact numbers depend on your file, and Ingrid closes FHA loans all the time in Miami-Dade and Broward. Want the details page, or a call?" },
       { "k": ["va", "veteran", "military"], "a": "If you or your spouse served, the VA loan is almost always worth checking first: zero down, no monthly mortgage insurance. Ingrid works with VA-experienced lenders who move these fast." },
-      { "k": ["jumbo"], "a": "Above the county loan limit you're in jumbo territory — and that's where a broker matters most, because pricing varies hugely between lenders. Ingrid structures the file first, then shops it where it's wanted." },
+      { "k": ["jumbo"], "a": "Above the county loan limit you're in jumbo territory — and that's where lender choice matters most, because pricing varies hugely between them. Ingrid structures the file first, then shops it where it's wanted." },
       { "k": ["invest", "dscr", "rental", "airbnb"], "a": "For rental properties, DSCR loans qualify the property on its rent — no tax returns or W-2s. Ingrid runs the ratio quickly and can tell you if a deal clears typical thresholds." },
       { "k": ["foreign", "international", "extranjero", "itin", "no credit"], "a": "No U.S. credit history? No problem — foreign-national programs exist exactly for that, with income documented from your home country and remote closings. Ingrid handles these routinely, in English or Spanish." },
       { "k": ["construc", "build", "lot", "land"], "a": "Construction-to-permanent financing covers the build and the mortgage with one qualification. Ingrid pressure-tests the project the way lenders will — before you're committed." },
@@ -156,7 +156,7 @@
   },
   "meta": {
     "ogLocale": "en_US",
-    "titleSuffix": " · Ingrid Ascanio, Miami Mortgage Broker"
+    "titleSuffix": " · Ingrid Ascanio, Miami Mortgage Loan Originator"
   },
   "seo": {
     "homeCrumb": "Home",
