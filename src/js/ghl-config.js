@@ -16,7 +16,7 @@ window.GHL = {
   formUrl: "",
 
   // Full URL of the GHL calendar for "Book a call" CTAs.
-  calendarUrl: "",
+  calendarUrl: "https://api.leadconnectorhq.com/widget/booking/B1KgNV7FXLUZgTkudzqE",
 
   // GHL form (with file-upload field) to EMBED on /upload-documents/.
   // Paste the iframe embed URL. When set, it replaces the built-in
