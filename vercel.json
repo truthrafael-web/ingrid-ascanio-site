@@ -15,6 +15,9 @@
     { "source": "/contact.html", "destination": "/contact/", "permanent": true },
     { "source": "/contact-us/", "destination": "/contact/", "permanent": true },
 
+    { "source": "/upload-documents/", "destination": "/contact/", "permanent": false },
+    { "source": "/es/subir-documentos/", "destination": "/es/contacto/", "permanent": false },
+
     { "source": "/mortgage-services/", "destination": "/loan-options/", "permanent": true },
     { "source": "/fha-loan/", "destination": "/loan-options/fha/", "permanent": true },
     { "source": "/fha-loans-comprehensive-guide/", "destination": "/loan-options/fha/", "permanent": true },

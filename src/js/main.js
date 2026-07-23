@@ -233,7 +233,6 @@
       switch (to) {
         case 'book': return calendarHref();
         case 'preapproval': return GHL.formUrl || (es ? '/es/contacto/' : '/contact/');
-        case 'upload': return I18N.uploadPath;
         case 'loans': return es ? '/es/opciones-de-prestamo/' : '/loan-options/';
         case 'contact': return es ? '/es/contacto/' : '/contact/';
         case 'about': return es ? '/es/sobre-ingrid/' : '/about/';

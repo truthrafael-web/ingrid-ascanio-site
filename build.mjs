@@ -424,7 +424,7 @@ function footer(g, loans, pageType) {
   const loanLinks = loans.programs.map(p =>
     `<a href="${L[g.lang].prefix}/${L[g.lang].loans.index.slug}/${p.slug}/">${esc(p.name)}</a>`).join('');
   const pageLinks = g.nav.map(n => `<a href="${n.path}">${esc(n.label)}</a>`).join('');
-  const i18n = { lang: g.lang, quickhelp: g.quickhelp, nudge: { ...g.nudge, page: pageType }, uploadPath: g.nav[4].path, calendarFallback: g.nav[5].path };
+  const i18n = { lang: g.lang, quickhelp: g.quickhelp, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path };
   return `</main>
 <a class="book-bar" href="#" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>
 <footer class="site-footer">
@@ -879,7 +879,7 @@ function emit(lang, slug, altSlugOrPath, title, desc, bodyHtml, pageType, ctx = 
   // Header CTA must target an anchor that exists on THIS page: the contact page has the
   // form but no contact-panel section; legal pages have neither → send them to /contact/.
   const ctaHref = pageType === 'contact' ? '#contact-form'
-    : pageType === 'legal' ? g.nav[5].path : '#contact-panel';
+    : pageType === 'legal' ? g.nav[4].path : '#contact-panel';
   const html = head({ g, title, desc, path, altPath, lang, ctx: fullCtx }) +
     header(g, path, altPath, ctaHref) + bodyHtml + footer(g, L[lang].loans, pageType);
   const dir = join(DIST, path);
@@ -911,10 +911,8 @@ for (const lang of ['en', 'es']) {
   }
   emit(lang, c.about.slug, o.about.slug, c.about.meta.title, c.about.meta.description, renderAbout(lang), 'about',
     { src: src('about'), crumbs: crumbsFor(lang, { navIndex: 3 }) });
-  emit(lang, c.upload.slug, o.upload.slug, c.upload.meta.title, c.upload.meta.description, renderUpload(lang), 'upload',
-    { src: src('upload'), crumbs: crumbsFor(lang, { navIndex: 4 }) });
   emit(lang, c.contact.slug, o.contact.slug, c.contact.meta.title, c.contact.meta.description, renderContact(lang), 'contact',
-    { src: src('contact'), crumbs: crumbsFor(lang, { navIndex: 5 }) });
+    { src: src('contact'), crumbs: crumbsFor(lang, { navIndex: 4 }) });
   emit(lang, c.legal.privacy.slug, o.legal.privacy.slug, c.legal.privacy.metaTitle, c.legal.privacy.metaDesc, renderLegal(lang, c.legal.privacy), 'legal',
     { src: src('legal'), crumbs: crumbsFor(lang, { label: c.legal.privacy.title, path: pagePath(lang, c.legal.privacy.slug) }) });
   emit(lang, c.legal.terms.slug, o.legal.terms.slug, c.legal.terms.metaTitle, c.legal.terms.metaDesc, renderLegal(lang, c.legal.terms), 'legal',
@@ -939,7 +937,7 @@ for (const lang of ['en', 'es']) {
 </section>`;
   const html = head({ g, title: nf.metaTitle, desc: nf.metaDesc, path: '/404/', altPath: '/404/', lang: 'en', ctx: { kind: 'notfound' } })
       .replace('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">', '<meta name="robots" content="noindex, follow">')
-    + header(g, '/404/', '/es/', g.nav[5].path) + body + footer(g, L.en.loans, 'home');
+    + header(g, '/404/', '/es/', g.nav[4].path) + body + footer(g, L.en.loans, 'home');
   writeFileSync(join(DIST, '404.html'), html);
 }
 

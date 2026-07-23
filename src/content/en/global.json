@@ -25,7 +25,6 @@
     { "label": "Refinance", "path": "/refinance/", "desc": "Honest math on lowering your payment" },
     { "label": "Loan options", "path": "/loan-options/", "desc": "Seven programs, one right fit" },
     { "label": "About Ingrid", "path": "/about/", "desc": "20+ years on every side of the desk" },
-    { "label": "Upload documents", "path": "/upload-documents/", "desc": "Send your files securely in minutes" },
     { "label": "Contact", "path": "/contact/", "desc": "Call, text, or write — same-day answers" }
   ],
   "menu": {
@@ -86,7 +85,6 @@
       "cards": [
         { "label": "Book a 15-minute call with Ingrid", "to": "book" },
         { "label": "Start your pre-approval", "to": "preapproval" },
-        { "label": "Send your documents securely", "to": "upload" },
         { "label": "Explore loan options", "to": "loans" },
         { "label": "Contact Ingrid", "to": "contact" }
       ]
@@ -103,9 +101,9 @@
         "keywords": "preapproval pre approval how fast time letter qualify approved speed quick prequalify",
         "link": { "label": "Start your pre-approval →", "to": "contact" } },
       { "q": "What documents will I need?",
-        "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. You can send everything through the Upload documents page.",
-        "keywords": "documents paperwork docs paystub pay stub w2 1099 bank statements id what do i need upload send self employed",
-        "link": { "label": "Upload your documents →", "to": "upload" } },
+        "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. Once you connect with Ingrid, she'll tell you exactly what to send and where.",
+        "keywords": "documents paperwork docs paystub pay stub w2 1099 bank statements id what do i need send self employed",
+        "link": { "label": "Contact Ingrid →", "to": "contact" } },
       { "q": "I'm a first-time buyer — where do I start?",
         "a": "With one short call. Low-down-payment programs exist to get you in the door — your exact number depends on your file, and Ingrid will tell you honestly whether now is your moment or what gets you there.",
         "keywords": "first time buyer start begin down payment new buyer where to start fha low down help",
@@ -142,8 +140,7 @@
       "buy": { "title": "Wondering what you could afford?", "body": "Ingrid will tell you in one short call — before you ever tour a home." },
       "refinance": { "title": "Curious if refinancing pays off?", "body": "Bring your statement — Ingrid runs the honest math in 15 minutes." },
       "loans": { "title": "Not sure which program fits?", "body": "That's Ingrid's job, not yours. One quick call and you'll know." },
-      "about": { "title": "Like what you're reading?", "body": "Twenty years of lending knowledge, 15 minutes of your time." },
-      "upload": { "title": "Questions about your documents?", "body": "Ingrid's team answers same-day. One quick call and you'll know exactly what to send." }
+      "about": { "title": "Like what you're reading?", "body": "Twenty years of lending knowledge, 15 minutes of your time." }
     }
   },
   "meta": {

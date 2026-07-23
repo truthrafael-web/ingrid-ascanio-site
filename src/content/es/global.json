@@ -25,7 +25,6 @@
     { "label": "Refinanciar", "path": "/es/refinanciar/", "desc": "Matemática honesta para bajar tu cuota" },
     { "label": "Tipos de préstamo", "path": "/es/opciones-de-prestamo/", "desc": "Siete programas, uno hecho para ti" },
     { "label": "Sobre Ingrid", "path": "/es/sobre-ingrid/", "desc": "20+ años en todos los lados del escritorio" },
-    { "label": "Subir documentos", "path": "/es/subir-documentos/", "desc": "Envía tus archivos seguros en minutos" },
     { "label": "Contacto", "path": "/es/contacto/", "desc": "Llama o escribe — respuesta el mismo día" }
   ],
   "menu": {
@@ -86,7 +85,6 @@
       "cards": [
         { "label": "Agenda una llamada de 15 minutos con Ingrid", "to": "book" },
         { "label": "Comienza tu preaprobación", "to": "preapproval" },
-        { "label": "Envía tus documentos de forma segura", "to": "upload" },
         { "label": "Explora las opciones de préstamo", "to": "loans" },
         { "label": "Contacta a Ingrid", "to": "contact" }
       ]
@@ -103,9 +101,9 @@
         "keywords": "preaprobacion pre aprobacion rapido tiempo carta calificar aprobado prequalificar",
         "link": { "label": "Comienza tu preaprobación →", "to": "contact" } },
       { "q": "¿Qué documentos necesitaré?",
-        "a": "La lista habitual: identificación con foto, tus últimos 2 talones de pago (o declaraciones de negocio si eres independiente), formularios W-2 o 1099 de 2 años, y 2 meses de estados de cuenta. Puedes enviar todo por la página de Subir documentos.",
-        "keywords": "documentos papeleo talon de pago w2 1099 estados de cuenta identificacion que necesito subir enviar independiente",
-        "link": { "label": "Sube tus documentos →", "to": "upload" } },
+        "a": "La lista habitual: identificación con foto, tus últimos 2 talones de pago (o declaraciones de negocio si eres independiente), formularios W-2 o 1099 de 2 años, y 2 meses de estados de cuenta. Cuando te comuniques con Ingrid, ella te dirá exactamente qué enviar y a dónde.",
+        "keywords": "documentos papeleo talon de pago w2 1099 estados de cuenta identificacion que necesito enviar independiente",
+        "link": { "label": "Contacta a Ingrid →", "to": "contact" } },
       { "q": "Soy comprador por primera vez, ¿por dónde empiezo?",
         "a": "Con una llamada corta. Existen programas de bajo enganche para ayudarte a entrar — tu número exacto depende de tu expediente, e Ingrid te dirá honestamente si este es tu momento o qué te llevará ahí.",
         "keywords": "primera vez comprador empezar enganche pago inicial nuevo fha bajo ayuda donde empiezo",
@@ -142,8 +140,7 @@
       "buy": { "title": "¿Te preguntas cuánto podrías pagar?", "body": "Ingrid te lo dice en una llamada corta — antes de que visites una sola casa." },
       "refinance": { "title": "¿Curiosidad por saber si el refi conviene?", "body": "Trae tu estado de cuenta — Ingrid corre la matemática honesta en 15 minutos." },
       "loans": { "title": "¿No sabes qué programa te queda?", "body": "Ese es el trabajo de Ingrid, no el tuyo. Una llamada y lo sabrás." },
-      "about": { "title": "¿Te gusta lo que lees?", "body": "Veinte años de conocimiento hipotecario, 15 minutos de tu tiempo." },
-      "upload": { "title": "¿Dudas con tus documentos?", "body": "El equipo de Ingrid responde el mismo día. Una llamada rápida y sabrás exactamente qué enviar." }
+      "about": { "title": "¿Te gusta lo que lees?", "body": "Veinte años de conocimiento hipotecario, 15 minutos de tu tiempo." }
     }
   },
   "meta": {
