@@ -78,6 +78,61 @@
     "terms": "Términos y Condiciones",
     "disclaimer": "Aviso legal"
   },
+  "quickhelp": {
+    "title": "Ayuda rápida",
+    "home": {
+      "hi": "Hola, ¿en qué te ayudamos?",
+      "searchPh": "Busca preguntas frecuentes",
+      "cards": [
+        { "label": "Agenda una llamada de 15 minutos con Ingrid", "to": "book" },
+        { "label": "Comienza tu preaprobación", "to": "preapproval" },
+        { "label": "Envía tus documentos de forma segura", "to": "upload" },
+        { "label": "Explora las opciones de préstamo", "to": "loans" },
+        { "label": "Contacta a Ingrid", "to": "contact" }
+      ]
+    },
+    "tabs": { "home": "Inicio", "help": "Preguntas" },
+    "helpTitle": "Preguntas frecuentes",
+    "articles": [
+      { "q": "¿En qué se diferencia trabajar con Ingrid de un banco?",
+        "a": "Un banco solo puede ofrecer sus propios productos. A través de Pioneer Mortgage Funding, Ingrid compara tu expediente entre más de 50 prestamistas — bancos, cooperativas y prestamistas mayoristas — y te conecta con el que mejor se ajusta a tu perfil y precio. Tú tienes opciones; ella hace el trabajo.",
+        "keywords": "banco diferencia prestamistas comparar opciones mayorista broker pioneer por que elegir",
+        "link": { "label": "Conoce a Ingrid →", "to": "about" } },
+      { "q": "¿Qué tan rápido me pueden preaprobar?",
+        "a": "Con los documentos en mano, normalmente 24–48 horas para una carta verificada. ¿Tienes una fecha límite —una casa abierta este fin de semana, una oferta que quieres hacer—? Díselo y se mueve a esa velocidad.",
+        "keywords": "preaprobacion pre aprobacion rapido tiempo carta calificar aprobado prequalificar",
+        "link": { "label": "Comienza tu preaprobación →", "to": "contact" } },
+      { "q": "¿Qué documentos necesitaré?",
+        "a": "La lista habitual: identificación con foto, tus últimos 2 talones de pago (o declaraciones de negocio si eres independiente), formularios W-2 o 1099 de 2 años, y 2 meses de estados de cuenta. Puedes enviar todo por la página de Subir documentos.",
+        "keywords": "documentos papeleo talon de pago w2 1099 estados de cuenta identificacion que necesito subir enviar independiente",
+        "link": { "label": "Sube tus documentos →", "to": "upload" } },
+      { "q": "Soy comprador por primera vez, ¿por dónde empiezo?",
+        "a": "Con una llamada corta. Existen programas de bajo enganche para ayudarte a entrar — tu número exacto depende de tu expediente, e Ingrid te dirá honestamente si este es tu momento o qué te llevará ahí.",
+        "keywords": "primera vez comprador empezar enganche pago inicial nuevo fha bajo ayuda donde empiezo",
+        "link": { "label": "Comprar una casa →", "to": "buy" } },
+      { "q": "¿Me pueden decir las tasas de hoy?",
+        "a": "Las tasas cambian a diario y dependen de tu crédito, enganche y programa — quien te da un número sin ver tu expediente está adivinando. Ingrid cotiza tu perfil exacto entre más de 50 prestamistas y te muestra números reales en una llamada rápida.",
+        "keywords": "tasa tasas interes tasa de hoy costo precio cuanto cotizar puntos",
+        "link": { "label": "Ver opciones de préstamo →", "to": "loans" } },
+      { "q": "¿Trabajan con inversionistas y extranjeros?",
+        "a": "Sí — ambos son parte central de la práctica de Ingrid en Miami. Los préstamos DSCR califican una propiedad de renta por sus ingresos, y los programas para extranjeros funcionan sin historial de crédito en EE. UU.",
+        "keywords": "inversionista inversionistas dscr renta ingreso extranjero nacional sin credito internacional itin propiedad",
+        "link": { "label": "Préstamos de inversión y DSCR →", "to": "dscr" } },
+      { "q": "¿Hablar con Ingrid tiene algún costo?",
+        "a": "No — la primera llamada es gratis, sin compromiso. La compensación del broker se divulga de forma transparente como parte de cualquier préstamo que decidas seguir.",
+        "keywords": "costo gratis tarifa cobro precio consulta compromiso cuanto hablar dinero pagar",
+        "link": { "label": "Agenda una llamada gratis →", "to": "book" } },
+      { "q": "¿El sitio también está en inglés?",
+        "a": "Sí — toca 'English' en la parte superior para ver todo el sitio en inglés.",
+        "keywords": "ingles english idioma cambiar sitio bilingue",
+        "link": { "label": "Ver en inglés →", "to": "en" } }
+    ],
+    "noMatch": {
+      "text": "No hay coincidencia exacta — pero estas son justo las preguntas que Ingrid contesta mejor en una llamada rápida. Normalmente responde el mismo día.",
+      "short": "Sin coincidencia — prueba otra palabra o contacta a Ingrid abajo.",
+      "cta": "Agenda una llamada de 15 minutos"
+    }
+  },
   "nudge": {
     "delaySeconds": 16,
     "cta": "Agenda 15 minutos",
