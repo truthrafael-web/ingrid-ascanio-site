@@ -23,12 +23,6 @@ window.GHL = {
   // link-based upload form.
   uploadFormEmbedUrl: "",
 
-  // GHL chat widget script URL (Sites → Chat Widget → Get Code).
-  // Example: "https://widgets.leadconnectorhq.com/loader.js"
-  chatWidgetSrc: "",
-  chatWidgetResourcesUrl: "",   // data-resources-url from the same snippet
-  chatWidgetId: "",             // data-widget-id from the same snippet
-
   // Tracking IDs — injected on every page when non-empty.
   ga4Id: "",        // e.g. "G-XXXXXXXXXX"
   gtmId: "",        // e.g. "GTM-XXXXXXX"

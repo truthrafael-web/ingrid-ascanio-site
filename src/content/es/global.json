@@ -78,69 +78,6 @@
     "terms": "Términos y Condiciones",
     "disclaimer": "Aviso legal"
   },
-  "roxy": {
-    "name": "Roxy",
-    "buttonLabel": "Chatea con Roxy",
-    "teaser": "Hola, me llamo Roxy 👋 Si tienes cualquier pregunta — hipotecas, documentos, cómo trabajar con Ingrid — pregúntame aquí con confianza.",
-    "header": "Roxy — asistente de Ingrid",
-    "agentTag": "Agente IA",
-    "meta": "Roxy · Agente IA · Ahora mismo",
-    "greeting": "¡Hola! Soy Roxy, la asistente IA de Ingrid 👋 Puedo ayudarte con preguntas sobre hipotecas, documentos, tipos de préstamo — lo que necesites. Y lo que yo no pueda responder, el equipo de Ingrid te lo confirma, normalmente el mismo día. ¿En qué te ayudo hoy?",
-    "tabs": { "home": "Inicio", "messages": "Mensajes", "help": "Ayuda" },
-    "home": {
-      "hi": "Hola, ¿cómo te ayudamos?",
-      "sendTitle": "Envíanos un mensaje",
-      "sendSub": "Roxy responde al instante",
-      "bookRow": "Agenda 15 minutos con Ingrid",
-      "uploadRow": "Envía tus documentos de forma segura",
-      "searchTitle": "Busca ayuda",
-      "searchPh": "Buscar"
-    },
-    "helpTitle": "Ayuda",
-    "helpBack": "Volver",
-    "helpMore": "¿Todavía con dudas? Es una llamada de 15 minutos.",
-    "articles": [
-      { "q": "¿Qué hace un broker hipotecario que un banco no?", "a": "Un banco solo puede ofrecer sus propios productos. A través de Pioneer Mortgage Funding, Ingrid cotiza tu expediente entre 50+ prestamistas — bancos, cooperativas y prestamistas mayoristas — y te empareja con el que de verdad encaja con tu perfil. Tú recibes opciones; ella hace el trabajo." },
-      { "q": "¿Qué tan rápido me pre-aprueban?", "a": "Con los documentos listos, normalmente 24–48 horas para una carta verificada. Si tienes fecha límite — un open house este fin de semana, una oferta que quieres presentar — díselo y ella se mueve a esa velocidad." },
-      { "q": "¿Qué documentos voy a necesitar?", "a": "La lista habitual: identificación con foto, tus últimos 2 talones de pago (o declaraciones del negocio si eres independiente), W-2 o 1099 de 2 años, y 2 meses de estados de cuenta. Puedes enviarlo todo por la página Subir documentos.", "link": "upload", "linkLabel": "Subir documentos" },
-      { "q": "Compro por primera vez — ¿por dónde empiezo?", "a": "Con una llamada corta. Existen programas de entrada baja para abrirte la puerta — tu número exacto depende de tu perfil, e Ingrid te dirá con honestidad si tu momento es ahora o qué te lleva ahí." },
-      { "q": "¿Me puedes decir las tasas de hoy?", "a": "Las tasas cambian a diario y dependen de tu crédito, tu entrada y el programa — quien te cotice sin mirar tu expediente está adivinando. Ingrid cotiza tu perfil exacto entre 50+ prestamistas y te muestra números reales en una llamada corta." },
-      { "q": "¿Trabajan con inversionistas y extranjeros?", "a": "Sí — ambos son parte central de la práctica de Ingrid en Miami. Los préstamos DSCR califican la propiedad por su renta, y los programas foreign national funcionan sin historial de crédito en EE.UU.", "link": "loans", "linkLabel": "Ver tipos de préstamo" },
-      { "q": "¿Hablar con Ingrid cuesta algo?", "a": "No — la primera llamada es gratis y sin compromiso. La compensación del broker se divulga con transparencia en cualquier préstamo que decidas seguir." },
-      { "q": "Do you speak English?", "a": "Of course! Ingrid works in English too — toca 'English' arriba para cambiar todo el sitio." }
-    ],
-    "placeholder": "Mensaje…",
-    "send": "Enviar",
-    "bookCta": "Agenda una llamada con Ingrid",
-    "chips": [
-      { "label": "Agendar una llamada", "action": "book" },
-      { "label": "Pre-aprobación", "action": "preapproval" },
-      { "label": "¿Qué documentos necesito?", "action": "documents" },
-      { "label": "Tipos de préstamo", "action": "loans" },
-      { "label": "Enviar mis documentos", "action": "upload" }
-    ],
-    "fallback": "Buena pregunta — y es exactamente lo que Ingrid mejor responde en una llamada de 15 minutos. Suele responder el mismo día. ¿Te reservo un espacio?",
-    "kb": [
-      { "k": ["agend", "llamada", "cita", "reserv", "hablar", "reunión", "reunion"], "a": "Fácil — Ingrid mantiene espacios de 15 minutos, y no necesitas ningún documento para hablar. Toca abajo y elige la hora que te convenga." },
-      { "k": ["pre-aprob", "preaprob", "aprob", "califico", "empezar", "cuánto", "cuanto"], "a": "La pre-aprobación con Ingrid suele tomar 24–48 horas una vez recibidos tus documentos. Verifica números reales — no un estimado de internet — así tu carta pesa frente a los agentes. Lo más rápido para empezar es una llamada corta." },
-      { "k": ["documento", "papele", "necesito", "lista"], "a": "La lista habitual: identificación con foto, tus últimos 2 talones de pago (o declaraciones del negocio si eres independiente), W-2 o 1099 de 2 años, y 2 meses de estados de cuenta. Puedes enviarlo todo por la página Subir documentos — o te llevo ahí." },
-      { "k": ["subir", "enviar archivo", "adjuntar", "mandar"], "a": "Puedes enviar tus documentos de forma segura en la página Subir documentos — adjunta archivos directamente o pega un enlace de Drive/Dropbox, y llega organizado al equipo de Ingrid." },
-      { "k": ["tasa", "interés", "interes", "apr", "por ciento"], "a": "Las tasas cambian a diario y dependen de tu crédito, tu entrada y el programa — quien te cotice sin mirar tu expediente está adivinando. Ingrid cotiza tu perfil exacto entre 50+ prestamistas y te muestra números reales. Es una conversación de 15 minutos." },
-      { "k": ["fha"], "a": "FHA es la puerta más amigable para primeros compradores — requisitos de entrada más bajos y más flexible con el crédito que la mayoría de los programas. Tus números exactos dependen de tu perfil, e Ingrid cierra FHA todo el tiempo en Miami-Dade y Broward. ¿Quieres ver la página o agendar una llamada?" },
-      { "k": ["va", "veteran", "militar"], "a": "Si tú o tu cónyuge sirvieron, el préstamo VA casi siempre vale la pena revisarlo primero: cero entrada y sin seguro hipotecario mensual. Ingrid trabaja con prestamistas expertos en VA." },
-      { "k": ["jumbo"], "a": "Por encima del límite del condado entras en territorio jumbo — y ahí es donde más importa poder elegir prestamista, porque los precios varían muchísimo entre ellos. Ingrid estructura el expediente primero y luego lo coloca donde lo quieren." },
-      { "k": ["invers", "dscr", "renta", "airbnb"], "a": "Para propiedades de renta, los préstamos DSCR califican la propiedad por su renta — sin declaraciones ni W-2. Ingrid corre el ratio rápido y te dice si el negocio pasa los umbrales típicos." },
-      { "k": ["extranjero", "internacional", "foreign", "itin", "sin crédito", "sin credito"], "a": "¿Sin historial de crédito en EE.UU.? No hay problema — los programas foreign national existen exactamente para eso, con ingresos documentados desde tu país y cierres a distancia. Ingrid los maneja de rutina, en español o inglés." },
-      { "k": ["constru", "terreno", "lote", "obra"], "a": "El financiamiento construction-to-permanent cubre la obra y la hipoteca con una sola calificación. Ingrid somete el proyecto a presión como lo harán los prestamistas — antes de que te comprometas." },
-      { "k": ["refinanci", "refi", "cash out", "plusval", "bajar cuota"], "a": "Un refinanciamiento es matemática, no marketing: Ingrid modela tu cuota nueva, los costos y el punto de equilibrio honesto — y si te conviene quedarte como estás, te lo dice. Trae tu estado de cuenta a una llamada corta y lo sabrás." },
-      { "k": ["crédito", "credito", "puntaje", "score", "mal crédito"], "a": "No asumas que quedaste fuera — Ingrid ha visto expedientes en todos los niveles de crédito, y si el tuyo necesita trabajo primero, te lo dirá con un plan incluido, no con falsas esperanzas." },
-      { "k": ["primera vez", "primera casa", "nunca he comprado"], "a": "Los primeros compradores son los expedientes favoritos de Ingrid. Te explica lo que puedes pagar con comodidad — en lenguaje claro, en español o inglés — antes de que visites una sola casa." },
-      { "k": ["english", "inglés", "ingles"], "a": "Of course! Ingrid works in English too — tap 'English' at the top to switch the whole site." },
-      { "k": ["quién", "quien", "ingrid", "experiencia", "confiar", "confianza"], "a": "Ingrid Ascanio tiene 20+ años en préstamos residenciales — ex underwriter de banco, gerente de procesamiento y, desde 2016, Branch Manager en Pioneer Mortgage Funding. También es Vicepresidenta de FAMP Miami. En corto: sabe cómo piensa la persona que lee tu expediente, porque ella era esa persona." },
-      { "k": ["teléfono", "telefono", "correo", "contacto", "número", "numero"], "a": "Puedes llamar o escribir al (786) 554-8830, enviar correo a ingrid.ascanio@pmfmortgage.com — o agendar una llamada de 15 minutos directamente, que suele ser lo más rápido." },
-      { "k": ["costo", "cobra", "honorario", "comisión", "comision", "gratis"], "a": "Hablar con Ingrid no cuesta nada — la primera llamada es gratis y sin compromiso. La compensación del broker se divulga con transparencia en cualquier préstamo que decidas seguir." }
-    ]
-  },
   "nudge": {
     "delaySeconds": 16,
     "cta": "Agenda 15 minutos",
@@ -151,7 +88,7 @@
       "refinance": { "title": "¿Curiosidad por saber si el refi conviene?", "body": "Trae tu estado de cuenta — Ingrid corre la matemática honesta en 15 minutos." },
       "loans": { "title": "¿No sabes qué programa te queda?", "body": "Ese es el trabajo de Ingrid, no el tuyo. Una llamada y lo sabrás." },
       "about": { "title": "¿Te gusta lo que lees?", "body": "Veinte años de conocimiento hipotecario, 15 minutos de tu tiempo." },
-      "upload": { "title": "¿Dudas con tus documentos?", "body": "El equipo de Ingrid responde el mismo día. O pregúntale a Roxy aquí mismo." }
+      "upload": { "title": "¿Dudas con tus documentos?", "body": "El equipo de Ingrid responde el mismo día. Una llamada rápida y sabrás exactamente qué enviar." }
     }
   },
   "meta": {

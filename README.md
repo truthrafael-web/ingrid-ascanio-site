@@ -40,7 +40,6 @@ Every CRM link plugs in there (then rebuild + redeploy):
 | `formUrl` | GHL form link | All "Start your pre-approval" buttons |
 | `calendarUrl` | GHL calendar link | All "Book a call" buttons |
 | `uploadFormEmbedUrl` | GHL form (with file-upload field) embed URL | Replaces the link-based upload form with true file upload |
-| `chatWidgetSrc` + `chatWidgetId` | Chat widget snippet values | Floating AI chat on every page |
 | `ga4Id` / `gtmId` / `metaPixelId` | Tracking IDs | GA4 / Tag Manager / Meta Pixel on every page |
 
 **Status (2026-07-20): `webhookUrl` is SET and live** — contact/newsletter/upload
@@ -56,13 +55,14 @@ to the contact form; if `webhookUrl` were ever cleared, submissions open a
 pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
 (contact / document-upload / newsletter), `page`, `language`, and all form fields.
 
-## Roxy (the chat assistant)
+## Chat / message widget — REMOVED 2026-07-23
 
-Roxy is a hand-coded guided chat bubble on every page (EN + ES): keyword-matched
-answers from a curated knowledge base (`roxy` section of `global.json`), quick-reply
-chips, and every conversation routes toward booking. When Ingrid provides her GHL
-AI Chat Widget script (set `chatWidgetSrc` in `ghl-config.js`), it **replaces**
-Roxy automatically — name the GHL bot "Roxy" to keep continuity.
+The former "Roxy" chat bubble (a hand-coded guided messenger with a fake message
+box) was removed at Rafael's direction: no AI agent will be installed, so a
+message feature with no real responder was misleading. All of its JS/CSS/content
+and the `chatWidget*` config fields are gone; the bottom-right corner is now empty.
+A non-chat replacement — quick links + a question→answer search that routes to
+existing pages — is under consideration but **not yet built**.
 
 ## Direct file upload
 

@@ -424,7 +424,7 @@ function footer(g, loans, pageType) {
   const loanLinks = loans.programs.map(p =>
     `<a href="${L[g.lang].prefix}/${L[g.lang].loans.index.slug}/${p.slug}/">${esc(p.name)}</a>`).join('');
   const pageLinks = g.nav.map(n => `<a href="${n.path}">${esc(n.label)}</a>`).join('');
-  const i18n = { lang: g.lang, roxy: g.roxy, nudge: { ...g.nudge, page: pageType }, uploadPath: g.nav[4].path, calendarFallback: g.nav[5].path };
+  const i18n = { lang: g.lang, nudge: { ...g.nudge, page: pageType }, uploadPath: g.nav[4].path, calendarFallback: g.nav[5].path };
   return `</main>
 <a class="book-bar" href="#" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>
 <footer class="site-footer">
