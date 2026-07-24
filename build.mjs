@@ -762,7 +762,7 @@ function renderContact(lang) {
     ${formField(c.form.interest, `<select name="interest">${opts}</select>`)}
     ${formField(c.form.message, `<textarea name="message" rows="5" placeholder="${esc(c.form.messagePh)}"></textarea>`)}
     <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="consent"><input type="checkbox" name="consent" required><span>${esc(c.form.consent)}</span></label>
+    <label class="consent"><input type="checkbox" name="consent" required checked><span>${esc(c.form.consent)}</span></label>
     <button class="btn btn-navy btn-xl" type="submit">${esc(c.form.submit)}</button>
     <p class="form-status" role="status" data-loading="${esc(g.form.loading)}" data-success="${esc(g.form.success)}" data-error="${esc(g.form.error)}"></p>
   </form>
