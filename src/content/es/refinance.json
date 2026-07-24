@@ -34,14 +34,14 @@
     "eyebrow": "El proceso",
     "title": "Más simple que tu compra",
     "items": [
-      { "name": "La llamada de números", "desc": "Saldo actual, cuota, meta. Diez minutos y sé si un refi merece una mirada más profunda." },
+      { "name": "La llamada de números", "desc": "Saldo actual, cuota, meta. Quince minutos y sé si un refi merece una mirada más profunda." },
       { "name": "El modelo honesto", "desc": "Cuota nueva, costos de cierre, mes de equilibrio, interés de por vida — lado a lado con no hacer nada." },
       { "name": "Cierre en semanas", "desc": "Sin búsqueda de casa, sin vendedores. Un refi limpio suele ir de solicitud a cierre en tres a cinco semanas." }
     ]
   },
   "cta": {
     "eyebrow": "Corre los números",
-    "title": "Diez minutos te dicen si la matemática funciona.",
+    "title": "Quince minutos te dicen si la matemática funciona.",
     "body": "Trae tu estado de cuenta actual. Yo traigo el modelo honesto — incluida la versión en la que no cambias nada."
   },
   "related": {

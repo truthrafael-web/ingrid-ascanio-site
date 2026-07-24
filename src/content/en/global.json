@@ -35,7 +35,7 @@
   "cta": {
     "primary": "Start your pre-approval",
     "secondary": "Book a call with Ingrid",
-    "callback": "Request a callback"
+    "callback": "Have Ingrid call you"
   },
   "credentials": [
     { "big": "20+", "small": "years in residential lending" },

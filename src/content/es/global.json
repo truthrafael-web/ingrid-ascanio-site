@@ -35,7 +35,7 @@
   "cta": {
     "primary": "Comienza tu pre-aprobación",
     "secondary": "Agenda una llamada con Ingrid",
-    "callback": "Solicita que te llamemos"
+    "callback": "Haz que Ingrid te llame"
   },
   "credentials": [
     { "big": "20+", "small": "años en préstamos hipotecarios" },

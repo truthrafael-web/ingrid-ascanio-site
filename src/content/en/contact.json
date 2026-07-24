@@ -7,10 +7,10 @@
   "hero": {
     "eyebrow": "Contact",
     "title": "Start the conversation.",
-    "body": "Tell me a little about where you are, and I'll come back to you within one business day — usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
+    "body": "Two easy ways to start: book a 15-minute call at a time that suits you, or leave your details and Ingrid will call you — within one business day, usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
   },
   "form": {
-    "title": "Send a message",
+    "title": "Have Ingrid call you",
     "name": "Full name",
     "namePh": "Your name",
     "email": "Email",

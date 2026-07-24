@@ -34,14 +34,14 @@
     "eyebrow": "The process",
     "title": "Simpler than your purchase was",
     "items": [
-      { "name": "The numbers call", "desc": "Current balance, payment, goal. Ten minutes and I'll know whether a refi deserves a deeper look." },
+      { "name": "The numbers call", "desc": "Current balance, payment, goal. Fifteen minutes and I'll know whether a refi deserves a deeper look." },
       { "name": "The honest model", "desc": "New payment, closing costs, break-even month, lifetime interest — side by side with doing nothing." },
       { "name": "Close in weeks", "desc": "No house hunt, no sellers. A clean refi typically moves from application to closing in three to five weeks." }
     ]
   },
   "cta": {
     "eyebrow": "Run the numbers",
-    "title": "Ten minutes tells you if the math works.",
+    "title": "Fifteen minutes tells you if the math works.",
     "body": "Bring your current statement. I'll bring the honest model — including the version where you change nothing."
   },
   "related": {
