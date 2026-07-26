@@ -7,7 +7,7 @@
 // ============================================================
 window.GHL = {
   // Inbound webhook that receives ALL site form submissions as JSON
-  // (contact form, upload form, newsletter). From GHL:
+  // (contact form, upload form). From GHL:
   // Automation → Workflow → Inbound Webhook trigger → copy URL.
   webhookUrl: "https://services.leadconnectorhq.com/hooks/cpmixVyQPia8RJXe7Ukw/webhook-trigger/1d5b0053-9df3-4616-91f7-d95e3f28b13d",
 

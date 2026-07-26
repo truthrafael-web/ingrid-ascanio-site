@@ -50,14 +50,6 @@
     "phoneLabel": "Call or text",
     "emailLabel": "Email"
   },
-  "newsletter": {
-    "title": "South Florida market notes, a few times a year",
-    "body": "Rate moves, first-time-buyer programs, and timing insights for the Miami market. No spam — just what's worth knowing.",
-    "placeholder": "your@email.com",
-    "button": "Subscribe",
-    "success": "You're in. Talk soon.",
-    "error": "That didn't go through — check the email and try again."
-  },
   "form": {
     "loading": "Sending…",
     "success": "Got it — Ingrid's team will be in touch within one business day.",
@@ -68,6 +60,7 @@
     "loanOptionsTitle": "Loan options",
     "companyTitle": "Pages",
     "getStartedTitle": "Get started",
+    "language": "Ver el sitio en español",
     "legalLine": "Pioneer Mortgage Funding, Inc. · Company NMLS #1980 · Ingrid Ascanio NMLS #1030712 · Licensed in FL. Company licensed in AL, CT, FL, GA, KY, MI, NC, OH, SC, TN, TX & VA.",
     "brokerLine": "Mortgage broker only — not a mortgage lender or mortgage correspondent lender.",
     "equalHousing": "Equal Housing Opportunity. This is not a commitment to lend. All loans are subject to credit approval, income verification, and program guidelines. Rates and programs change without notice.",

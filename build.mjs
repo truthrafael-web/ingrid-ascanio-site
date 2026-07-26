@@ -422,10 +422,19 @@ function contactPanel(g, id = 'contact-panel') {
 </section>`;
 }
 
-function footer(g, loans, pageType) {
+function footer(g, loans, pageType, altPath) {
   const loanLinks = loans.programs.map(p =>
     `<a href="${L[g.lang].prefix}/${L[g.lang].loans.index.slug}/${p.slug}/">${esc(p.name)}</a>`).join('');
   const pageLinks = g.nav.map(n => `<a href="${n.path}">${esc(n.label)}</a>`).join('');
+  // The contact page is the no-JS/no-GHL fallback for both action links. Writing it into href
+  // (rather than "#") means these work with JavaScript off; main.js still swaps in the real GHL
+  // form/calendar URL when one is configured, because [data-ghl] overwrites href unconditionally.
+  const contactHref = g.nav[4].path;
+  const startLinks =
+    `<a class="footer-go" href="${contactHref}" data-ghl="form" data-fallback="contact">${esc(g.cta.primary)}</a>`
+    + `<a href="${contactHref}" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>`
+    + `<a href="${contactHref}#contact-form">${esc(g.cta.callback)}</a>`
+    + `<a class="footer-lang" href="${altPath}" hreflang="${g.lang === 'en' ? 'es' : 'en'}" title="${esc(g.microbar.switchHint)}">${esc(g.footer.language)}</a>`;
   const i18n = { lang: g.lang, quickhelp: g.quickhelp, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path };
   return `</main>
 <a class="book-bar" href="#" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>
@@ -439,21 +448,12 @@ function footer(g, loans, pageType) {
         <a href="mailto:${g.person.email}">${esc(g.person.email)}</a><br>
         ${esc(g.person.address)}
       </p>
-      <p class="footer-areas">${esc(g.seo.areasLine)}</p>
     </div>
     <nav class="footer-col" aria-label="${esc(g.footer.loanOptionsTitle)}"><h3>${esc(g.footer.loanOptionsTitle)}</h3>${loanLinks}</nav>
     <nav class="footer-col" aria-label="${esc(g.footer.companyTitle)}"><h3>${esc(g.footer.companyTitle)}</h3>${pageLinks}</nav>
-    <div class="footer-col footer-news">
-      <h3>${esc(g.newsletter.title)}</h3>
-      <p>${esc(g.newsletter.body)}</p>
-      <form class="news-form" data-ghl-newsletter novalidate>
-        <input type="email" name="email" required placeholder="${esc(g.newsletter.placeholder)}" aria-label="Email">
-        <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn btn-gold btn-sm" type="submit">${esc(g.newsletter.button)}</button>
-        <p class="form-status" role="status" data-success="${esc(g.newsletter.success)}" data-error="${esc(g.newsletter.error)}"></p>
-      </form>
-    </div>
+    <nav class="footer-col" aria-label="${esc(g.footer.getStartedTitle)}"><h3>${esc(g.footer.getStartedTitle)}</h3>${startLinks}</nav>
   </div>
+  <p class="footer-areas">${esc(g.seo.areasLine)}</p>
   <div class="footer-legal">
     <div class="footer-legal-row">
       <img src="/assets/img/equal-housing-white.png" alt="Equal Housing Opportunity" width="44" height="47" loading="lazy">
@@ -884,7 +884,7 @@ function emit(lang, slug, altSlugOrPath, title, desc, bodyHtml, pageType, ctx = 
     : pageType === 'legal' ? g.nav[4].path : '#contact-panel';
   const callbackHref = pageType === 'contact' ? '#contact-form' : `${g.nav[4].path}#contact-form`;
   const html = head({ g, title, desc, path, altPath, lang, ctx: fullCtx }) +
-    header(g, path, altPath, ctaHref, callbackHref) + bodyHtml + footer(g, L[lang].loans, pageType);
+    header(g, path, altPath, ctaHref, callbackHref) + bodyHtml + footer(g, L[lang].loans, pageType, altPath);
   const dir = join(DIST, path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), html);
@@ -940,7 +940,7 @@ for (const lang of ['en', 'es']) {
 </section>`;
   const html = head({ g, title: nf.metaTitle, desc: nf.metaDesc, path: '/404/', altPath: '/404/', lang: 'en', ctx: { kind: 'notfound' } })
       .replace('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">', '<meta name="robots" content="noindex, follow">')
-    + header(g, '/404/', '/es/', g.nav[4].path, '/contact/#contact-form') + body + footer(g, L.en.loans, 'home');
+    + header(g, '/404/', '/es/', g.nav[4].path, '/contact/#contact-form') + body + footer(g, L.en.loans, 'home', '/es/');
   writeFileSync(join(DIST, '404.html'), html);
 }
 

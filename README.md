@@ -36,13 +36,13 @@ Every CRM link plugs in there (then rebuild + redeploy):
 
 | Field | What Ingrid provides | What it activates |
 |---|---|---|
-| `webhookUrl` | Inbound Webhook URL from a GHL workflow | Contact form, upload form, and newsletter POST JSON to it |
+| `webhookUrl` | Inbound Webhook URL from a GHL workflow | Contact form and upload form POST JSON to it |
 | `formUrl` | GHL form link | All "Start your pre-approval" buttons |
 | `calendarUrl` | GHL calendar link | All "Book a call" buttons |
 | `uploadFormEmbedUrl` | GHL form (with file-upload field) embed URL | Replaces the link-based upload form with true file upload |
 | `ga4Id` / `gtmId` / `metaPixelId` | Tracking IDs | GA4 / Tag Manager / Meta Pixel on every page |
 
-**Status (2026-07-20): `webhookUrl` is SET and live** — contact/newsletter/upload
+**Status (2026-07-20): `webhookUrl` is SET and live** — contact/upload
 forms POST every submission to the GHL inbound webhook (verified: real live form
 fill → HTTP 200 + success message). ⚠️ **But a submission only becomes a CRM
 contact if the GHL inbound-webhook *workflow* creates/updates a contact from the
@@ -53,7 +53,7 @@ a website fix.
 **Fallbacks until the other links are provided (working today):** CTA buttons route
 to the contact form; if `webhookUrl` were ever cleared, submissions open a
 pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
-(contact / document-upload / newsletter), `page`, `language`, and all form fields.
+(contact / document-upload), `page`, `language`, and all form fields.
 
 ## Chat / message widget — REMOVED 2026-07-23
 
@@ -63,6 +63,29 @@ message feature with no real responder was misleading. All of its JS/CSS/content
 and the `chatWidget*` config fields are gone; the bottom-right corner is now empty.
 A non-chat replacement — quick links + a question→answer search that routes to
 existing pages — is under consideration but **not yet built**.
+
+## Newsletter signup — REMOVED 2026-07-25
+
+The footer's fourth column was an email-capture form ("South Florida market notes").
+Removed at Rafael's direction — same reasoning as the chat widget: no one is writing
+or sending that newsletter, so a subscribe box promised something that doesn't exist.
+Its form, JS wiring (`data-ghl-newsletter`), CSS (`.news-form`/`.footer-news`) and the
+`newsletter` content block in both `global.json` files are gone; the webhook no longer
+receives a `newsletter` payload type.
+
+The column is now **"Get started"** — the slot the content model always anticipated
+(`footer.getStartedTitle` existed in EN + ES but rendered nowhere). It carries the site's
+three real conversion paths, reusing the existing `cta.*` strings so wording never drifts
+from the rest of the site: pre-approval → `formUrl`, book a call → `calendarUrl`, and the
+callback form. Both action links carry the contact page as their literal `href`, so they
+still work with JavaScript disabled; `main.js` swaps in the GHL URL when one is set. A
+fourth link switches language, pointing at the current page's `altPath` (not the home
+page), so it holds your place.
+
+Also moved in the same pass: the long "Serving Miami, Hollywood…" service-area line went
+from the tail of the brand column to a **full-width band** under the columns. In column 1
+it made that column run roughly double the height of the other three and left the right
+half of the footer visibly empty once the newsletter form was gone.
 
 ## Direct file upload
 

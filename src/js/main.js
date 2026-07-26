@@ -188,7 +188,6 @@
   }
   document.querySelectorAll('[data-ghl-contact]').forEach(function (f) { wireForm(f, 'contact'); });
   document.querySelectorAll('[data-ghl-upload]').forEach(function (f) { wireForm(f, 'document-upload'); });
-  document.querySelectorAll('[data-ghl-newsletter]').forEach(function (f) { wireForm(f, 'newsletter'); });
 
   /* ---------- booking nudge (one per session, dismissible) ---------- */
   var N = I18N.nudge;
