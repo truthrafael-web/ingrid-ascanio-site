@@ -64,7 +64,7 @@ and the `chatWidget*` config fields are gone; the bottom-right corner is now emp
 A non-chat replacement — quick links + a question→answer search that routes to
 existing pages — is under consideration but **not yet built**.
 
-## Newsletter signup — REMOVED 2026-07-25
+## Newsletter signup — REMOVED 2026-07-25 · LIVE 2026-07-26 (`57a9ab4`)
 
 The footer's fourth column was an email-capture form ("South Florida market notes").
 Removed at Rafael's direction — same reasoning as the chat widget: no one is writing
