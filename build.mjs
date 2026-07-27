@@ -147,7 +147,7 @@ function schemaJsonLd(g, lang, ctx) {
     url: `${SITE_URL}/`,
     image: { '@id': PORTRAIT },
     logo: `${SITE_URL}/assets/img/pmf-logo-transparent.png`,
-    telephone: '+1-786-554-8830',
+    telephone: '+1-786-250-0922',
     email: p.email,
     address,
     geo: { '@type': 'GeoCoordinates', latitude: 26.0108783, longitude: -80.1750192 },
@@ -160,7 +160,7 @@ function schemaJsonLd(g, lang, ctx) {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      telephone: '+1-786-554-8830',
+      telephone: '+1-786-250-0922',
       email: p.email,
       availableLanguage: ['English', 'Spanish'],
       areaServed: 'US-FL',
@@ -194,7 +194,7 @@ function schemaJsonLd(g, lang, ctx) {
     familyName: 'Ascanio',
     jobTitle: p.title,
     description: s.bio,
-    telephone: '+1-786-554-8830',
+    telephone: '+1-786-250-0922',
     email: p.email,
     image: { '@id': PORTRAIT },
     url: `${SITE_URL}${L[lang].prefix}/${L[lang].about.slug}/`,
@@ -295,7 +295,7 @@ function schemaJsonLd(g, lang, ctx) {
       availableChannel: {
         '@type': 'ServiceChannel',
         serviceUrl: url,
-        servicePhone: '+1-786-554-8830',
+        servicePhone: '+1-786-250-0922',
         availableLanguage: ['English', 'Spanish'],
       },
     });

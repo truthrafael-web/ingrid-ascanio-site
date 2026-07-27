@@ -67,7 +67,7 @@
       a.setAttribute('rel', 'noopener');
     } else if (a.getAttribute('href') === '#' || !a.getAttribute('href')) {
       var fb = a.getAttribute('data-fallback');
-      a.setAttribute('href', fb === 'phone' ? 'tel:+17865548830'
+      a.setAttribute('href', fb === 'phone' ? 'tel:+17862500922'
         : (document.getElementById('contact-form') ? '#contact-form' : contactPath));
     }
   });
