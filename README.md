@@ -106,6 +106,23 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
+## Phone number — CHANGED 2026-07-27 · LIVE (`0014de4`)
+
+Sitewide number is **(786) 250-0922** (was `(786) 554-8830`). Rafael's direction.
+It lives in three formats and all three must move together:
+
+- `src/content/{en,es}/global.json` — `phone` (display), `phoneHref` (`tel:`), form-error copy
+- `src/content/{en,es}/legal.json` — SMS opt-out, Privacy contact, Terms contact
+- `build.mjs` — 4 structured-data `telephone`/`servicePhone` fields (hardcoded, not read
+  from content; easy to miss)
+- `src/js/main.js` — `data-fallback="phone"` href
+
+The `(305) 555-0100` on the contact/upload forms is **not** a listed number — it's the
+placeholder in the visitor's own Phone field. Leave it.
+
+Still open: her **GHL sub-account** carries the old number, so CRM-sent SMS/email can
+disagree with the site. Not touched here.
+
 ## ⚠️ Facts to confirm with Ingrid before the real domain goes live
 
 - **NMLS # 1936558** — taken from Pioneer's own billboard artwork. The old demo
