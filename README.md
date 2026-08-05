@@ -106,6 +106,29 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
+## Contact form — RESTRUCTURED 2026-08-05 · preview only (`contact-form-consent`)
+
+Rebuilt to the carrier consent layout required for SMS (A2P) registration:
+First name / Last name split, then Phone, Email, "What brings you here?" and the
+details textarea — **all required except Last name** — then two consent
+checkboxes and a Privacy Policy | Terms link row under Submit. EN and ES.
+
+Two things here are deliberate, not oversights:
+
+- **Neither box is pre-checked, and the marketing box is optional.** This reverses
+  the 2026-07-23 pre-checked default (`2cc8c4a`). A pre-checked or mandatory
+  marketing consent is not valid express written consent, and a registration
+  reviewer looking at this form would see that.
+- **`main.js` still sends `name`.** The form collects `first_name` / `last_name`,
+  but her GHL workflow maps First name from `{{inboundWebhookRequest.name}}`.
+  `collect()` joins first + last back into `name` alongside the new keys —
+  drop that and contact creation stops silently. Checkbox state is written as
+  explicit `"yes"` / `"no"` so an unchecked box records as a refusal rather than
+  as a question never asked.
+
+New webhook keys available to map into GHL custom fields: `first_name`,
+`last_name`, `consent_sms`, `consent_marketing`.
+
 ## Phone number — CHANGED 2026-07-27 · LIVE (`0014de4`)
 
 Sitewide number is **(786) 250-0922** (was `(786) 554-8830`). Rafael's direction.
