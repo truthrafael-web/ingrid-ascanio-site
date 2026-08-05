@@ -106,7 +106,7 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
-## Contact form — RESTRUCTURED 2026-08-05 · preview only (`contact-form-consent`)
+## Contact form — RESTRUCTURED 2026-08-05 · LIVE (`0193935`)
 
 Rebuilt to the carrier consent layout required for SMS (A2P) registration:
 First name / Last name split, then Phone, Email, "What brings you here?" and the
