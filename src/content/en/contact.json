@@ -11,13 +11,16 @@
   },
   "form": {
     "title": "Have Ingrid call you",
-    "name": "Full name",
-    "namePh": "Your name",
+    "firstName": "First name",
+    "firstNamePh": "Enter your first name",
+    "lastName": "Last name",
+    "lastNamePh": "Enter your last name",
     "email": "Email",
     "emailPh": "you@email.com",
     "phone": "Phone",
     "phonePh": "(305) 555-0100",
     "interest": "What brings you here?",
+    "interestPh": "Choose one",
     "interestOptions": [
       "Buying my first home",
       "Buying my next home",
@@ -27,9 +30,10 @@
       "Building a home",
       "Something else"
     ],
-    "message": "Anything you'd like me to know?",
-    "messagePh": "Timeline, questions, the situation as you see it — anything helps.",
-    "consent": "I agree to be contacted by phone, text, or email about my inquiry. Message and data rates may apply. Consent is not a condition of purchase.",
+    "message": "Any specific or additional details",
+    "messagePh": "Your timeline, your questions, the situation as you see it. Anything helps.",
+    "consentSms": "By checking this box, I consent to receive non-marketing text messages from Pioneer Mortgage Funding, Inc. about appointment confirmations, reminders, relevant follow-up messages, and support communications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.",
+    "consentMarketing": "By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others, from Pioneer Mortgage Funding, Inc. at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.",
     "submit": "Send message"
   },
   "direct": {

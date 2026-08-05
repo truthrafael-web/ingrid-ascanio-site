@@ -11,13 +11,16 @@
   },
   "form": {
     "title": "Envía un mensaje",
-    "name": "Nombre completo",
-    "namePh": "Tu nombre",
+    "firstName": "Nombre",
+    "firstNamePh": "Escribe tu nombre",
+    "lastName": "Apellido",
+    "lastNamePh": "Escribe tu apellido",
     "email": "Correo",
     "emailPh": "tu@correo.com",
     "phone": "Teléfono",
     "phonePh": "(305) 555-0100",
     "interest": "¿Qué te trae por aquí?",
+    "interestPh": "Elige una opción",
     "interestOptions": [
       "Comprar mi primera casa",
       "Comprar mi siguiente casa",
@@ -27,9 +30,10 @@
       "Construir una casa",
       "Otra cosa"
     ],
-    "message": "¿Algo que quieras contarme?",
-    "messagePh": "Tu calendario, tus preguntas, la situación como la ves — todo ayuda.",
-    "consent": "Acepto ser contactado por teléfono, mensaje de texto o correo sobre mi consulta. Pueden aplicar tarifas de mensajes y datos. El consentimiento no es condición de compra.",
+    "message": "Detalles específicos o información adicional",
+    "messagePh": "Tus plazos, tus preguntas, la situación como la ves. Todo ayuda.",
+    "consentSms": "Al marcar esta casilla, doy mi consentimiento para recibir mensajes de texto no promocionales de Pioneer Mortgage Funding, Inc. sobre confirmaciones de citas, recordatorios, mensajes de seguimiento relevantes y comunicaciones de soporte. La frecuencia de los mensajes varía, pueden aplicar tarifas de mensajes y datos. Escribe HELP para obtener ayuda, responde STOP para darte de baja.",
+    "consentMarketing": "Al marcar esta casilla, doy mi consentimiento para recibir mensajes de marketing y promocionales, incluidas ofertas especiales, descuentos y novedades de productos, entre otros, de Pioneer Mortgage Funding, Inc. al número de teléfono proporcionado. La frecuencia puede variar. Pueden aplicar tarifas de mensajes y datos. Escribe HELP para obtener ayuda, responde STOP para darte de baja.",
     "submit": "Enviar mensaje"
   },
   "direct": {

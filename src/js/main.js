@@ -133,6 +133,16 @@
   function collect(form, extraType) {
     var data = { type: extraType, page: location.pathname, language: lang, submitted_at: new Date().toISOString() };
     new FormData(form).forEach(function (v, k) { if (k !== 'company' && k !== 'files') data[k] = v; });
+    // An unchecked checkbox is simply absent from FormData. Consent has to be an explicit
+    // yes/no on the record, so write both states rather than letting "no" look like "not asked".
+    form.querySelectorAll('input[type="checkbox"][name]').forEach(function (cb) {
+      data[cb.name] = cb.checked ? 'yes' : 'no';
+    });
+    // The GHL workflow maps First name from {{inboundWebhookRequest.name}}. The form now collects
+    // first/last separately, so keep sending `name` as well or contact creation silently breaks.
+    if (data.first_name || data.last_name) {
+      data.name = ((data.first_name || '') + ' ' + (data.last_name || '')).trim();
+    }
     return data;
   }
   function wireForm(form, extraType) {

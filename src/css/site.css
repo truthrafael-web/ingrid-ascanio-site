@@ -519,8 +519,15 @@ h3 { font-size: 1.25rem; }
 }
 .field-help { font-size: .85rem; color: var(--ink-soft); margin-top: -.5rem; }
 .secure-note { margin-top: .6rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
-.consent { display: flex; gap: .7rem; font-size: .82rem; color: var(--ink-soft); font-weight: 400; align-items: flex-start; }
-.consent input { margin-top: .25rem; accent-color: var(--gold); }
+.req { color: #A33A2A; font-weight: 700; }
+/* Placeholder option of a required select reads as prompt text, not as an answer. */
+.field select:invalid { color: var(--ink-soft); }
+.consent { display: flex; gap: .7rem; font-size: .82rem; color: var(--ink-soft); font-weight: 400; align-items: flex-start; line-height: 1.45; }
+.consent input { margin-top: .25rem; accent-color: var(--gold); flex: none; }
+.consent + .consent { margin-top: -.35rem; }
+.form-legal { font-size: .82rem; color: var(--ink-soft); text-align: center; margin-top: -.35rem; }
+.form-legal a { color: inherit; }
+.form-legal span { margin: 0 .35rem; opacity: .5; }
 .hp { position: absolute !important; left: -9999px !important; height: 0; width: 0; opacity: 0; }
 .form-status { font-size: .92rem; font-weight: 600; min-height: 1.4em; }
 .form-status.ok { color: #2E6B3F; }

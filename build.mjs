@@ -742,11 +742,16 @@ function renderAbout(lang) {
 ${contactPanel(g)}`;
 }
 
-function formField(label, input) { return `<label class="field"><span>${esc(label)}</span>${input}</label>`; }
+function formField(label, input, req) {
+  const star = req ? ' <b class="req" aria-hidden="true">*</b>' : '';
+  return `<label class="field"><span>${esc(label)}${star}</span>${input}</label>`;
+}
 
 function renderContact(lang) {
   const { global: g, contact: c } = L[lang];
-  const opts = c.form.interestOptions.map(o => `<option>${esc(o)}</option>`).join('');
+  const opts = `<option value="" disabled selected>${esc(c.form.interestPh)}</option>`
+    + c.form.interestOptions.map(o => `<option>${esc(o)}</option>`).join('');
+  const legalHref = (doc) => `${L[lang].prefix}/${L[lang].legal[doc].slug}/`;
   return `
 <section class="page-hero">
   <p class="eyebrow reveal">${esc(c.hero.eyebrow)}</p>
@@ -756,17 +761,22 @@ function renderContact(lang) {
 <section class="section contact-grid">
   <form class="card-form reveal" id="contact-form" data-ghl-contact novalidate>
     <h2>${esc(c.form.title)}</h2>
-    ${formField(c.form.name, `<input type="text" name="name" required placeholder="${esc(c.form.namePh)}">`)}
     <div class="field-row">
-      ${formField(c.form.email, `<input type="email" name="email" required placeholder="${esc(c.form.emailPh)}">`)}
-      ${formField(c.form.phone, `<input type="tel" name="phone" placeholder="${esc(c.form.phonePh)}">`)}
+      ${formField(c.form.firstName, `<input type="text" name="first_name" required placeholder="${esc(c.form.firstNamePh)}">`, true)}
+      ${formField(c.form.lastName, `<input type="text" name="last_name" placeholder="${esc(c.form.lastNamePh)}">`)}
     </div>
-    ${formField(c.form.interest, `<select name="interest">${opts}</select>`)}
-    ${formField(c.form.message, `<textarea name="message" rows="5" placeholder="${esc(c.form.messagePh)}"></textarea>`)}
+    <div class="field-row">
+      ${formField(c.form.phone, `<input type="tel" name="phone" required placeholder="${esc(c.form.phonePh)}">`, true)}
+      ${formField(c.form.email, `<input type="email" name="email" required placeholder="${esc(c.form.emailPh)}">`, true)}
+    </div>
+    ${formField(c.form.interest, `<select name="interest" required>${opts}</select>`, true)}
+    ${formField(c.form.message, `<textarea name="message" rows="5" required placeholder="${esc(c.form.messagePh)}"></textarea>`, true)}
     <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="consent"><input type="checkbox" name="consent" required checked><span>${esc(c.form.consent)}</span></label>
+    <label class="consent"><input type="checkbox" name="consent_sms" required><span>${esc(c.form.consentSms)}</span></label>
+    <label class="consent"><input type="checkbox" name="consent_marketing"><span>${esc(c.form.consentMarketing)}</span></label>
     <button class="btn btn-navy btn-xl" type="submit">${esc(c.form.submit)}</button>
     <p class="form-status" role="status" data-loading="${esc(g.form.loading)}" data-success="${esc(g.form.success)}" data-error="${esc(g.form.error)}"></p>
+    <p class="form-legal"><a href="${legalHref('privacy')}">${esc(g.footer.privacy)}</a> <span aria-hidden="true">|</span> <a href="${legalHref('terms')}">${esc(g.footer.terms)}</a></p>
   </form>
   <aside class="contact-direct reveal">
     <h2>${esc(c.direct.title)}</h2>
