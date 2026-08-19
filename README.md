@@ -106,6 +106,44 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
+## Pioneer compliance changes — 2026-08-19 · LIVE (`857775c`)
+
+Three changes PMF compliance (Lauren Brownell, admin coordinator) required before
+approving the site. Her email of 2026-08-17 is the spec; Rafael's instruction was
+to follow it to the letter, so nothing beyond it was touched.
+
+1. **Titles must match NMLS.** "Loan Officer" is not a permitted title — only
+   "Branch Manager" or "Mortgage Loan Originator". Now **"Branch Manager &
+   Mortgage Loan Originator"** everywhere it describes Ingrid. She flagged three
+   visible spots; it was in 24, most of them invisible on the page: `person.title`
+   in `global.json` (header, hero card, schema `jobTitle`), `home.json` `withLabel`
+   and `imageAlt`, the About eyebrow, the Road Here current role, both `legal.json`
+   files (Privacy + Terms), `seo.bio`, `portraitAlt`, `occupationName`, and every
+   Spanish meta title. **Spanish keeps the English title** — it is the title of
+   record in NMLS, and the site already left "Branch Manager" untranslated.
+2. **Footer** — dropped `Inc.` from the company name and removed the multi-state
+   licensing sentence (`footer.legalLine`, EN + ES). `footer.equalHousing` now
+   carries **Pioneer's own supplied disclaimer, byte-identical to her email** —
+   extracted from the `.eml` programmatically rather than retyped. That text
+   contains a broken sentence ("Specified rates may not be available for all
+   borrowers. interest rates, and program guidelines, and are subject to change")
+   which is **deliberately preserved**; fix it at Pioneer's end, not here. The ES
+   footer carries it in English on purpose — a self-translated compliance
+   disclaimer would be an unreviewed second version.
+3. **Road Here** — removed the company names beside former positions. Without
+   employment dates a reader could take them as current employers. Reordered
+   resume-style, most recent first, Pioneer at the top as she asked. Pioneer stays
+   named; it is the current employer.
+
+Two "loan officers" survive, in the EN and ES About hero body ("Most loan officers
+learned lending from the sales side"). That is the profession in general, not her
+title, so her instruction does not reach it. Rafael was shown this and left it.
+
+Side effect worth knowing: the Road Here section had been listing **"Globex
+Lending"** and **"Legal Save"** as former employers. Those read as placeholder
+names rather than real companies. Change 3 deleted them, but her actual work
+history has never been sourced — do not reintroduce company names without it.
+
 ## Contact form — RESTRUCTURED 2026-08-05 · LIVE (`0193935`)
 
 Rebuilt to the carrier consent layout required for SMS (A2P) registration:
