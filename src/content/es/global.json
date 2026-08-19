@@ -6,7 +6,7 @@
   "siteName": "Ingrid Ascanio · Hipotecas Miami",
   "person": {
     "name": "Ingrid Ascanio",
-    "title": "Branch Manager y Oficial de Préstamos",
+    "title": "Branch Manager y Mortgage Loan Originator",
     "company": "Pioneer Mortgage Funding, Inc.",
     "nmls": "1030712",
     "companyNmls": "1980",
@@ -61,9 +61,9 @@
     "companyTitle": "Páginas",
     "getStartedTitle": "Comienza",
     "language": "See the site in English",
-    "legalLine": "Pioneer Mortgage Funding, Inc. · NMLS de la compañía #1980 · Ingrid Ascanio NMLS #1030712 · Licenciada en FL. Compañía licenciada en AL, CT, FL, GA, KY, MI, NC, OH, SC, TN, TX y VA.",
+    "legalLine": "Pioneer Mortgage Funding · NMLS de la compañía #1980 · Ingrid Ascanio NMLS #1030712 · Licenciada en FL.",
     "brokerLine": "Somos mortgage broker — no somos prestamista hipotecario ni corresponsal de préstamos.",
-    "equalHousing": "Igualdad de Oportunidades de Vivienda. Esto no es un compromiso de préstamo. Todo préstamo está sujeto a aprobación de crédito, verificación de ingresos y las guías de cada programa. Las tasas y los programas cambian sin previo aviso.",
+    "equalHousing": "All loan approvals are conditional, not guaranteed, and subject to lender review of all information. A loan is conditionally approved when the lender has issued an approval in writing, but until all conditions are met, a loan cannot be funded. Specified rates may not be available for all borrowers. interest rates, and program guidelines, and are subject to change without notice based on applicant’s eligibility and market conditions. PMF, Inc. is an Equal Opportunity Mortgage Broker headquartered in Tampa, Florida. This licensee is performing acts for which a mortgage broker license is required. PMF, Inc. is licensed by the Florida Office of Financial Regulation, NMLS# 1980.  PMF, Inc. is approved to originate Conventional, FHA, VA, and USDA loans, and has the ability to broker such loans to Conventional, FHA, VA, and USDA approved lenders. PMF, Inc. is not acting on behalf of or at the direction of HUD/FHA or the VA.",
     "nmlsAccess": "NMLS Consumer Access",
     "nmlsAccessUrl": "https://www.nmlsconsumeraccess.org/",
     "privacy": "Política de Privacidad",
@@ -138,16 +138,16 @@
   },
   "meta": {
     "ogLocale": "es_US",
-    "titleSuffix": " · Ingrid Ascanio, Oficial de Préstamos en Miami"
+    "titleSuffix": " · Ingrid Ascanio, Mortgage Loan Originator en Miami"
   },
   "seo": {
     "homeCrumb": "Inicio",
-    "bio": "Ingrid Ascanio es Branch Manager y oficial de préstamos hipotecarios con licencia en Pioneer Mortgage Funding, en Hollywood, Florida (NMLS #1030712). Ex underwriter de BankUnited y gerente de procesamiento, con más de 20 años en préstamos residenciales, gestiona financiamiento de compra, refinanciamiento, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción para clientes en Miami-Dade, Broward y toda la Florida — en inglés y español. Es Vicepresidenta del capítulo de Miami de la Florida Association of Mortgage Professionals para 2025–2026.",
-    "portraitAlt": "Ingrid Ascanio, Branch Manager y oficial de préstamos hipotecarios en Pioneer Mortgage Funding, Hollywood, Florida",
-    "portraitAltAlt": "Ingrid Ascanio, oficial de préstamos hipotecarios en Miami y ex underwriter de banco",
+    "bio": "Ingrid Ascanio es Branch Manager y Mortgage Loan Originator con licencia en Pioneer Mortgage Funding, en Hollywood, Florida (NMLS #1030712). Ex underwriter de BankUnited y gerente de procesamiento, con más de 20 años en préstamos residenciales, gestiona financiamiento de compra, refinanciamiento, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción para clientes en Miami-Dade, Broward y toda la Florida — en inglés y español. Es Vicepresidenta del capítulo de Miami de la Florida Association of Mortgage Professionals para 2025–2026.",
+    "portraitAlt": "Ingrid Ascanio, Branch Manager y Mortgage Loan Originator en Pioneer Mortgage Funding, Hollywood, Florida",
+    "portraitAltAlt": "Ingrid Ascanio, Mortgage Loan Originator en Miami y ex underwriter de banco",
     "businessAlternateName": "Ingrid Ascanio Hipotecas — Pioneer Mortgage Funding, Sucursal Hollywood",
     "credentialName": "Licencia de Originador de Préstamos Hipotecarios (NMLS)",
-    "occupationName": "Oficial de Préstamos Hipotecarios",
+    "occupationName": "Mortgage Loan Originator",
     "membership": "Florida Association of Mortgage Professionals (FAMP) — Capítulo de Miami",
     "awards": [
       "Vicepresidenta, Capítulo FAMP Miami (2025–2026)",

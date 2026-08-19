@@ -5,7 +5,7 @@
     "description": "De underwriter en BankUnited a branch manager en Pioneer Mortgage Funding: 20+ años en todos los lados del escritorio hipotecario, al servicio de Miami."
   },
   "hero": {
-    "eyebrow": "Ingrid Ascanio · Branch Manager y Oficial de Préstamos",
+    "eyebrow": "Ingrid Ascanio · Branch Manager y Mortgage Loan Originator",
     "title": "Sé cómo piensa la persona que lee tu expediente. Yo era esa persona.",
     "body": "La mayoría de los oficiales de préstamo aprendieron el negocio desde las ventas. Yo lo aprendí desde adentro — evaluando expedientes, dirigiendo equipos de procesamiento y defendiendo a propietarios en riesgo de perder su casa — antes de originar mi primer préstamo.",
     "body2": "Ese orden importa: por eso mis expedientes se estructuran para ser aprobados, no solo enviados."
@@ -15,24 +15,24 @@
     "title": "Todos los lados del escritorio",
     "items": [
       {
-        "era": "Los años de banco",
-        "name": "Underwriter, BankUnited",
-        "desc": "La persona que dice sí o no. Aprendí exactamente qué hace financiable un expediente — y las cosas pequeñas y corregibles que hunden solicitudes que debieron cerrar."
-      },
-      {
-        "era": "Los años de operaciones",
-        "name": "Gerente de Procesamiento, Globex Lending",
-        "desc": "Dirigir la maquinaria entre la solicitud y la mesa de cierre. La velocidad, en este negocio, es operaciones — y yo dirigía la operación."
+        "era": "2016 — hoy",
+        "name": "Branch Manager y Mortgage Loan Originator, Pioneer Mortgage Funding",
+        "desc": "Todo eso, trabajando para ti: la disciplina del banco, la velocidad del operador, la lealtad de la defensora — con la libertad de comparar 50+ prestamistas en vez de defender el menú de un solo banco."
       },
       {
         "era": "Los años de defensa",
-        "name": "Especialista en Loss Mitigation, Legal Save",
+        "name": "Especialista en Loss Mitigation",
         "desc": "Defensa contra ejecuciones hipotecarias y modificaciones de préstamo — pelear por propietarios en el peor día de su vida financiera. Cambió para siempre lo en serio que me tomo la frase “el préstamo correcto”."
       },
       {
-        "era": "2016 — hoy",
-        "name": "Branch Manager y Oficial de Préstamos, Pioneer Mortgage Funding",
-        "desc": "Todo eso, trabajando para ti: la disciplina del banco, la velocidad del operador, la lealtad de la defensora — con la libertad de comparar 50+ prestamistas en vez de defender el menú de un solo banco."
+        "era": "Los años de operaciones",
+        "name": "Gerente de Procesamiento",
+        "desc": "Dirigir la maquinaria entre la solicitud y la mesa de cierre. La velocidad, en este negocio, es operaciones — y yo dirigía la operación."
+      },
+      {
+        "era": "Los años de banco",
+        "name": "Underwriter",
+        "desc": "La persona que dice sí o no. Aprendí exactamente qué hace financiable un expediente — y las cosas pequeñas y corregibles que hunden solicitudes que debieron cerrar."
       }
     ]
   },
@@ -63,9 +63,18 @@
     "eyebrow": "Reconocimiento y liderazgo",
     "title": "La industria también confía",
     "items": [
-      { "name": "FAMP Miami — Vicepresidenta, 2025–2026", "desc": "Liderazgo electo en la Asociación de Profesionales Hipotecarios de la Florida, capítulo Miami." },
-      { "name": "Co-Chair del Tradeshow FAMP, 2025–2026", "desc": "Co-dirigiendo el evento insignia del capítulo." },
-      { "name": "Top Producer, 2019", "desc": "Reconocimiento de producción de Pioneer Mortgage Funding." }
+      {
+        "name": "FAMP Miami — Vicepresidenta, 2025–2026",
+        "desc": "Liderazgo electo en la Asociación de Profesionales Hipotecarios de la Florida, capítulo Miami."
+      },
+      {
+        "name": "Co-Chair del Tradeshow FAMP, 2025–2026",
+        "desc": "Co-dirigiendo el evento insignia del capítulo."
+      },
+      {
+        "name": "Top Producer, 2019",
+        "desc": "Reconocimiento de producción de Pioneer Mortgage Funding."
+      }
     ]
   },
   "cta": {
