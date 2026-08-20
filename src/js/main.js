@@ -1,4 +1,4 @@
-/* Ingrid Ascanio · Miami Mortgage — interactions + GHL wiring (vanilla JS) */
+/* Ingrid Ascanio · Miami Mortgage - interactions + GHL wiring (vanilla JS) */
 (function () {
   'use strict';
   var GHL = window.GHL || {};
@@ -176,7 +176,7 @@
           .then(function (r) { if (!r.ok) throw 0; done(true); })
           .catch(function () {
             // relay unavailable (static host / Blob not set up) → fall back to webhook or email with metadata
-            data.files_note = pickedFiles.map(function (f) { return f.name; }).join(', ') + ' (files could not be attached — will follow up)';
+            data.files_note = pickedFiles.map(function (f) { return f.name; }).join(', ') + ' (files could not be attached, will follow up)';
             sendJson(data, done);
           });
         return;
@@ -224,7 +224,7 @@
     }, (N.delaySeconds || 16) * 1000);
   }
 
-  /* ---------- Quick Help — links + answers launcher (no chat, no AI) ---------- */
+  /* ---------- Quick Help - links + answers launcher (no chat, no AI) ---------- */
   var QH = I18N.quickhelp;
   if (QH && QH.articles) {
     var QIC = {
@@ -336,7 +336,7 @@
       });
     });
 
-    /* real client-side search over the curated FAQ — question + answer + keyword tags */
+    /* real client-side search over the curated FAQ - question + answer + keyword tags */
     var qArts = QH.articles;
     function qhSearch(query) {
       var q = (query || '').toLowerCase().trim();

@@ -141,7 +141,7 @@ function schemaJsonLd(g, lang, ctx) {
   graph.push({
     '@type': ['FinancialService', 'LocalBusiness'],
     '@id': BIZ,
-    name: `${p.name} — ${p.company}`,
+    name: `${p.name} · ${p.company}`,
     alternateName: s.businessAlternateName,
     description: g.footer.blurb,
     url: `${SITE_URL}/`,
@@ -228,7 +228,7 @@ function schemaJsonLd(g, lang, ctx) {
     '@type': 'WebSite',
     '@id': WEBSITE,
     url: `${SITE_URL}/`,
-    name: `${p.name} — ${p.company}`,
+    name: `${p.name} · ${p.company}`,
     description: g.footer.blurb,
     inLanguage: lang,
     publisher: { '@id': BIZ },

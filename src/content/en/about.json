@@ -1,13 +1,13 @@
 {
   "slug": "about",
   "meta": {
-    "title": "About Ingrid Ascanio — 20+ Years in Residential Lending",
+    "title": "About Ingrid Ascanio · 20+ Years in Residential Lending",
     "description": "From BankUnited underwriter to Pioneer Mortgage Funding branch manager: 20+ years on every side of the lending desk, now working for Miami borrowers."
   },
   "hero": {
     "eyebrow": "Ingrid Ascanio · Branch Manager & Mortgage Loan Originator",
     "title": "I know how the person reading your file thinks. I used to be her.",
-    "body": "Most loan officers learned lending from the sales side. I learned it from the inside — underwriting files, running processing teams, and defending homeowners in loss mitigation — before I ever originated a loan.",
+    "body": "Most loan officers learned lending from the sales side. I learned it from the inside (underwriting files, running processing teams, and defending homeowners in loss mitigation) before I ever originated a loan.",
     "body2": "That order matters: it's why my files are structured to be approved, not just submitted."
   },
   "timeline": {
@@ -15,28 +15,28 @@
     "title": "Every side of the lending desk",
     "items": [
       {
-        "era": "2016 — today",
+        "era": "2016 to today",
         "name": "Branch Manager & Mortgage Loan Originator, Pioneer Mortgage Funding",
-        "desc": "All of it, working for you: banker's discipline, operator's speed, advocate's loyalty — with the freedom to shop 50+ lenders instead of defending one bank's menu."
+        "desc": "All of it, working for you: banker's discipline, operator's speed, advocate's loyalty, with the freedom to shop 50+ lenders instead of defending one bank's menu."
       },
       {
         "era": "The advocacy years",
         "name": "Loss Mitigation Specialist",
-        "desc": "Foreclosure defense and loan modifications — fighting for homeowners on the worst day of their financial lives. It permanently changed how seriously I take the phrase “the right loan.”"
+        "desc": "Foreclosure defense and loan modifications: fighting for homeowners on the worst day of their financial lives. It permanently changed how seriously I take the phrase “the right loan.”"
       },
       {
         "era": "The operations years",
         "name": "Processing Manager",
-        "desc": "Running the machinery between application and closing table. Speed, in this business, is operations — and I ran the operation."
+        "desc": "Running the machinery between application and closing table. Speed, in this business, is operations, and I ran the operation."
       },
       {
         "era": "The bank years",
         "name": "Underwriter",
-        "desc": "The person who says yes or no. I learned exactly what makes a file fundable — and the small, fixable things that sink applications that should have closed."
+        "desc": "The person who says yes or no. I learned exactly what makes a file fundable, and the small, fixable things that sink applications that should have closed."
       }
     ]
   },
-  "pull": "“My goal is to think outside the box — within the guidelines — and structure the deal with a win for all.”",
+  "pull": "“My goal is to think outside the box (within the guidelines) and structure the deal with a win for all.”",
   "values": {
     "eyebrow": "How I work",
     "title": "What you can hold me to",
@@ -47,11 +47,11 @@
       },
       {
         "name": "The truth, early",
-        "desc": "If your file needs six months of credit work before it's ready, you'll hear it in our first call — with a plan attached. False hope wastes your time; a real map doesn't."
+        "desc": "If your file needs six months of credit work before it's ready, you'll hear it in our first call, with a plan attached. False hope wastes your time; a real map doesn't."
       },
       {
         "name": "In your language",
-        "desc": "The whole process happens in English or en español — not just the small talk, but the documents, the explanations, and the closing. Miami deserves nothing less."
+        "desc": "The whole process happens in English or en español, not just the small talk, but the documents, the explanations, and the closing. Miami deserves nothing less."
       },
       {
         "name": "Reachable, humanly",
@@ -64,7 +64,7 @@
     "title": "Trusted by the industry, too",
     "items": [
       {
-        "name": "FAMP Miami — Vice President, 2025–2026",
+        "name": "FAMP Miami · Vice President, 2025–2026",
         "desc": "Elected leadership in the Florida Association of Mortgage Professionals, Miami chapter."
       },
       {
@@ -80,6 +80,6 @@
   "cta": {
     "eyebrow": "Work with Ingrid",
     "title": "Twenty years of lending knowledge. Fifteen minutes of your time.",
-    "body": "Tell me where you are — dreaming, shopping, or under contract and nervous. I'll tell you exactly what happens next."
+    "body": "Tell me where you are: dreaming, shopping, or under contract and nervous. I'll tell you exactly what happens next."
   }
 }

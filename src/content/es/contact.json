@@ -1,13 +1,13 @@
 {
   "slug": "contacto",
   "meta": {
-    "title": "Contacta a Ingrid Ascanio — Mortgage Loan Originator en Miami",
+    "title": "Contacta a Ingrid Ascanio · Mortgage Loan Originator en Miami",
     "description": "Llama, escribe, envía correo o agenda una llamada con Ingrid Ascanio, Mortgage Loan Originator en Miami. Respuesta el mismo día a nuevas consultas."
   },
   "hero": {
     "eyebrow": "Contacto",
     "title": "Empieza la conversación.",
-    "body": "Dos formas fáciles de empezar: agenda una llamada de 15 minutos a la hora que te convenga, o deja tus datos e Ingrid te llama — dentro de un día hábil, normalmente mucho antes. ¿Prefieres hablar ahora mismo? Llama o escribe y sáltate el formulario."
+    "body": "Dos formas fáciles de empezar: agenda una llamada de 15 minutos a la hora que te convenga, o deja tus datos e Ingrid te llama dentro de un día hábil, normalmente mucho antes. ¿Prefieres hablar ahora mismo? Llama o escribe y sáltate el formulario."
   },
   "form": {
     "title": "Envía un mensaje",
@@ -39,13 +39,13 @@
   "direct": {
     "title": "O contáctame directo",
     "callTitle": "Llama o escribe",
-    "callDesc": "Lo más rápido para cualquier urgencia — fechas límite de ofertas, cartas de pre-aprobación el mismo día.",
+    "callDesc": "Lo más rápido para cualquier urgencia: fechas límite de ofertas, cartas de pre-aprobación el mismo día.",
     "emailTitle": "Correo",
     "emailDesc": "Lo mejor para documentos y preguntas detalladas.",
     "visitTitle": "Oficina",
     "visitDesc": "Con cita previa.",
     "bookTitle": "Agenda una llamada",
-    "bookDesc": "Elige la hora que te convenga — 15 minutos, sin preparación necesaria.",
+    "bookDesc": "Elige la hora que te convenga. 15 minutos, sin preparación necesaria.",
     "bookButton": "Abrir el calendario"
   }
 }

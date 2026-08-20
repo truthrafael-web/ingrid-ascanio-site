@@ -1,13 +1,13 @@
 {
   "slug": "sobre-ingrid",
   "meta": {
-    "title": "Sobre Ingrid Ascanio — 20+ Años en Préstamos Residenciales",
+    "title": "Sobre Ingrid Ascanio · 20+ Años en Préstamos Residenciales",
     "description": "De underwriter en BankUnited a branch manager en Pioneer Mortgage Funding: 20+ años en todos los lados del escritorio hipotecario, al servicio de Miami."
   },
   "hero": {
     "eyebrow": "Ingrid Ascanio · Branch Manager y Mortgage Loan Originator",
     "title": "Sé cómo piensa la persona que lee tu expediente. Yo era esa persona.",
-    "body": "La mayoría de los oficiales de préstamo aprendieron el negocio desde las ventas. Yo lo aprendí desde adentro — evaluando expedientes, dirigiendo equipos de procesamiento y defendiendo a propietarios en riesgo de perder su casa — antes de originar mi primer préstamo.",
+    "body": "La mayoría de los oficiales de préstamo aprendieron el negocio desde las ventas. Yo lo aprendí desde adentro (evaluando expedientes, dirigiendo equipos de procesamiento y defendiendo a propietarios en riesgo de perder su casa) antes de originar mi primer préstamo.",
     "body2": "Ese orden importa: por eso mis expedientes se estructuran para ser aprobados, no solo enviados."
   },
   "timeline": {
@@ -15,28 +15,28 @@
     "title": "Todos los lados del escritorio",
     "items": [
       {
-        "era": "2016 — hoy",
+        "era": "2016 a hoy",
         "name": "Branch Manager y Mortgage Loan Originator, Pioneer Mortgage Funding",
-        "desc": "Todo eso, trabajando para ti: la disciplina del banco, la velocidad del operador, la lealtad de la defensora — con la libertad de comparar 50+ prestamistas en vez de defender el menú de un solo banco."
+        "desc": "Todo eso, trabajando para ti: la disciplina del banco, la velocidad del operador, la lealtad de la defensora, con la libertad de comparar 50+ prestamistas en vez de defender el menú de un solo banco."
       },
       {
         "era": "Los años de defensa",
         "name": "Especialista en Loss Mitigation",
-        "desc": "Defensa contra ejecuciones hipotecarias y modificaciones de préstamo — pelear por propietarios en el peor día de su vida financiera. Cambió para siempre lo en serio que me tomo la frase “el préstamo correcto”."
+        "desc": "Defensa contra ejecuciones hipotecarias y modificaciones de préstamo: pelear por propietarios en el peor día de su vida financiera. Cambió para siempre lo en serio que me tomo la frase “el préstamo correcto”."
       },
       {
         "era": "Los años de operaciones",
         "name": "Gerente de Procesamiento",
-        "desc": "Dirigir la maquinaria entre la solicitud y la mesa de cierre. La velocidad, en este negocio, es operaciones — y yo dirigía la operación."
+        "desc": "Dirigir la maquinaria entre la solicitud y la mesa de cierre. La velocidad, en este negocio, es operaciones, y yo dirigía la operación."
       },
       {
         "era": "Los años de banco",
         "name": "Underwriter",
-        "desc": "La persona que dice sí o no. Aprendí exactamente qué hace financiable un expediente — y las cosas pequeñas y corregibles que hunden solicitudes que debieron cerrar."
+        "desc": "La persona que dice sí o no. Aprendí exactamente qué hace financiable un expediente, y las cosas pequeñas y corregibles que hunden solicitudes que debieron cerrar."
       }
     ]
   },
-  "pull": "“Mi meta es pensar fuera de la caja — dentro de las reglas — y estructurar cada negocio para que todos ganen.”",
+  "pull": "“Mi meta es pensar fuera de la caja (dentro de las reglas) y estructurar cada negocio para que todos ganen.”",
   "values": {
     "eyebrow": "Cómo trabajo",
     "title": "Lo que me puedes exigir",
@@ -47,11 +47,11 @@
       },
       {
         "name": "La verdad, temprano",
-        "desc": "Si tu expediente necesita seis meses de trabajo de crédito antes de estar listo, lo vas a escuchar en nuestra primera llamada — con un plan incluido. La falsa esperanza pierde tu tiempo; un mapa real, no."
+        "desc": "Si tu expediente necesita seis meses de trabajo de crédito antes de estar listo, lo vas a escuchar en nuestra primera llamada, con un plan incluido. La falsa esperanza pierde tu tiempo; un mapa real, no."
       },
       {
         "name": "En tu idioma",
-        "desc": "Todo el proceso ocurre en español o en inglés — no solo la charla, sino los documentos, las explicaciones y el cierre. Miami no merece menos."
+        "desc": "Todo el proceso ocurre en español o en inglés, no solo la charla, sino los documentos, las explicaciones y el cierre. Miami no merece menos."
       },
       {
         "name": "Localizable, humanamente",
@@ -64,7 +64,7 @@
     "title": "La industria también confía",
     "items": [
       {
-        "name": "FAMP Miami — Vicepresidenta, 2025–2026",
+        "name": "FAMP Miami · Vicepresidenta, 2025–2026",
         "desc": "Liderazgo electo en la Asociación de Profesionales Hipotecarios de la Florida, capítulo Miami."
       },
       {
@@ -80,6 +80,6 @@
   "cta": {
     "eyebrow": "Trabaja con Ingrid",
     "title": "Veinte años de conocimiento hipotecario. Quince minutos de tu tiempo.",
-    "body": "Cuéntame dónde estás — soñando, buscando, o bajo contrato y con nervios. Yo te digo exactamente qué sigue."
+    "body": "Cuéntame dónde estás: soñando, buscando, o bajo contrato y con nervios. Yo te digo exactamente qué sigue."
   }
 }

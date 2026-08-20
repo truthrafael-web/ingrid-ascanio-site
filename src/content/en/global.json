@@ -25,7 +25,7 @@
     { "label": "Refinance", "path": "/refinance/", "desc": "Honest math on lowering your payment" },
     { "label": "Loan options", "path": "/loan-options/", "desc": "Seven programs, one right fit" },
     { "label": "About Ingrid", "path": "/about/", "desc": "20+ years on every side of the desk" },
-    { "label": "Contact", "path": "/contact/", "desc": "Call, text, or write — same-day answers" }
+    { "label": "Contact", "path": "/contact/", "desc": "Call, text, or write: same-day answers" }
   ],
   "menu": {
     "label": "Menu",
@@ -46,23 +46,23 @@
   "contactPanel": {
     "eyebrow": "The next step",
     "title": "15 minutes with Ingrid beats a week of googling.",
-    "body": "No obligation, no pressure. Tell her where you are — she'll tell you exactly what's possible and what happens next.",
+    "body": "No obligation, no pressure. Tell her where you are. She'll tell you exactly what's possible and what happens next.",
     "phoneLabel": "Call or text",
     "emailLabel": "Email"
   },
   "form": {
     "loading": "Sending…",
-    "success": "Got it — Ingrid's team will be in touch within one business day.",
+    "success": "Got it. Ingrid's team will be in touch within one business day.",
     "error": "Something went wrong sending your message. Call or text (786) 250-0922 instead."
   },
   "footer": {
-    "blurb": "Local mortgage guidance for Miami, Hollywood, and all of Florida — with access to 50+ lenders under one roof.",
+    "blurb": "Local mortgage guidance for Miami, Hollywood, and all of Florida, with access to 50+ lenders under one roof.",
     "loanOptionsTitle": "Loan options",
     "companyTitle": "Pages",
     "getStartedTitle": "Get started",
     "language": "Ver el sitio en español",
     "legalLine": "Pioneer Mortgage Funding · Company NMLS #1980 · Ingrid Ascanio NMLS #1030712 · Licensed in FL.",
-    "brokerLine": "Mortgage broker only — not a mortgage lender or mortgage correspondent lender.",
+    "brokerLine": "Mortgage broker only. Not a mortgage lender or mortgage correspondent lender.",
     "equalHousing": "All loan approvals are conditional, not guaranteed, and subject to lender review of all information. A loan is conditionally approved when the lender has issued an approval in writing, but until all conditions are met, a loan cannot be funded. Specified rates may not be available for all borrowers. interest rates, and program guidelines, and are subject to change without notice based on applicant’s eligibility and market conditions. PMF, Inc. is an Equal Opportunity Mortgage Broker headquartered in Tampa, Florida. This licensee is performing acts for which a mortgage broker license is required. PMF, Inc. is licensed by the Florida Office of Financial Regulation, NMLS# 1980.  PMF, Inc. is approved to originate Conventional, FHA, VA, and USDA loans, and has the ability to broker such loans to Conventional, FHA, VA, and USDA approved lenders. PMF, Inc. is not acting on behalf of or at the direction of HUD/FHA or the VA.",
     "nmlsAccess": "NMLS Consumer Access",
     "nmlsAccessUrl": "https://www.nmlsconsumeraccess.org/",
@@ -86,41 +86,41 @@
     "helpTitle": "Common questions",
     "articles": [
       { "q": "How is working with Ingrid different from a bank?",
-        "a": "A bank can only offer its own products. Through Pioneer Mortgage Funding, Ingrid shops your file across 50+ lenders — banks, credit unions, and wholesale lenders — and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork.",
+        "a": "A bank can only offer its own products. Through Pioneer Mortgage Funding, Ingrid shops your file across 50+ lenders (banks, credit unions, and wholesale lenders) and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork.",
         "keywords": "bank difference lenders shop options wholesale compare broker vs bank pioneer why choose",
         "link": { "label": "Meet Ingrid →", "to": "about" } },
       { "q": "How fast can I get pre-approved?",
-        "a": "With documents in hand, typically 24–48 hours for a verified letter. On a deadline — an open house this weekend, an offer you want to write — tell her and she moves at that speed.",
+        "a": "With documents in hand, typically 24–48 hours for a verified letter. On a deadline (an open house this weekend, an offer you want to write), tell her and she moves at that speed.",
         "keywords": "preapproval pre approval how fast time letter qualify approved speed quick prequalify",
         "link": { "label": "Start your pre-approval →", "to": "contact" } },
       { "q": "What documents will I need?",
         "a": "The usual list: photo ID, your last 2 pay stubs (or business returns if self-employed), W-2s or 1099s for 2 years, and 2 months of bank statements. Once you connect with Ingrid, she'll tell you exactly what to send and where.",
         "keywords": "documents paperwork docs paystub pay stub w2 1099 bank statements id what do i need send self employed",
         "link": { "label": "Contact Ingrid →", "to": "contact" } },
-      { "q": "I'm a first-time buyer — where do I start?",
-        "a": "With one short call. Low-down-payment programs exist to get you in the door — your exact number depends on your file, and Ingrid will tell you honestly whether now is your moment or what gets you there.",
+      { "q": "I'm a first-time buyer. Where do I start?",
+        "a": "With one short call. Low-down-payment programs exist to get you in the door. Your exact number depends on your file, and Ingrid will tell you honestly whether now is your moment or what gets you there.",
         "keywords": "first time buyer start begin down payment new buyer where to start fha low down help",
         "link": { "label": "Buying a home →", "to": "buy" } },
       { "q": "Can you tell me today's rates?",
-        "a": "Rates change daily and depend on your credit, down payment, and program — anyone quoting a number without looking at your file is guessing. Ingrid prices your exact profile across 50+ lenders and shows you real numbers on a quick call.",
+        "a": "Rates change daily and depend on your credit, down payment, and program. Anyone quoting a number without looking at your file is guessing. Ingrid prices your exact profile across 50+ lenders and shows you real numbers on a quick call.",
         "keywords": "rate rates interest today rate cost pricing how much apr quote points",
         "link": { "label": "See loan options →", "to": "loans" } },
       { "q": "Do you work with investors and foreign nationals?",
-        "a": "Yes — both are core to Ingrid's Miami practice. DSCR loans qualify a rental on its income, and foreign-national programs work without U.S. credit history.",
+        "a": "Yes. Both are core to Ingrid's Miami practice. DSCR loans qualify a rental on its income, and foreign-national programs work without U.S. credit history.",
         "keywords": "investor investors dscr rental income foreign national no credit history international itin property landlord",
         "link": { "label": "Investor & DSCR loans →", "to": "dscr" } },
       { "q": "Does talking to Ingrid cost anything?",
-        "a": "No — the first call is free, no obligation. Broker compensation is disclosed transparently as part of any loan you choose to move forward with.",
+        "a": "No. The first call is free, no obligation. Broker compensation is disclosed transparently as part of any loan you choose to move forward with.",
         "keywords": "cost free fee charge price consultation obligation how much to talk money pay",
         "link": { "label": "Book a free call →", "to": "book" } },
       { "q": "¿Hablan español?",
-        "a": "¡Claro! Ingrid atiende todo el proceso en español — y este sitio también. Toca 'Español' arriba para cambiar todo el sitio.",
+        "a": "¡Claro! Ingrid atiende todo el proceso en español, y este sitio también. Toca 'Español' arriba para cambiar todo el sitio.",
         "keywords": "spanish espanol español language hablan idioma bilingual latino hispanic",
         "link": { "label": "Ver el sitio en español →", "to": "es" } }
     ],
     "noMatch": {
-      "text": "No exact match — but questions like this are exactly what Ingrid answers best on a quick call. She's usually same-day.",
-      "short": "No match yet — try another word, or reach Ingrid below.",
+      "text": "No exact match, but questions like this are exactly what Ingrid answers best on a quick call. She's usually same-day.",
+      "short": "No match yet. Try another word, or reach Ingrid below.",
       "cta": "Book a 15-minute call"
     }
   },
@@ -130,8 +130,8 @@
     "dismiss": "Maybe later",
     "byPage": {
       "home": { "title": "Not sure where to start?", "body": "That's what the first call is for. 15 minutes with Ingrid and you'll know exactly what's possible." },
-      "buy": { "title": "Wondering what you could afford?", "body": "Ingrid will tell you in one short call — before you ever tour a home." },
-      "refinance": { "title": "Curious if refinancing pays off?", "body": "Bring your statement — Ingrid runs the honest math in 15 minutes." },
+      "buy": { "title": "Wondering what you could afford?", "body": "Ingrid will tell you in one short call, before you ever tour a home." },
+      "refinance": { "title": "Curious if refinancing pays off?", "body": "Bring your statement. Ingrid runs the honest math in 15 minutes." },
       "loans": { "title": "Not sure which program fits?", "body": "That's Ingrid's job, not yours. One quick call and you'll know." },
       "about": { "title": "Like what you're reading?", "body": "Twenty years of lending knowledge, 15 minutes of your time." }
     }
@@ -142,13 +142,13 @@
   },
   "seo": {
     "homeCrumb": "Home",
-    "bio": "Ingrid Ascanio is a Branch Manager and licensed Mortgage Loan Originator at Pioneer Mortgage Funding in Hollywood, Florida (NMLS #1030712). A former BankUnited underwriter and processing manager with more than 20 years in residential lending, she arranges purchase, refinance, FHA, VA, jumbo, investor DSCR, foreign-national and construction financing for clients across Miami-Dade, Broward and all of Florida — in English and Spanish. She serves as Vice President of the Miami chapter of the Florida Association of Mortgage Professionals for 2025–2026.",
+    "bio": "Ingrid Ascanio is a Branch Manager and licensed Mortgage Loan Originator at Pioneer Mortgage Funding in Hollywood, Florida (NMLS #1030712). A former BankUnited underwriter and processing manager with more than 20 years in residential lending, she arranges purchase, refinance, FHA, VA, jumbo, investor DSCR, foreign-national and construction financing for clients across Miami-Dade, Broward and all of Florida, in English and Spanish. She serves as Vice President of the Miami chapter of the Florida Association of Mortgage Professionals for 2025–2026.",
     "portraitAlt": "Ingrid Ascanio, Branch Manager and Mortgage Loan Originator at Pioneer Mortgage Funding in Hollywood, Florida",
     "portraitAltAlt": "Ingrid Ascanio, Miami mortgage loan originator and former bank underwriter",
-    "businessAlternateName": "Ingrid Ascanio Mortgage — Pioneer Mortgage Funding, Hollywood Branch",
+    "businessAlternateName": "Ingrid Ascanio Mortgage · Pioneer Mortgage Funding, Hollywood Branch",
     "credentialName": "Mortgage Loan Originator License (NMLS)",
     "occupationName": "Mortgage Loan Originator",
-    "membership": "Florida Association of Mortgage Professionals (FAMP) — Miami Chapter",
+    "membership": "Florida Association of Mortgage Professionals (FAMP), Miami Chapter",
     "awards": [
       "Vice President, FAMP Miami Chapter (2025–2026)",
       "Tradeshow Co-Chair, FAMP Miami Chapter (2025–2026)",
@@ -185,14 +185,14 @@
       "Davie, FL",
       "Florida"
     ],
-    "areasLine": "Serving Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie and Fort Lauderdale — and all of Florida."
+    "areasLine": "Serving Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie and Fort Lauderdale, and all of Florida."
   },
   "notFound": {
     "metaTitle": "Page not found · Ingrid Ascanio · miamipmf.com",
     "metaDesc": "That page has moved or no longer exists. Here is where to go instead.",
     "eyebrow": "Error 404",
     "title": "That page has moved.",
-    "body": "The old site had a different map. Whatever you came for is almost certainly one of these — or one short call with Ingrid.",
+    "body": "The old site had a different map. Whatever you came for is almost certainly one of these, or one short call with Ingrid.",
     "linksTitle": "Try one of these"
   }
 }

@@ -7,7 +7,7 @@
   "hero": {
     "eyebrow": "Refinancing",
     "title": "A refinance is math, not marketing.",
-    "body": "Whatever your goal, I'll model the real numbers — the true monthly change, the actual cost, and the honest break-even point. If the math says keep your current loan, that's exactly what I'll tell you."
+    "body": "Whatever your goal, I'll model the real numbers: the true monthly change, the actual cost, and the honest break-even point. If the math says keep your current loan, that's exactly what I'll tell you."
   },
   "reasons": {
     "eyebrow": "Three smart reasons",
@@ -15,7 +15,7 @@
     "items": [
       {
         "name": "Lower the monthly payment",
-        "desc": "When rates move or your credit has improved since you closed, the same house can cost less every month. The question is whether savings outrun the cost of refinancing — I'll show you the break-even month, not just the new payment.",
+        "desc": "When rates move or your credit has improved since you closed, the same house can cost less every month. The question is whether savings outrun the cost of refinancing. I'll show you the break-even month, not just the new payment.",
         "detail": "Best when: rates have dropped since your loan, your credit score has climbed, or you're shedding FHA mortgage insurance by moving to conventional."
       },
       {
@@ -25,7 +25,7 @@
       },
       {
         "name": "Put equity to work",
-        "desc": "South Florida owners are often sitting on serious equity. A cash-out refinance can consolidate expensive debt, fund a renovation, or seed an investment — against your home's value, at mortgage pricing.",
+        "desc": "South Florida owners are often sitting on serious equity. A cash-out refinance can consolidate expensive debt, fund a renovation, or seed an investment (against your home's value, at mortgage pricing).",
         "detail": "Best when: you're carrying high-interest debt, funding a project with real return, or buying your next property. Not for: vacations. I'll be honest about that too."
       }
     ]
@@ -35,14 +35,14 @@
     "title": "Simpler than your purchase was",
     "items": [
       { "name": "The numbers call", "desc": "Current balance, payment, goal. Fifteen minutes and I'll know whether a refi deserves a deeper look." },
-      { "name": "The honest model", "desc": "New payment, closing costs, break-even month, lifetime interest — side by side with doing nothing." },
+      { "name": "The honest model", "desc": "New payment, closing costs, break-even month, lifetime interest: side by side with doing nothing." },
       { "name": "Close in weeks", "desc": "No house hunt, no sellers. A clean refi typically moves from application to closing in three to five weeks." }
     ]
   },
   "cta": {
     "eyebrow": "Run the numbers",
     "title": "Fifteen minutes tells you if the math works.",
-    "body": "Bring your current statement. I'll bring the honest model — including the version where you change nothing."
+    "body": "Bring your current statement. I'll bring the honest model, including the version where you change nothing."
   },
   "related": {
     "title": "Programs people refinance into",

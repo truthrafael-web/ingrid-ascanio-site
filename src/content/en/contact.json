@@ -1,13 +1,13 @@
 {
   "slug": "contact",
   "meta": {
-    "title": "Contact Ingrid Ascanio — Miami Mortgage Loan Originator",
+    "title": "Contact Ingrid Ascanio · Miami Mortgage Loan Originator",
     "description": "Call, text, email, or book a call with Miami mortgage loan originator Ingrid Ascanio. Same-day response on new inquiries. Se habla español."
   },
   "hero": {
     "eyebrow": "Contact",
     "title": "Start the conversation.",
-    "body": "Two easy ways to start: book a 15-minute call at a time that suits you, or leave your details and Ingrid will call you — within one business day, usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
+    "body": "Two easy ways to start: book a 15-minute call at a time that suits you, or leave your details and Ingrid will call you within one business day, usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
   },
   "form": {
     "title": "Have Ingrid call you",
@@ -39,13 +39,13 @@
   "direct": {
     "title": "Or reach me directly",
     "callTitle": "Call or text",
-    "callDesc": "Fastest for anything urgent — offer deadlines, same-day pre-approval letters.",
+    "callDesc": "Fastest for anything urgent: offer deadlines, same-day pre-approval letters.",
     "emailTitle": "Email",
     "emailDesc": "Best for documents and detailed questions.",
     "visitTitle": "Office",
     "visitDesc": "By appointment.",
     "bookTitle": "Book a call",
-    "bookDesc": "Pick a time that suits you — 15 minutes, no preparation needed.",
+    "bookDesc": "Pick a time that suits you. 15 minutes, no preparation needed.",
     "bookButton": "Open the calendar"
   }
 }

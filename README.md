@@ -106,6 +106,39 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
+## Em dashes removed sitewide · 2026-08-20 · BUILT, NOT YET DEPLOYED
+
+Rafael's instruction: no em dashes (`—`) anywhere on the site. **1,120 served
+occurrences went to 0** across all 31 built pages, EN and ES.
+
+Method: 281 em dashes in `src/content/**/*.json` across 253 strings, each rewritten
+by hand-chosen punctuation rather than a blanket find-replace (a bare deletion leaves
+broken sentences). Choice per site: period where the clause stands alone, colon where
+it introduces a list, comma for a light aside, parentheses for a bracketed aside, and
+`·` for title/label separators (the separator this site already used elsewhere).
+
+**Only punctuation moved.** A word-level diff of every page against a pristine
+pre-change build shows 28 of 31 pages with *zero* word changes and three deliberate
+additions, all grammar-forced by turning a dash into a sentence break:
+`2016 — today` → `2016 to today`, `2016 — hoy` → `2016 a hoy`, and
+`— ofertas FHA cierran` → `. Las ofertas FHA cierran` (Spanish needs the article).
+
+Four non-content spots also fed dashes to the page and were changed:
+`.know-list li::before` in `site.css` (the gold dash bullet on "what to know" lists,
+now an en dash `–` so the design is unchanged), two JSON-LD `name` template literals in
+`build.mjs`, and one upload-fallback string in `main.js` that posts to the CRM.
+Comments inside the three files a browser downloads (`site.css`, `main.js`,
+`ghl-config.js`) were cleaned too. **21 em dashes remain in `build.mjs` and
+`api/upload.mjs`** — both are code comments in files never served to a visitor.
+
+Deliberately untouched: en dashes in ranges (`24–48 hours`, `2025–2026`) are not em
+dashes; Pioneer's `footer.equalHousing` disclaimer (930 chars, verified byte-identical,
+contained none); and every NMLS title string.
+
+Two strings here are compliance-adjacent and changed by **punctuation only, words
+byte-identical**: `footer.brokerLine` ("Mortgage broker only. Not a mortgage lender…")
+and the Privacy SMS-consent paragraph (`legal.json` `privacy.blocks[58]`).
+
 ## Pioneer compliance changes — 2026-08-19 · LIVE (`857775c`)
 
 Three changes PMF compliance (Lauren Brownell, admin coordinator) required before

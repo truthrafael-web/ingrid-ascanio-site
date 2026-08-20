@@ -1,4 +1,4 @@
-/* Ingrid Ascanio · Miami Mortgage — hand-built, no framework */
+/* Ingrid Ascanio · Miami Mortgage - hand-built, no framework */
 
 @font-face {
   font-family: 'Fraunces';
@@ -104,7 +104,7 @@ h3 { font-size: 1.25rem; }
 .menu-btn-glyph span { height: 2px; background: currentColor; border-radius: 2px; }
 .menu-btn-glyph span:last-child { width: 70%; }
 
-/* floating menu panel — anchored under the Menu button, page stays in view */
+/* floating menu panel - anchored under the Menu button, page stays in view */
 .menu-scrim {
   position: fixed; inset: 0; z-index: 190;
   background: rgba(11, 26, 48, .28);
@@ -207,7 +207,7 @@ h3 { font-size: 1.25rem; }
 .hero-caption span { font-size: .85rem; color: var(--ink-soft); }
 .hero-caption-meta { color: var(--gold); font-weight: 600; font-size: .78rem !important; letter-spacing: .04em; }
 
-/* identity card — the credential block under Ingrid's portrait */
+/* identity card - the credential block under Ingrid's portrait */
 .hero-caption.id-card {
   align-items: center; gap: .18rem;
   background: #FCFAF6; border: 1px solid var(--line); border-radius: 14px;
@@ -254,7 +254,7 @@ h3 { font-size: 1.25rem; }
 .panel-body { color: #B9C2D2; max-width: 38rem; margin-top: 1rem; }
 .path-head, .path { max-width: var(--max); margin: 0 auto; }
 
-/* the 3-step strip — the route draws itself: dot pops, line draws to the next dot */
+/* the 3-step strip - the route draws itself: dot pops, line draws to the next dot */
 .steps3 {
   list-style: none; display: grid; grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.5rem, 4vw, 3rem); max-width: var(--max); margin: 2.6rem auto 0; position: relative;
@@ -361,7 +361,7 @@ h3 { font-size: 1.25rem; }
 .split-refi h2 { color: #fff; }
 .split-refi .text-link { color: var(--gold-bright); }
 
-/* ---------- FAQ — white question cards on a warm band ---------- */
+/* ---------- FAQ - white question cards on a warm band ---------- */
 .faq-band { background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .faq { max-width: 46rem; }
 .faq-section .faq { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; align-items: start; }
@@ -460,7 +460,7 @@ h3 { font-size: 1.25rem; }
   border-left: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(-45deg);
 }
 .know-list li { padding: .55rem 0 .55rem 1.4rem; position: relative; color: var(--ink-soft); }
-.know-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold-bright); }
+.know-list li::before { content: '–'; position: absolute; left: 0; color: var(--gold-bright); }
 .others { margin-top: 2.5rem; font-size: .92rem; color: var(--ink-soft); display: flex; gap: .9rem; flex-wrap: wrap; }
 .others a { color: var(--gold); font-weight: 600; text-decoration: none; }
 .others a:hover { text-decoration: underline; }
@@ -496,7 +496,7 @@ h3 { font-size: 1.25rem; }
 /* ---------- cta block ---------- */
 .cta-block { text-align: left; }
 .cta-block .panel-ctas { margin-top: 1.6rem; }
-/* Related-programs row on /buy/ and /refinance/ — reuses the .others treatment already used at
+/* Related-programs row on /buy/ and /refinance/ - reuses the .others treatment already used at
    the foot of every loan page, so it reads as part of the system rather than a bolted-on SEO block. */
 .related-block { padding-top: 2.6rem; padding-bottom: 0; }
 .related-block .others { margin-top: 0; }
@@ -553,7 +553,7 @@ h3 { font-size: 1.25rem; }
 .footer-brand p { font-size: .92rem; }
 .footer-contact { margin-top: 1rem; line-height: 1.9; }
 .footer-contact a { color: var(--gold-bright); text-decoration: none; }
-/* service area — a full-width band under the columns, not a tail on the brand column:
+/* service area - a full-width band under the columns, not a tail on the brand column:
    it's a long line, and keeping it in column 1 made that column run twice the height of
    the other three and left the right side of the footer visibly empty */
 .footer-areas {
@@ -613,7 +613,7 @@ h3 { font-size: 1.25rem; }
 .nudge-dismiss { background: none; border: 0; color: #8FA0B8; font: inherit; font-size: .85rem; cursor: pointer; text-decoration: underline; }
 .nudge-close { position: absolute; top: .5rem; right: .8rem; background: none; border: 0; color: #8FA0B8; font-size: 1.3rem; cursor: pointer; line-height: 1; }
 
-/* ---------- Quick Help — links + answers launcher (no chat, no AI) ---------- */
+/* ---------- Quick Help - links + answers launcher (no chat, no AI) ---------- */
 .qh-btn {
   position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 80;
   width: 3.4rem; height: 3.4rem; border-radius: 50%;

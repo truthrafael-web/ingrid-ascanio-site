@@ -1,5 +1,5 @@
 // ============================================================
-//  GHL integration config — Ingrid Ascanio · Miami Mortgage
+//  GHL integration config - Ingrid Ascanio · Miami Mortgage
 //  ONE place for every GoHighLevel link, embed, and tracking ID.
 //  Fill these in as Ingrid provides them; everything on the site
 //  picks them up automatically. Leave "" to use the built-in
@@ -23,7 +23,7 @@ window.GHL = {
   // link-based upload form.
   uploadFormEmbedUrl: "",
 
-  // Tracking IDs — injected on every page when non-empty.
+  // Tracking IDs - injected on every page when non-empty.
   ga4Id: "",        // e.g. "G-XXXXXXXXXX"
   gtmId: "",        // e.g. "GTM-XXXXXXX"
   metaPixelId: "",  // e.g. "1234567890"

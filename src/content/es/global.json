@@ -25,7 +25,7 @@
     { "label": "Refinanciar", "path": "/es/refinanciar/", "desc": "Matemática honesta para bajar tu cuota" },
     { "label": "Tipos de préstamo", "path": "/es/opciones-de-prestamo/", "desc": "Siete programas, uno hecho para ti" },
     { "label": "Sobre Ingrid", "path": "/es/sobre-ingrid/", "desc": "20+ años en todos los lados del escritorio" },
-    { "label": "Contacto", "path": "/es/contacto/", "desc": "Llama o escribe — respuesta el mismo día" }
+    { "label": "Contacto", "path": "/es/contacto/", "desc": "Llama o escribe: respuesta el mismo día" }
   ],
   "menu": {
     "label": "Menú",
@@ -46,7 +46,7 @@
   "contactPanel": {
     "eyebrow": "El siguiente paso",
     "title": "15 minutos con Ingrid valen más que una semana en Google.",
-    "body": "Sin compromiso y sin presión. Cuéntale dónde estás — ella te dice exactamente qué es posible y qué sigue.",
+    "body": "Sin compromiso y sin presión. Cuéntale dónde estás. Ella te dice exactamente qué es posible y qué sigue.",
     "phoneLabel": "Llama o escribe",
     "emailLabel": "Correo"
   },
@@ -56,13 +56,13 @@
     "error": "Algo falló al enviar tu mensaje. Mejor llama o escribe al (786) 250-0922."
   },
   "footer": {
-    "blurb": "Asesoría hipotecaria local para Miami, Hollywood y toda la Florida — con acceso a más de 50 prestamistas bajo un mismo techo.",
+    "blurb": "Asesoría hipotecaria local para Miami, Hollywood y toda la Florida, con acceso a más de 50 prestamistas bajo un mismo techo.",
     "loanOptionsTitle": "Tipos de préstamo",
     "companyTitle": "Páginas",
     "getStartedTitle": "Comienza",
     "language": "See the site in English",
     "legalLine": "Pioneer Mortgage Funding · NMLS de la compañía #1980 · Ingrid Ascanio NMLS #1030712 · Licenciada en FL.",
-    "brokerLine": "Somos mortgage broker — no somos prestamista hipotecario ni corresponsal de préstamos.",
+    "brokerLine": "Somos mortgage broker. No somos prestamista hipotecario ni corresponsal de préstamos.",
     "equalHousing": "All loan approvals are conditional, not guaranteed, and subject to lender review of all information. A loan is conditionally approved when the lender has issued an approval in writing, but until all conditions are met, a loan cannot be funded. Specified rates may not be available for all borrowers. interest rates, and program guidelines, and are subject to change without notice based on applicant’s eligibility and market conditions. PMF, Inc. is an Equal Opportunity Mortgage Broker headquartered in Tampa, Florida. This licensee is performing acts for which a mortgage broker license is required. PMF, Inc. is licensed by the Florida Office of Financial Regulation, NMLS# 1980.  PMF, Inc. is approved to originate Conventional, FHA, VA, and USDA loans, and has the ability to broker such loans to Conventional, FHA, VA, and USDA approved lenders. PMF, Inc. is not acting on behalf of or at the direction of HUD/FHA or the VA.",
     "nmlsAccess": "NMLS Consumer Access",
     "nmlsAccessUrl": "https://www.nmlsconsumeraccess.org/",
@@ -86,11 +86,11 @@
     "helpTitle": "Preguntas frecuentes",
     "articles": [
       { "q": "¿En qué se diferencia trabajar con Ingrid de un banco?",
-        "a": "Un banco solo puede ofrecer sus propios productos. A través de Pioneer Mortgage Funding, Ingrid compara tu expediente entre más de 50 prestamistas — bancos, cooperativas y prestamistas mayoristas — y te conecta con el que mejor se ajusta a tu perfil y precio. Tú tienes opciones; ella hace el trabajo.",
+        "a": "Un banco solo puede ofrecer sus propios productos. A través de Pioneer Mortgage Funding, Ingrid compara tu expediente entre más de 50 prestamistas (bancos, cooperativas y prestamistas mayoristas) y te conecta con el que mejor se ajusta a tu perfil y precio. Tú tienes opciones; ella hace el trabajo.",
         "keywords": "banco diferencia prestamistas comparar opciones mayorista broker pioneer por que elegir",
         "link": { "label": "Conoce a Ingrid →", "to": "about" } },
       { "q": "¿Qué tan rápido me pueden preaprobar?",
-        "a": "Con los documentos en mano, normalmente 24–48 horas para una carta verificada. ¿Tienes una fecha límite —una casa abierta este fin de semana, una oferta que quieres hacer—? Díselo y se mueve a esa velocidad.",
+        "a": "Con los documentos en mano, normalmente 24–48 horas para una carta verificada. ¿Tienes una fecha límite (una casa abierta este fin de semana, una oferta que quieres hacer)? Díselo y se mueve a esa velocidad.",
         "keywords": "preaprobacion pre aprobacion rapido tiempo carta calificar aprobado prequalificar",
         "link": { "label": "Comienza tu preaprobación →", "to": "contact" } },
       { "q": "¿Qué documentos necesitaré?",
@@ -98,29 +98,29 @@
         "keywords": "documentos papeleo talon de pago w2 1099 estados de cuenta identificacion que necesito enviar independiente",
         "link": { "label": "Contacta a Ingrid →", "to": "contact" } },
       { "q": "Soy comprador por primera vez, ¿por dónde empiezo?",
-        "a": "Con una llamada corta. Existen programas de bajo enganche para ayudarte a entrar — tu número exacto depende de tu expediente, e Ingrid te dirá honestamente si este es tu momento o qué te llevará ahí.",
+        "a": "Con una llamada corta. Existen programas de bajo enganche para ayudarte a entrar. Tu número exacto depende de tu expediente, e Ingrid te dirá honestamente si este es tu momento o qué te llevará ahí.",
         "keywords": "primera vez comprador empezar enganche pago inicial nuevo fha bajo ayuda donde empiezo",
         "link": { "label": "Comprar una casa →", "to": "buy" } },
       { "q": "¿Me pueden decir las tasas de hoy?",
-        "a": "Las tasas cambian a diario y dependen de tu crédito, enganche y programa — quien te da un número sin ver tu expediente está adivinando. Ingrid cotiza tu perfil exacto entre más de 50 prestamistas y te muestra números reales en una llamada rápida.",
+        "a": "Las tasas cambian a diario y dependen de tu crédito, enganche y programa. Quien te da un número sin ver tu expediente está adivinando. Ingrid cotiza tu perfil exacto entre más de 50 prestamistas y te muestra números reales en una llamada rápida.",
         "keywords": "tasa tasas interes tasa de hoy costo precio cuanto cotizar puntos",
         "link": { "label": "Ver opciones de préstamo →", "to": "loans" } },
       { "q": "¿Trabajan con inversionistas y extranjeros?",
-        "a": "Sí — ambos son parte central de la práctica de Ingrid en Miami. Los préstamos DSCR califican una propiedad de renta por sus ingresos, y los programas para extranjeros funcionan sin historial de crédito en EE. UU.",
+        "a": "Sí. Ambos son parte central de la práctica de Ingrid en Miami. Los préstamos DSCR califican una propiedad de renta por sus ingresos, y los programas para extranjeros funcionan sin historial de crédito en EE. UU.",
         "keywords": "inversionista inversionistas dscr renta ingreso extranjero nacional sin credito internacional itin propiedad",
         "link": { "label": "Préstamos de inversión y DSCR →", "to": "dscr" } },
       { "q": "¿Hablar con Ingrid tiene algún costo?",
-        "a": "No — la primera llamada es gratis, sin compromiso. La compensación del broker se divulga de forma transparente como parte de cualquier préstamo que decidas seguir.",
+        "a": "No. La primera llamada es gratis, sin compromiso. La compensación del broker se divulga de forma transparente como parte de cualquier préstamo que decidas seguir.",
         "keywords": "costo gratis tarifa cobro precio consulta compromiso cuanto hablar dinero pagar",
         "link": { "label": "Agenda una llamada gratis →", "to": "book" } },
       { "q": "¿El sitio también está en inglés?",
-        "a": "Sí — toca 'English' en la parte superior para ver todo el sitio en inglés.",
+        "a": "Sí. Toca 'English' en la parte superior para ver todo el sitio en inglés.",
         "keywords": "ingles english idioma cambiar sitio bilingue",
         "link": { "label": "Ver en inglés →", "to": "en" } }
     ],
     "noMatch": {
-      "text": "No hay coincidencia exacta — pero estas son justo las preguntas que Ingrid contesta mejor en una llamada rápida. Normalmente responde el mismo día.",
-      "short": "Sin coincidencia — prueba otra palabra o contacta a Ingrid abajo.",
+      "text": "No hay coincidencia exacta, pero estas son justo las preguntas que Ingrid contesta mejor en una llamada rápida. Normalmente responde el mismo día.",
+      "short": "Sin coincidencia. Prueba otra palabra o contacta a Ingrid abajo.",
       "cta": "Agenda una llamada de 15 minutos"
     }
   },
@@ -130,8 +130,8 @@
     "dismiss": "Quizás luego",
     "byPage": {
       "home": { "title": "¿No sabes por dónde empezar?", "body": "Para eso es la primera llamada. 15 minutos con Ingrid y sabrás exactamente qué es posible." },
-      "buy": { "title": "¿Te preguntas cuánto podrías pagar?", "body": "Ingrid te lo dice en una llamada corta — antes de que visites una sola casa." },
-      "refinance": { "title": "¿Curiosidad por saber si el refi conviene?", "body": "Trae tu estado de cuenta — Ingrid corre la matemática honesta en 15 minutos." },
+      "buy": { "title": "¿Te preguntas cuánto podrías pagar?", "body": "Ingrid te lo dice en una llamada corta, antes de que visites una sola casa." },
+      "refinance": { "title": "¿Curiosidad por saber si el refi conviene?", "body": "Trae tu estado de cuenta. Ingrid corre la matemática honesta en 15 minutos." },
       "loans": { "title": "¿No sabes qué programa te queda?", "body": "Ese es el trabajo de Ingrid, no el tuyo. Una llamada y lo sabrás." },
       "about": { "title": "¿Te gusta lo que lees?", "body": "Veinte años de conocimiento hipotecario, 15 minutos de tu tiempo." }
     }
@@ -142,13 +142,13 @@
   },
   "seo": {
     "homeCrumb": "Inicio",
-    "bio": "Ingrid Ascanio es Branch Manager y Mortgage Loan Originator con licencia en Pioneer Mortgage Funding, en Hollywood, Florida (NMLS #1030712). Ex underwriter de BankUnited y gerente de procesamiento, con más de 20 años en préstamos residenciales, gestiona financiamiento de compra, refinanciamiento, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción para clientes en Miami-Dade, Broward y toda la Florida — en inglés y español. Es Vicepresidenta del capítulo de Miami de la Florida Association of Mortgage Professionals para 2025–2026.",
+    "bio": "Ingrid Ascanio es Branch Manager y Mortgage Loan Originator con licencia en Pioneer Mortgage Funding, en Hollywood, Florida (NMLS #1030712). Ex underwriter de BankUnited y gerente de procesamiento, con más de 20 años en préstamos residenciales, gestiona financiamiento de compra, refinanciamiento, FHA, VA, jumbo, DSCR para inversionistas, extranjeros y construcción para clientes en Miami-Dade, Broward y toda la Florida, en inglés y español. Es Vicepresidenta del capítulo de Miami de la Florida Association of Mortgage Professionals para 2025–2026.",
     "portraitAlt": "Ingrid Ascanio, Branch Manager y Mortgage Loan Originator en Pioneer Mortgage Funding, Hollywood, Florida",
     "portraitAltAlt": "Ingrid Ascanio, Mortgage Loan Originator en Miami y ex underwriter de banco",
-    "businessAlternateName": "Ingrid Ascanio Hipotecas — Pioneer Mortgage Funding, Sucursal Hollywood",
+    "businessAlternateName": "Ingrid Ascanio Hipotecas · Pioneer Mortgage Funding, Sucursal Hollywood",
     "credentialName": "Licencia de Originador de Préstamos Hipotecarios (NMLS)",
     "occupationName": "Mortgage Loan Originator",
-    "membership": "Florida Association of Mortgage Professionals (FAMP) — Capítulo de Miami",
+    "membership": "Florida Association of Mortgage Professionals (FAMP), Capítulo de Miami",
     "awards": [
       "Vicepresidenta, Capítulo FAMP Miami (2025–2026)",
       "Co-Chair del Tradeshow, Capítulo FAMP Miami (2025–2026)",
@@ -185,6 +185,6 @@
       "Davie, FL",
       "Florida"
     ],
-    "areasLine": "Sirviendo Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie y Fort Lauderdale — y toda la Florida."
+    "areasLine": "Sirviendo Miami, Hollywood, Aventura, Miami Beach, Coral Gables, Doral, Kendall, Pembroke Pines, Hallandale Beach, Weston, Davie y Fort Lauderdale, y toda la Florida."
   }
 }
