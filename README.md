@@ -106,10 +106,12 @@ Deploy the **`Website/` folder as the project root** on Vercel (needed so the
 `vercel.json` already sets the build (`node build.mjs`) and output (`dist`).
 Plain-static hosts work too — everything except direct file upload degrades cleanly.
 
-## Em dashes removed sitewide · 2026-08-20 · BUILT, NOT YET DEPLOYED
+## Em dashes removed sitewide · 2026-08-20 · LIVE (`1d0fd97`)
 
 Rafael's instruction: no em dashes (`—`) anywhere on the site. **1,120 served
-occurrences went to 0** across all 31 built pages, EN and ES.
+occurrences went to 0** across all 31 built pages, EN and ES. Verified on the live
+domain after deploy: all 30 sitemap URLs plus the 404 page, `site.css`, `main.js`
+and `ghl-config.js` return zero.
 
 Method: 281 em dashes in `src/content/**/*.json` across 253 strings, each rewritten
 by hand-chosen punctuation rather than a blanket find-replace (a bare deletion leaves
@@ -138,6 +140,18 @@ contained none); and every NMLS title string.
 Two strings here are compliance-adjacent and changed by **punctuation only, words
 byte-identical**: `footer.brokerLine` ("Mortgage broker only. Not a mortgage lender…")
 and the Privacy SMS-consent paragraph (`legal.json` `privacy.blocks[58]`).
+
+**Shipped in the same commit — one NMLS title miss.** The homepage meta description
+still read "Ingrid Ascanio, licensed **loan originator**", the only title left on the
+site outside Lauren Brownell's permitted set (2026-08-19 above); it survived that pass
+because it is invisible on the page. Now "licensed Mortgage Loan Originator", which
+fixes it in four places at once: `meta description`, `og:description`,
+`twitter:description` and the JSON-LD. The ES homepage already read correctly.
+
+Still deliberately as-is: the two "loan officers" in the EN/ES About hero
+("Most loan officers learned lending from the sales side" / "La mayoría de los
+oficiales de préstamo…"). That is the profession in general, not Ingrid's title, so
+the compliance instruction does not reach it — the same call recorded 2026-08-19.
 
 ## Pioneer compliance changes — 2026-08-19 · LIVE (`857775c`)
 
