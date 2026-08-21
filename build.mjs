@@ -435,7 +435,7 @@ function footer(g, loans, pageType, altPath) {
     + `<a href="${contactHref}" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>`
     + `<a href="${contactHref}#contact-form">${esc(g.cta.callback)}</a>`
     + `<a class="footer-lang" href="${altPath}" hreflang="${g.lang === 'en' ? 'es' : 'en'}" title="${esc(g.microbar.switchHint)}">${esc(g.footer.language)}</a>`;
-  const i18n = { lang: g.lang, quickhelp: g.quickhelp, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path };
+  const i18n = { lang: g.lang, roxy: g.roxy, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path, phone: g.person.phone, phoneHref: g.person.phoneHref };
   return `</main>
 <a class="book-bar" href="#" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>
 <footer class="site-footer">
@@ -747,6 +747,13 @@ function formField(label, input, req) {
   return `<label class="field"><span>${esc(label)}${star}</span>${input}</label>`;
 }
 
+// CONSENT BOXES - read before touching either one.
+// consent_sms carries `required` (Rafael's call, 2026-08-21): the form will not submit without
+// permission to text, so every lead that reaches GHL is textable.
+// consent_marketing is deliberately OPTIONAL and unchecked. Mandatory marketing consent is not
+// valid express consent and is exactly what an A2P reviewer looks for, so it must never get
+// `required`. This is the same reasoning that removed both in 3750397; only the SMS half was
+// reversed, and only because Rafael weighed it with the risk in front of him.
 function renderContact(lang) {
   const { global: g, contact: c } = L[lang];
   const opts = `<option value="" disabled selected>${esc(c.form.interestPh)}</option>`
@@ -772,10 +779,10 @@ function renderContact(lang) {
     ${formField(c.form.interest, `<select name="interest" required>${opts}</select>`, true)}
     ${formField(c.form.message, `<textarea name="message" rows="5" required placeholder="${esc(c.form.messagePh)}"></textarea>`, true)}
     <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label class="consent"><input type="checkbox" name="consent_sms"><span>${esc(c.form.consentSms)}</span></label>
+    <label class="consent"><input type="checkbox" name="consent_sms" required><span>${esc(c.form.consentSms)}</span></label>
     <label class="consent"><input type="checkbox" name="consent_marketing"><span>${esc(c.form.consentMarketing)}</span></label>
     <button class="btn btn-navy btn-xl" type="submit">${esc(c.form.submit)}</button>
-    <p class="form-status" role="status" data-loading="${esc(g.form.loading)}" data-success="${esc(g.form.success)}" data-error="${esc(g.form.error)}"></p>
+    <p class="form-status" role="status" data-loading="${esc(g.form.loading)}" data-success="${esc(g.form.success)}" data-error="${esc(g.form.error)}" data-consent="${esc(g.form.consent)}"></p>
     <p class="form-legal"><a href="${legalHref('privacy')}">${esc(g.footer.privacy)}</a> <span aria-hidden="true">|</span> <a href="${legalHref('terms')}">${esc(g.footer.terms)}</a></p>
   </form>
   <aside class="contact-direct reveal">

@@ -150,7 +150,14 @@
     function setStatus(cls, txt) { if (status) { status.className = 'form-status ' + cls; status.textContent = txt || ''; } }
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!form.checkValidity()) {
+        /* the SMS consent box is the one blocker a visitor can miss without seeing an empty
+           field, so it gets a written line of its own on top of the browser's own bubble */
+        var smsBox = form.querySelector('input[name="consent_sms"][required]');
+        setStatus('err', smsBox && !smsBox.checked ? status.getAttribute('data-consent') : '');
+        form.reportValidity();
+        return;
+      }
       if (form.querySelector('.hp') && form.querySelector('.hp').value) return;
       var data = collect(form, extraType);
       var btn = form.querySelector('[type="submit"]');
@@ -224,189 +231,178 @@
     }, (N.delaySeconds || 16) * 1000);
   }
 
-  /* ---------- Quick Help - links + answers launcher (no chat, no AI) ---------- */
-  var QH = I18N.quickhelp;
-  if (QH && QH.articles) {
-    var QIC = {
-      help: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.5 2.5 0 1 1 3.4 2.4c-.8.3-.9 1-.9 1.6"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>',
-      close: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>',
-      home: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>',
-      qmark: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.5 2.5 0 1 1 3.4 2.4c-.8.3-.9 1-.9 1.6"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>',
-      search: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>',
+  /* ---------- Roxy - Ingrid's corner shortcuts (a menu, not a chat: no message box, no AI) ---------- */
+  var RX = I18N.roxy;
+  if (RX && RX.actions) {
+    var RIC = {
+      calendar: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>',
+      callback: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.1v2.6a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.3 4a1.9 1.9 0 0 1 1.9-2.1h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L7.9 9.2a15 15 0 0 0 5.6 5.6l1.1-1.1a1.9 1.9 0 0 1 2-.4c.8.3 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/><path d="M15 3.5h5.5V9"/><path d="M20.5 3.5 15 9"/></svg>',
+      phone: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.1v2.6a1.9 1.9 0 0 1-2.1 1.9 18.6 18.6 0 0 1-8.1-2.9 18.3 18.3 0 0 1-5.6-5.6A18.6 18.6 0 0 1 2.3 4a1.9 1.9 0 0 1 1.9-2.1h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L7.9 9.2a15 15 0 0 0 5.6 5.6l1.1-1.1a1.9 1.9 0 0 1 2-.4c.8.3 1.7.6 2.6.7a1.9 1.9 0 0 1 1.6 1.9z"/></svg>',
+      loans: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+      person: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>',
       chev: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
       back: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>'
     };
 
-    function qhHref(to) {
-      var es = lang === 'es';
+    var rxEs = lang === 'es';
+    function rxHref(to) {
       switch (to) {
         case 'book': return calendarHref();
-        case 'preapproval': return GHL.formUrl || (es ? '/es/contacto/' : '/contact/');
-        case 'loans': return es ? '/es/opciones-de-prestamo/' : '/loan-options/';
-        case 'contact': return es ? '/es/contacto/' : '/contact/';
-        case 'about': return es ? '/es/sobre-ingrid/' : '/about/';
-        case 'buy': return es ? '/es/comprar/' : '/buy/';
-        case 'dscr': return es ? '/es/opciones-de-prestamo/inversionista-dscr/' : '/loan-options/investor-dscr/';
+        case 'callback': return document.getElementById('contact-form') ? '#contact-form' : contactPath + '#contact-form';
+        case 'phone': return I18N.phoneHref || 'tel:+17862500922';
+        case 'preapproval': return GHL.formUrl || contactPath;
+        case 'loans': return rxEs ? '/es/opciones-de-prestamo/' : '/loan-options/';
+        case 'contact': return contactPath;
+        case 'about': return rxEs ? '/es/sobre-ingrid/' : '/about/';
+        case 'buy': return rxEs ? '/es/comprar/' : '/buy/';
+        case 'dscr': return rxEs ? '/es/opciones-de-prestamo/inversionista-dscr/' : '/loan-options/investor-dscr/';
         case 'es': return '/es/';
         case 'en': return '/';
         default: return to || '#';
       }
     }
-    function qhExternal(to) { return to === 'book' && !!GHL.calendarUrl; }
+    function rxExternal(to) { return to === 'book' && !!GHL.calendarUrl; }
 
-    var qBtn = document.createElement('button');
-    qBtn.className = 'qh-btn'; qBtn.type = 'button';
-    qBtn.setAttribute('aria-label', QH.title);
-    qBtn.innerHTML = '<span class="qh-btn-open">' + QIC.help + '</span><span class="qh-btn-close">' + QIC.close + '</span>';
+    var rxBtn = document.createElement('button');
+    rxBtn.className = 'roxy-btn'; rxBtn.type = 'button';
+    rxBtn.setAttribute('aria-expanded', 'false');
+    rxBtn.innerHTML = '<span class="roxy-ava" aria-hidden="true">' + RX.name.charAt(0) + '</span><span class="roxy-btn-label"></span>';
+    rxBtn.querySelector('.roxy-btn-label').textContent = RX.name;
+    rxBtn.setAttribute('aria-label', RX.name + ': ' + RX.sub);
 
-    var qPanel = document.createElement('div');
-    qPanel.className = 'qh-panel';
-    qPanel.setAttribute('role', 'dialog');
-    qPanel.setAttribute('aria-label', QH.title);
-    qPanel.innerHTML =
-      '<div class="qh-view qh-view-home">' +
-        '<div class="qh-home-hero"><div class="qh-home-brand"><img src="/assets/img/pmf-logo-transparent.png" alt="Pioneer Mortgage Funding" width="120"></div><h2></h2></div>' +
-        '<div class="qh-home-body">' +
-          '<label class="qh-search qh-home-search">' + QIC.search + '<input type="text" autocomplete="off"></label>' +
-          '<div class="qh-home-results" hidden></div>' +
-          '<div class="qh-home-cards"></div>' +
+    var rxPanel = document.createElement('div');
+    rxPanel.className = 'roxy-panel';
+    rxPanel.setAttribute('role', 'dialog');
+    rxPanel.setAttribute('aria-label', RX.name);
+    rxPanel.innerHTML =
+      '<div class="roxy-view roxy-view-home">' +
+        '<div class="roxy-head">' +
+          '<span class="roxy-ava" aria-hidden="true">' + RX.name.charAt(0) + '</span>' +
+          '<div class="roxy-head-t"><h2></h2><p></p></div>' +
+          '<button type="button" class="roxy-close">&times;</button>' +
         '</div>' +
+        '<div class="roxy-body"></div>' +
+        '<div class="roxy-foot"><button type="button" class="roxy-faq-link"></button></div>' +
       '</div>' +
-      '<div class="qh-view qh-view-help" hidden>' +
-        '<div class="qh-help-head"><button type="button" class="qh-help-back" hidden aria-label="Back">' + QIC.back + '</button><strong></strong></div>' +
-        '<div class="qh-help-body">' +
-          '<label class="qh-search">' + QIC.search + '<input type="text" autocomplete="off"></label>' +
-          '<div class="qh-help-list"></div>' +
-          '<div class="qh-nomatch" hidden><p class="qh-nomatch-text"></p><a class="qh-book qh-nomatch-cta"></a></div>' +
-          '<article class="qh-article" hidden><h3></h3><p></p><a class="qh-book qh-article-link" hidden></a></article>' +
+      '<div class="roxy-view roxy-view-faq" hidden>' +
+        '<div class="roxy-faq-head"><button type="button" class="roxy-back">' + RIC.back + '</button><strong></strong></div>' +
+        '<div class="roxy-faq-body"><div class="roxy-faq-list"></div>' +
+          '<article class="roxy-article" hidden><h3></h3><p></p><a class="roxy-article-link" hidden></a></article>' +
         '</div>' +
-      '</div>' +
-      '<nav class="qh-tabs">' +
-        '<button type="button" data-view="home" class="on">' + QIC.home + '<span></span></button>' +
-        '<button type="button" data-view="help">' + QIC.qmark + '<span></span></button>' +
-      '</nav>';
+      '</div>';
 
-    qPanel.querySelector('.qh-home-hero h2').textContent = QH.home.hi;
-    qPanel.querySelectorAll('.qh-search input').forEach(function (i) { i.placeholder = QH.home.searchPh; });
-    var qHelpHead = qPanel.querySelector('.qh-help-head strong');
-    qHelpHead.textContent = QH.helpTitle;
-    var qTabBtns = qPanel.querySelectorAll('.qh-tabs button');
-    qTabBtns[0].querySelector('span').textContent = QH.tabs.home;
-    qTabBtns[1].querySelector('span').textContent = QH.tabs.help;
+    rxPanel.querySelector('.roxy-head h2').textContent = RX.greeting;
+    rxPanel.querySelector('.roxy-head p').textContent = RX.sub;
+    rxPanel.querySelector('.roxy-close').setAttribute('aria-label', RX.close);
+    rxPanel.querySelector('.roxy-faq-link').textContent = RX.faqLink;
+    rxPanel.querySelector('.roxy-faq-head strong').textContent = RX.faqTitle;
+    var rxBack = rxPanel.querySelector('.roxy-back');
+    rxBack.setAttribute('aria-label', RX.back);
 
-    var qCards = qPanel.querySelector('.qh-home-cards');
-    QH.home.cards.forEach(function (c) {
+    /* the 3-5 prominent actions */
+    var rxBody = rxPanel.querySelector('.roxy-body');
+    RX.actions.forEach(function (act) {
       var a = document.createElement('a');
-      a.className = 'qh-card'; a.href = qhHref(c.to);
-      if (qhExternal(c.to)) { a.target = '_blank'; a.rel = 'noopener'; }
-      a.innerHTML = '<span class="qh-card-text"><strong></strong></span>' + QIC.chev;
-      a.querySelector('strong').textContent = c.label;
-      qCards.appendChild(a);
+      a.className = 'roxy-card'; a.href = rxHref(act.to);
+      if (rxExternal(act.to)) { a.target = '_blank'; a.rel = 'noopener'; }
+      a.innerHTML = '<span class="roxy-ico" aria-hidden="true">' + (RIC[act.icon] || RIC.chev) + '</span>' +
+        '<span class="roxy-card-t"><strong></strong><span></span></span>' + RIC.chev;
+      a.querySelector('strong').textContent = act.label;
+      a.querySelector('.roxy-card-t span').textContent = (act.desc || '').replace('{phone}', I18N.phone || '');
+      a.addEventListener('click', function () { rxSet(false); });
+      rxBody.appendChild(a);
     });
 
-    var qNoMatch = qPanel.querySelector('.qh-nomatch');
-    qNoMatch.querySelector('.qh-nomatch-text').textContent = QH.noMatch.text;
-    var qNmCta = qNoMatch.querySelector('.qh-nomatch-cta');
-    qNmCta.textContent = QH.noMatch.cta; qNmCta.href = calendarHref();
-    if (GHL.calendarUrl) { qNmCta.target = '_blank'; qNmCta.rel = 'noopener'; }
+    document.body.appendChild(rxBtn);
+    document.body.appendChild(rxPanel);
 
-    document.body.appendChild(qBtn);
-    document.body.appendChild(qPanel);
-
-    var qIsOpen = false;
-    function qhSet(open) {
-      qIsOpen = open;
-      qPanel.classList.toggle('open', open);
-      qBtn.classList.toggle('open', open);
-      qBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var rxOpen = false;
+    function rxSet(open) {
+      rxOpen = open;
+      rxPanel.classList.toggle('open', open);
+      rxBtn.classList.toggle('open', open);
+      rxBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (!open) rxShow('home');
     }
-    qBtn.addEventListener('click', function () { qhSet(!qIsOpen); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && qIsOpen) { qhSet(false); qBtn.focus(); } });
+    rxBtn.addEventListener('click', function () { rxSet(!rxOpen); });
+    rxPanel.querySelector('.roxy-close').addEventListener('click', function () { rxSet(false); rxBtn.focus(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rxOpen) { rxSet(false); rxBtn.focus(); } });
 
-    var qViews = { home: qPanel.querySelector('.qh-view-home'), help: qPanel.querySelector('.qh-view-help') };
-    function qhShow(v) {
-      Object.keys(qViews).forEach(function (k) { qViews[k].hidden = k !== v; });
-      qTabBtns.forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-view') === v); });
+    var rxViews = { home: rxPanel.querySelector('.roxy-view-home'), faq: rxPanel.querySelector('.roxy-view-faq') };
+    function rxShow(v) { Object.keys(rxViews).forEach(function (k) { rxViews[k].hidden = k !== v; }); }
+
+    /* secondary layer: the 8 curated answers, one tap away from the actions */
+    var rxList = rxPanel.querySelector('.roxy-faq-list');
+    var rxArticle = rxPanel.querySelector('.roxy-article');
+    function rxRenderList() {
+      rxArticle.hidden = true; rxList.hidden = false;
+      rxPanel.querySelector('.roxy-faq-head strong').textContent = RX.faqTitle;
     }
-    qTabBtns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var v = b.getAttribute('data-view');
-        qhShow(v);
-        if (v === 'help') qhRenderList(qhSearch(qHelpInput.value));
-      });
-    });
-
-    /* real client-side search over the curated FAQ - question + answer + keyword tags */
-    var qArts = QH.articles;
-    function qhSearch(query) {
-      var q = (query || '').toLowerCase().trim();
-      if (!q) return qArts.map(function (art, idx) { return { art: art, idx: idx, score: 0 }; });
-      var tokens = q.split(/\s+/).filter(function (t) { return t.length >= 2; });
-      var res = [];
-      qArts.forEach(function (art, idx) {
-        var hay = (art.q + ' ' + art.a + ' ' + (art.keywords || '')).toLowerCase();
-        var score = 0;
-        if (art.q.toLowerCase().indexOf(q) !== -1) score += 10;
-        if (hay.indexOf(q) !== -1) score += 4;
-        tokens.forEach(function (t) { if (hay.indexOf(t) !== -1) score += 2; });
-        if (score > 0) res.push({ art: art, idx: idx, score: score });
-      });
-      res.sort(function (a, b) { return b.score - a.score; });
-      return res;
-    }
-
-    var qHelpList = qPanel.querySelector('.qh-help-list');
-    var qHelpInput = qPanel.querySelector('.qh-view-help .qh-search input');
-    var qArticle = qPanel.querySelector('.qh-article');
-    var qBack = qPanel.querySelector('.qh-help-back');
-    function qhRow(item) {
+    (RX.articles || []).forEach(function (art) {
       var b = document.createElement('button');
-      b.type = 'button'; b.className = 'qh-art-row';
-      b.innerHTML = '<span></span>' + QIC.chev;
-      b.querySelector('span').textContent = item.art.q;
-      b.addEventListener('click', function () { qhOpenArticle(item.art); });
-      return b;
-    }
-    function qhRenderList(results) {
-      qArticle.hidden = true; qBack.hidden = true; qHelpList.hidden = false;
-      qHelpHead.textContent = QH.helpTitle;
-      qHelpList.innerHTML = '';
-      if (!results.length) { qNoMatch.hidden = false; return; }
-      qNoMatch.hidden = true;
-      results.forEach(function (r) { qHelpList.appendChild(qhRow(r)); });
-    }
-    function qhOpenArticle(art) {
-      qhShow('help');
-      qHelpList.hidden = true; qNoMatch.hidden = true; qBack.hidden = false; qArticle.hidden = false;
-      qArticle.querySelector('h3').textContent = art.q;
-      qArticle.querySelector('p').textContent = art.a;
-      var link = qArticle.querySelector('.qh-article-link');
-      if (art.link && art.link.to) {
-        link.hidden = false; link.textContent = art.link.label; link.href = qhHref(art.link.to);
-        if (qhExternal(art.link.to)) { link.target = '_blank'; link.rel = 'noopener'; } else { link.removeAttribute('target'); }
-      } else { link.hidden = true; }
-    }
-    qBack.addEventListener('click', function () { qhRenderList(qhSearch(qHelpInput.value)); });
-    qHelpInput.addEventListener('input', function () { qhRenderList(qhSearch(qHelpInput.value)); });
-
-    var qHomeInput = qPanel.querySelector('.qh-home-search input');
-    var qHomeResults = qPanel.querySelector('.qh-home-results');
-    qHomeInput.addEventListener('input', function () {
-      var q = qHomeInput.value.trim();
-      if (!q) { qHomeResults.hidden = true; qHomeResults.innerHTML = ''; qCards.hidden = false; return; }
-      var results = qhSearch(q);
-      qCards.hidden = true; qHomeResults.hidden = false; qHomeResults.innerHTML = '';
-      if (!results.length) {
-        var d = document.createElement('div'); d.className = 'qh-noresult'; d.textContent = QH.noMatch.short;
-        qHomeResults.appendChild(d);
-      } else {
-        results.forEach(function (r) { qHomeResults.appendChild(qhRow(r)); });
-      }
+      b.type = 'button'; b.className = 'roxy-q';
+      b.innerHTML = '<span></span>' + RIC.chev;
+      b.querySelector('span').textContent = art.q;
+      b.addEventListener('click', function () {
+        rxList.hidden = true; rxArticle.hidden = false;
+        rxArticle.querySelector('h3').textContent = art.q;
+        rxArticle.querySelector('p').textContent = art.a;
+        var link = rxArticle.querySelector('.roxy-article-link');
+        if (art.link && art.link.to) {
+          link.hidden = false; link.textContent = art.link.label; link.href = rxHref(art.link.to);
+          if (rxExternal(art.link.to)) { link.target = '_blank'; link.rel = 'noopener'; } else { link.removeAttribute('target'); }
+        } else { link.hidden = true; }
+      });
+      rxList.appendChild(b);
     });
+    rxPanel.querySelector('.roxy-faq-link').addEventListener('click', function () { rxRenderList(); rxShow('faq'); });
+    rxBack.addEventListener('click', function () { if (rxArticle.hidden) { rxShow('home'); } else { rxRenderList(); } });
 
-    qhRenderList(qhSearch(''));
+    /* ---- the attention bubble: once on arrival, then every N minutes ---- */
+    var RT = RX.teaser;
+    if (RT) {
+      var rxTip = document.createElement('div');
+      rxTip.className = 'roxy-tip';
+      rxTip.setAttribute('role', 'note');
+      rxTip.innerHTML =
+        '<span class="roxy-ava" aria-hidden="true">' + RX.name.charAt(0) + '</span>' +
+        '<span class="roxy-tip-t"><strong></strong><p></p></span>' +
+        '<button type="button" class="roxy-tip-x">&times;</button>';
+      rxTip.querySelector('strong').textContent = RT.title;
+      rxTip.querySelector('p').textContent = RT.body;
+      var rxTipX = rxTip.querySelector('.roxy-tip-x');
+      rxTipX.setAttribute('aria-label', RT.close || 'Close');
+      document.body.appendChild(rxTip);
+
+      var rxTipTimer = null;
+      function rxTipHide() {
+        rxTip.classList.remove('show');
+        rxBtn.classList.remove('nudging');
+        if (rxTipTimer) { clearTimeout(rxTipTimer); rxTipTimer = null; }
+      }
+      function rxTipShow() {
+        /* someone already has Roxy open: skip this beat, don't point a bubble at an open panel */
+        if (rxOpen) return;
+        /* the booking nudge lives in this same corner and sits there until it's dismissed, so it
+           has to yield or Roxy's beat would be starved forever. It has had the corner since the
+           16-second mark and its one CTA is now Roxy's first row, so nothing is lost by retiring it. */
+        var booking = document.querySelector('.nudge.show');
+        if (booking) { booking.classList.remove('show'); sessionStorage.setItem('nudged', '1'); }
+        rxTip.classList.add('show');
+        rxBtn.classList.add('nudging');
+        rxTipTimer = setTimeout(rxTipHide, 10000);
+      }
+      rxTip.addEventListener('click', function (e) {
+        if (e.target === rxTipX) return;
+        rxTipHide(); rxSet(true);
+      });
+      rxTipX.addEventListener('click', rxTipHide);
+      rxBtn.addEventListener('click', rxTipHide);
+
+      setTimeout(rxTipShow, 4000);
+      setInterval(rxTipShow, Math.max(1, RT.everyMinutes || 5) * 60 * 1000);
+    }
   }
-
   /* ---------- tracking ---------- */
   if (GHL.ga4Id) {
     var g = document.createElement('script');

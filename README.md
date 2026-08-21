@@ -55,14 +55,64 @@ to the contact form; if `webhookUrl` were ever cleared, submissions open a
 pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
 (contact / document-upload), `page`, `language`, and all form fields.
 
-## Chat / message widget — REMOVED 2026-07-23
+## Roxy — the corner widget · REBUILT 2026-08-21
 
-The former "Roxy" chat bubble (a hand-coded guided messenger with a fake message
-box) was removed at Rafael's direction: no AI agent will be installed, so a
-message feature with no real responder was misleading. All of its JS/CSS/content
-and the `chatWidget*` config fields are gone; the bottom-right corner is now empty.
-A non-chat replacement — quick links + a question→answer search that routes to
-existing pages — is under consideration but **not yet built**.
+Bottom-right on every page. **Roxy is a menu, not a chat.** She carries **five actions and
+nothing else** — Rafael's instruction: "three to five extremely prominent things that customers
+need to know", no AI agent. There is no message box anywhere in the widget (a scripted check
+asserts `panel.querySelector('input, textarea')` is null on every page).
+
+The five, in order, each with a one-line explanation of what actually happens:
+
+| Action | Goes to | Why it's separate |
+|---|---|---|
+| Book a call with Ingrid | `GHL.calendarUrl`, new tab | the visitor picks the time |
+| Have Ingrid call you | `/contact/#contact-form` | Ingrid picks the time |
+| Call or text Ingrid now | `tel:` from `person.phoneHref` | no waiting at all |
+| See the loan options | `/loan-options/` | what she can do |
+| Who Ingrid is | `/about/` | who she is |
+
+The three "reach her" rows look redundant and are not: they are the three different ways a
+person is willing to start a conversation, and the subtitle on each says which one they're
+choosing. The phone row prints the real number so a desktop visitor can read it without a
+`tel:` handler.
+
+**History.** The original "Roxy" (2026-07-17) was a hand-coded messenger with an AI-assistant
+persona and a fake message box; it was removed 2026-07-23 (`d29589a`) because nothing answered
+it. Its replacement, a neutral **"Quick Help"** launcher with a `?` icon, a search box and a
+Questions tab (`eafa3f7`), shipped the same day. This pass restores the **name and the face**
+Ingrid asked for while keeping the no-AI ruling: `quickhelp` → `roxy` in both `global.json`
+files, `qh-` → `roxy-` across `site.css` and `main.js`, the search box dropped (real keyword
+search over 8 items is machinery nobody needs), and the two-tab bar replaced by one quiet
+**"Common questions"** link in the panel footer. **The 8 curated FAQs are carried over byte-identical
+in EN and ES** and still deep-link to the matching page; they are now a second layer rather than
+half the widget.
+
+Roxy has **no photo**. She is not Ingrid and is not a real person, so she gets a gold monogram
+`R` in the site's serif rather than a face a visitor could mistake for staff.
+
+**Content:** `roxy` block in `src/content/{en,es}/global.json`. The phone subtitle interpolates
+`{phone}` from `person.phone` at render time, so the number still lives in exactly one place
+(see "Phone number" below). **Build payload:** `build.mjs` ships `roxy`, `phone` and `phoneHref`
+into `window.SITE_I18N`.
+
+**The attention bubble (added 2026-08-21, Rafael's instruction).** A navy speech bubble rises from
+the pill **4 seconds after every page load and again every 5 minutes**, auto-hiding after 10 seconds:
+"Hey, it's Roxy. / Ingrid's assistant. Open me for the fastest ways to reach her." Clicking anywhere
+on it opens the panel; the `×` closes just that appearance and the 5-minute beat continues. The pill
+pulses gold three times while it is up. Interval lives in content as `roxy.teaser.everyMinutes`.
+
+⚠️ **The booking nudge now yields the corner.** `.nudge` (the 16-second "Book a 15-minute call" pop-up)
+is fixed to the same bottom-right slot and stays until dismissed, so the first version of this guard
+deferred Roxy's bubble forever, which a scripted clock test caught. On each beat Roxy now **retires the
+booking nudge** (removes `.show`, sets the `nudged` session flag) and takes the corner. Nothing is lost:
+its single CTA is Roxy's first row. Roxy's bubble is in turn suppressed entirely while the panel is open.
+
+**Verified 2026-08-21** by scripted browser run over EN home / contact / about and ES home /
+contacto: launcher opens, five cards present, every `href` resolves (no `#`), no message box,
+FAQ layer opens, an article renders, both back steps work, zero console errors. Rendered and
+looked at on 1440px desktop and a 390px phone in Spanish (the longer language) — all five
+actions fit without scrolling.
 
 ## Newsletter signup — REMOVED 2026-07-25 · LIVE 2026-07-26 (`57a9ab4`)
 
@@ -98,6 +148,23 @@ links forwarded as JSON to the GHL webhook. One-time setup in the Vercel dashboa
 
 Until that's done (or on any non-Vercel host) the form falls back gracefully:
 metadata + share-link go through the client-side webhook/email path instead.
+
+## Tests
+
+`_tests/roxy-and-consent.mjs` checks Roxy's attention bubble and the contact-form consent gate in a
+real browser. The bubble runs on a **mocked clock**, so the 5-minute beat is verified in milliseconds
+instead of waited out, and the webhook is intercepted, so running it **never posts to Ingrid's real
+GHL**. It is what caught the bubble/booking-nudge corner collision on 2026-08-21.
+
+```
+node build.mjs && (cd dist && python3 -m http.server 8899 &)
+cd "<repo root>/Automations/reference-scanner"          # the folder that has playwright installed
+node "<this folder>/_tests/roxy-and-consent.mjs"
+# against a protected preview:
+BASE=https://<preview>.vercel.app SHARE='?_vercel_share=...' node "<...>/_tests/roxy-and-consent.mjs"
+```
+
+Nothing here is served: `_tests/` sits outside `dist/`.
 
 ## Deploy
 
@@ -190,6 +257,23 @@ Side effect worth knowing: the Road Here section had been listing **"Globex
 Lending"** and **"Legal Save"** as former employers. Those read as placeholder
 names rather than real companies. Change 3 deleted them, but her actual work
 history has never been sourced — do not reintroduce company names without it.
+
+## Contact form — SMS CONSENT NOW REQUIRED 2026-08-21
+
+`consent_sms` carries `required`. The form will not submit without it, so **every lead that reaches
+GHL is textable**. Unticked, Submit is blocked and the status line reads "Please check the consent box
+below, then send your message again." (ES: "Por favor marca la casilla…"), on top of the browser's own
+bubble on the box. Copy lives in `form.consent` in both `global.json` files, rendered as `data-consent`
+on `.form-status`.
+
+⚠️ **`consent_marketing` stays OPTIONAL and unchecked, and must never get `required`.** Rafael asked for
+both boxes to be mandatory; he was shown that mandatory *marketing* consent is not valid express consent,
+is the pattern an A2P reviewer looks for, and carries TCPA damages of $500 to $1,500 per text, and he
+chose the SMS-only gate (2026-08-21). This is a deliberate partial reversal of `3750397`, which had
+removed `required` from both. The reasoning is repeated as a comment above `renderContact()` in
+`build.mjs` so the next person to touch it sees it before the code.
+
+Neither box is pre-checked. Checkbox state still posts as explicit `"yes"` / `"no"`.
 
 ## Contact form — RESTRUCTURED 2026-08-05 · LIVE (`0193935`)
 
