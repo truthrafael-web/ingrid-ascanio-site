@@ -149,6 +149,23 @@ links forwarded as JSON to the GHL webhook. One-time setup in the Vercel dashboa
 Until that's done (or on any non-Vercel host) the form falls back gracefully:
 metadata + share-link go through the client-side webhook/email path instead.
 
+## Tests
+
+`_tests/roxy-and-consent.mjs` checks Roxy's attention bubble and the contact-form consent gate in a
+real browser. The bubble runs on a **mocked clock**, so the 5-minute beat is verified in milliseconds
+instead of waited out, and the webhook is intercepted, so running it **never posts to Ingrid's real
+GHL**. It is what caught the bubble/booking-nudge corner collision on 2026-08-21.
+
+```
+node build.mjs && (cd dist && python3 -m http.server 8899 &)
+cd "<repo root>/Automations/reference-scanner"          # the folder that has playwright installed
+node "<this folder>/_tests/roxy-and-consent.mjs"
+# against a protected preview:
+BASE=https://<preview>.vercel.app SHARE='?_vercel_share=...' node "<...>/_tests/roxy-and-consent.mjs"
+```
+
+Nothing here is served: `_tests/` sits outside `dist/`.
+
 ## Deploy
 
 Deploy the **`Website/` folder as the project root** on Vercel (needed so the
