@@ -150,7 +150,14 @@
     function setStatus(cls, txt) { if (status) { status.className = 'form-status ' + cls; status.textContent = txt || ''; } }
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!form.checkValidity()) {
+        /* the SMS consent box is the one blocker a visitor can miss without seeing an empty
+           field, so it gets a written line of its own on top of the browser's own bubble */
+        var smsBox = form.querySelector('input[name="consent_sms"][required]');
+        setStatus('err', smsBox && !smsBox.checked ? status.getAttribute('data-consent') : '');
+        form.reportValidity();
+        return;
+      }
       if (form.querySelector('.hp') && form.querySelector('.hp').value) return;
       var data = collect(form, extraType);
       var btn = form.querySelector('[type="submit"]');
@@ -350,6 +357,51 @@
     });
     rxPanel.querySelector('.roxy-faq-link').addEventListener('click', function () { rxRenderList(); rxShow('faq'); });
     rxBack.addEventListener('click', function () { if (rxArticle.hidden) { rxShow('home'); } else { rxRenderList(); } });
+
+    /* ---- the attention bubble: once on arrival, then every N minutes ---- */
+    var RT = RX.teaser;
+    if (RT) {
+      var rxTip = document.createElement('div');
+      rxTip.className = 'roxy-tip';
+      rxTip.setAttribute('role', 'note');
+      rxTip.innerHTML =
+        '<span class="roxy-ava" aria-hidden="true">' + RX.name.charAt(0) + '</span>' +
+        '<span class="roxy-tip-t"><strong></strong><p></p></span>' +
+        '<button type="button" class="roxy-tip-x">&times;</button>';
+      rxTip.querySelector('strong').textContent = RT.title;
+      rxTip.querySelector('p').textContent = RT.body;
+      var rxTipX = rxTip.querySelector('.roxy-tip-x');
+      rxTipX.setAttribute('aria-label', RT.close || 'Close');
+      document.body.appendChild(rxTip);
+
+      var rxTipTimer = null;
+      function rxTipHide() {
+        rxTip.classList.remove('show');
+        rxBtn.classList.remove('nudging');
+        if (rxTipTimer) { clearTimeout(rxTipTimer); rxTipTimer = null; }
+      }
+      function rxTipShow() {
+        /* someone already has Roxy open: skip this beat, don't point a bubble at an open panel */
+        if (rxOpen) return;
+        /* the booking nudge lives in this same corner and sits there until it's dismissed, so it
+           has to yield or Roxy's beat would be starved forever. It has had the corner since the
+           16-second mark and its one CTA is now Roxy's first row, so nothing is lost by retiring it. */
+        var booking = document.querySelector('.nudge.show');
+        if (booking) { booking.classList.remove('show'); sessionStorage.setItem('nudged', '1'); }
+        rxTip.classList.add('show');
+        rxBtn.classList.add('nudging');
+        rxTipTimer = setTimeout(rxTipHide, 10000);
+      }
+      rxTip.addEventListener('click', function (e) {
+        if (e.target === rxTipX) return;
+        rxTipHide(); rxSet(true);
+      });
+      rxTipX.addEventListener('click', rxTipHide);
+      rxBtn.addEventListener('click', rxTipHide);
+
+      setTimeout(rxTipShow, 4000);
+      setInterval(rxTipShow, Math.max(1, RT.everyMinutes || 5) * 60 * 1000);
+    }
   }
   /* ---------- tracking ---------- */
   if (GHL.ga4Id) {

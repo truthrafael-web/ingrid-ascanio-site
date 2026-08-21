@@ -587,7 +587,8 @@ h3 { font-size: 1.25rem; }
   html { scroll-behavior: auto; }
   .reveal, .step3, .step3-dot, .step3 h3, .step3 p { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
   .step3::before { transform: none !important; animation: none !important; }
-  .nudge, .roxy-panel { transition: none !important; }
+  .nudge, .roxy-panel, .roxy-tip { transition: none !important; }
+  .roxy-btn.nudging { animation: none !important; }
 }
 
 /* ---------- sticky mobile book bar ---------- */
@@ -631,6 +632,40 @@ h3 { font-size: 1.25rem; }
   background: linear-gradient(150deg, var(--gold-bright) 0%, var(--gold) 100%);
   color: var(--navy); font-family: var(--serif); font-weight: 600; font-size: 1.2rem; line-height: 1;
 }
+/* the attention bubble: same corner slot as the panel, never shown at the same time */
+.roxy-tip {
+  position: fixed; right: 1.2rem; bottom: 5.3rem; z-index: 85;
+  width: min(19rem, calc(100vw - 2.4rem));
+  display: flex; align-items: flex-start; gap: .7rem;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+  color: #fff; border: 1px solid var(--line-navy); border-radius: 16px;
+  padding: .9rem 1rem; cursor: pointer; text-align: left;
+  box-shadow: 0 22px 48px -16px rgba(11, 26, 48, .6);
+  opacity: 0; transform: translateY(12px) scale(.97); pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.roxy-tip.show { opacity: 1; transform: none; pointer-events: auto; }
+.roxy-tip::after {
+  content: ''; position: absolute; right: 2.2rem; bottom: -.44rem;
+  width: .85rem; height: .85rem; background: var(--navy-2);
+  border-right: 1px solid var(--line-navy); border-bottom: 1px solid var(--line-navy);
+  transform: rotate(45deg);
+}
+.roxy-tip .roxy-ava { width: 2.1rem; height: 2.1rem; font-size: 1rem; }
+.roxy-tip-t { min-width: 0; padding-right: .8rem; }
+.roxy-tip strong { display: block; font-family: var(--serif); font-weight: 550; font-size: 1.02rem; color: #fff; line-height: 1.2; }
+.roxy-tip p { font-size: .82rem; color: #B9C2D2; line-height: 1.45; margin-top: .18rem; }
+.roxy-tip-x {
+  position: absolute; top: .3rem; right: .5rem; background: none; border: 0;
+  color: #8FA0B8; font-size: 1.15rem; line-height: 1; cursor: pointer; padding: .15rem .3rem;
+}
+.roxy-tip-x:hover { color: var(--gold-bright); }
+.roxy-btn.nudging { animation: roxy-pulse 2.1s ease-in-out 3; }
+@keyframes roxy-pulse {
+  0%, 100% { box-shadow: 0 16px 38px -12px rgba(11, 26, 48, .55), 0 0 0 0 rgba(227, 178, 60, .55); }
+  50%      { box-shadow: 0 16px 38px -12px rgba(11, 26, 48, .55), 0 0 0 .6rem rgba(227, 178, 60, 0); }
+}
+
 .roxy-panel {
   position: fixed; right: 1.2rem; bottom: 5.3rem; z-index: 90;
   width: min(25.5rem, calc(100vw - 2.4rem)); max-height: min(38rem, 78vh);
@@ -717,6 +752,7 @@ h3 { font-size: 1.25rem; }
   /* all five actions have to fit on a phone without hunting, so the panel runs taller
      and the cards run tighter than on desktop */
   .roxy-panel { bottom: 8.1rem; max-height: min(36rem, 72vh); }
+  .roxy-tip { bottom: 8.1rem; }
   .roxy-head { padding: 1rem 1.1rem; }
   .roxy-head h2 { font-size: 1.16rem; }
   .roxy-head p { font-size: .8rem; }

@@ -96,6 +96,18 @@ Roxy has **no photo**. She is not Ingrid and is not a real person, so she gets a
 (see "Phone number" below). **Build payload:** `build.mjs` ships `roxy`, `phone` and `phoneHref`
 into `window.SITE_I18N`.
 
+**The attention bubble (added 2026-08-21, Rafael's instruction).** A navy speech bubble rises from
+the pill **4 seconds after every page load and again every 5 minutes**, auto-hiding after 10 seconds:
+"Hey, it's Roxy. / Ingrid's assistant. Open me for the fastest ways to reach her." Clicking anywhere
+on it opens the panel; the `×` closes just that appearance and the 5-minute beat continues. The pill
+pulses gold three times while it is up. Interval lives in content as `roxy.teaser.everyMinutes`.
+
+⚠️ **The booking nudge now yields the corner.** `.nudge` (the 16-second "Book a 15-minute call" pop-up)
+is fixed to the same bottom-right slot and stays until dismissed, so the first version of this guard
+deferred Roxy's bubble forever, which a scripted clock test caught. On each beat Roxy now **retires the
+booking nudge** (removes `.show`, sets the `nudged` session flag) and takes the corner. Nothing is lost:
+its single CTA is Roxy's first row. Roxy's bubble is in turn suppressed entirely while the panel is open.
+
 **Verified 2026-08-21** by scripted browser run over EN home / contact / about and ES home /
 contacto: launcher opens, five cards present, every `href` resolves (no `#`), no message box,
 FAQ layer opens, an article renders, both back steps work, zero console errors. Rendered and
@@ -228,6 +240,23 @@ Side effect worth knowing: the Road Here section had been listing **"Globex
 Lending"** and **"Legal Save"** as former employers. Those read as placeholder
 names rather than real companies. Change 3 deleted them, but her actual work
 history has never been sourced — do not reintroduce company names without it.
+
+## Contact form — SMS CONSENT NOW REQUIRED 2026-08-21
+
+`consent_sms` carries `required`. The form will not submit without it, so **every lead that reaches
+GHL is textable**. Unticked, Submit is blocked and the status line reads "Please check the consent box
+below, then send your message again." (ES: "Por favor marca la casilla…"), on top of the browser's own
+bubble on the box. Copy lives in `form.consent` in both `global.json` files, rendered as `data-consent`
+on `.form-status`.
+
+⚠️ **`consent_marketing` stays OPTIONAL and unchecked, and must never get `required`.** Rafael asked for
+both boxes to be mandatory; he was shown that mandatory *marketing* consent is not valid express consent,
+is the pattern an A2P reviewer looks for, and carries TCPA damages of $500 to $1,500 per text, and he
+chose the SMS-only gate (2026-08-21). This is a deliberate partial reversal of `3750397`, which had
+removed `required` from both. The reasoning is repeated as a comment above `renderContact()` in
+`build.mjs` so the next person to touch it sees it before the code.
+
+Neither box is pre-checked. Checkbox state still posts as explicit `"yes"` / `"no"`.
 
 ## Contact form — RESTRUCTURED 2026-08-05 · LIVE (`0193935`)
 

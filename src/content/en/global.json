@@ -51,6 +51,7 @@
     "emailLabel": "Email"
   },
   "form": {
+    "consent": "Please check the consent box below, then send your message again.",
     "loading": "Sending…",
     "success": "Got it. Ingrid's team will be in touch within one business day.",
     "error": "Something went wrong sending your message. Call or text (786) 250-0922 instead."
@@ -75,6 +76,7 @@
     "greeting": "Hi, I'm Roxy.",
     "sub": "The fastest ways to reach Ingrid, all in one place.",
     "close": "Close",
+    "teaser": { "title": "Hey, it's Roxy.", "body": "Ingrid's assistant. Open me for the fastest ways to reach her.", "close": "Close", "everyMinutes": 5 },
     "actions": [
       { "to": "book", "icon": "calendar", "label": "Book a call with Ingrid", "desc": "Pick a 15-minute slot on her calendar." },
       { "to": "callback", "icon": "callback", "label": "Have Ingrid call you", "desc": "Leave your number. She calls you back, usually the same day." },

@@ -51,6 +51,7 @@
     "emailLabel": "Correo"
   },
   "form": {
+    "consent": "Por favor marca la casilla de consentimiento y envía tu mensaje de nuevo.",
     "loading": "Enviando…",
     "success": "¡Recibido! El equipo de Ingrid te contacta dentro de un día hábil.",
     "error": "Algo falló al enviar tu mensaje. Mejor llama o escribe al (786) 250-0922."
@@ -75,6 +76,7 @@
     "greeting": "Hola, soy Roxy.",
     "sub": "Las formas más rápidas de comunicarte con Ingrid, en un solo lugar.",
     "close": "Cerrar",
+    "teaser": { "title": "Hola, soy Roxy.", "body": "La asistente de Ingrid. Ábreme para las formas más rápidas de comunicarte con ella.", "close": "Cerrar", "everyMinutes": 5 },
     "actions": [
       { "to": "book", "icon": "calendar", "label": "Agenda una llamada con Ingrid", "desc": "Elige un espacio de 15 minutos en su calendario." },
       { "to": "callback", "icon": "callback", "label": "Haz que Ingrid te llame", "desc": "Deja tu número. Ella te devuelve la llamada, casi siempre el mismo día." },
