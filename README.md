@@ -55,7 +55,7 @@ to the contact form; if `webhookUrl` were ever cleared, submissions open a
 pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
 (contact / document-upload), `page`, `language`, and all form fields.
 
-## Roxy — the corner widget · REBUILT 2026-08-21
+## Roxy — the corner widget · REBUILT 2026-08-21 · LIVE (`fda9a58`)
 
 Bottom-right on every page. **Roxy is a menu, not a chat.** She carries **five actions and
 nothing else** — Rafael's instruction: "three to five extremely prominent things that customers
@@ -107,6 +107,12 @@ is fixed to the same bottom-right slot and stays until dismissed, so the first v
 deferred Roxy's bubble forever, which a scripted clock test caught. On each beat Roxy now **retires the
 booking nudge** (removes `.show`, sets the `nudged` session flag) and takes the corner. Nothing is lost:
 its single CTA is Roxy's first row. Roxy's bubble is in turn suppressed entirely while the panel is open.
+
+**Verified on www.miamipmf.com after the production deploy** (2026-08-21): launcher plus five
+cards on EN and ES, bubble on arrival and again at the 5-minute mark with the booking pop-up
+yielding, click opens the panel, and on the contact page the SMS box is required, the marketing box
+is not, neither is pre-checked, and a submit with it unticked is blocked with the written error. The
+live run aborts every request to the CRM, so it completed no submission against Ingrid's real GHL.
 
 **Verified 2026-08-21** by scripted browser run over EN home / contact / about and ES home /
 contacto: launcher opens, five cards present, every `href` resolves (no `#`), no message box,
@@ -258,7 +264,7 @@ Lending"** and **"Legal Save"** as former employers. Those read as placeholder
 names rather than real companies. Change 3 deleted them, but her actual work
 history has never been sourced — do not reintroduce company names without it.
 
-## Contact form — SMS CONSENT NOW REQUIRED 2026-08-21
+## Contact form — SMS CONSENT NOW REQUIRED 2026-08-21 · LIVE (`fda9a58`)
 
 `consent_sms` carries `required`. The form will not submit without it, so **every lead that reaches
 GHL is textable**. Unticked, Submit is blocked and the status line reads "Please check the consent box
