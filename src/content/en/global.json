@@ -70,20 +70,21 @@
     "terms": "Terms & Conditions",
     "disclaimer": "Disclaimer"
   },
-  "quickhelp": {
-    "title": "Quick Help",
-    "home": {
-      "hi": "Hi, how can we help?",
-      "searchPh": "Search common questions",
-      "cards": [
-        { "label": "Book a 15-minute call with Ingrid", "to": "book" },
-        { "label": "Start your pre-approval", "to": "preapproval" },
-        { "label": "Explore loan options", "to": "loans" },
-        { "label": "Contact Ingrid", "to": "contact" }
-      ]
-    },
-    "tabs": { "home": "Home", "help": "Questions" },
-    "helpTitle": "Common questions",
+  "roxy": {
+    "name": "Roxy",
+    "greeting": "Hi, I'm Roxy.",
+    "sub": "The fastest ways to reach Ingrid, all in one place.",
+    "close": "Close",
+    "actions": [
+      { "to": "book", "icon": "calendar", "label": "Book a call with Ingrid", "desc": "Pick a 15-minute slot on her calendar." },
+      { "to": "callback", "icon": "callback", "label": "Have Ingrid call you", "desc": "Leave your number. She calls you back, usually the same day." },
+      { "to": "phone", "icon": "phone", "label": "Call or text Ingrid now", "desc": "{phone} · fastest for anything urgent." },
+      { "to": "loans", "icon": "loans", "label": "See the loan options", "desc": "Conventional, FHA, VA, jumbo, investor, foreign national." },
+      { "to": "about", "icon": "person", "label": "Who Ingrid is", "desc": "20+ years in lending, former bank underwriter. Her story." }
+    ],
+    "faqLink": "Common questions",
+    "faqTitle": "Common questions",
+    "back": "Back",
     "articles": [
       { "q": "How is working with Ingrid different from a bank?",
         "a": "A bank can only offer its own products. Through Pioneer Mortgage Funding, Ingrid shops your file across 50+ lenders (banks, credit unions, and wholesale lenders) and matches you to the one whose guidelines and pricing actually fit. You get options; she does the legwork.",
@@ -117,12 +118,7 @@
         "a": "¡Claro! Ingrid atiende todo el proceso en español, y este sitio también. Toca 'Español' arriba para cambiar todo el sitio.",
         "keywords": "spanish espanol español language hablan idioma bilingual latino hispanic",
         "link": { "label": "Ver el sitio en español →", "to": "es" } }
-    ],
-    "noMatch": {
-      "text": "No exact match, but questions like this are exactly what Ingrid answers best on a quick call. She's usually same-day.",
-      "short": "No match yet. Try another word, or reach Ingrid below.",
-      "cta": "Book a 15-minute call"
-    }
+    ]
   },
   "nudge": {
     "delaySeconds": 16,

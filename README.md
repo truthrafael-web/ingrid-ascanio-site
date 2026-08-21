@@ -55,14 +55,52 @@ to the contact form; if `webhookUrl` were ever cleared, submissions open a
 pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
 (contact / document-upload), `page`, `language`, and all form fields.
 
-## Chat / message widget — REMOVED 2026-07-23
+## Roxy — the corner widget · REBUILT 2026-08-21
 
-The former "Roxy" chat bubble (a hand-coded guided messenger with a fake message
-box) was removed at Rafael's direction: no AI agent will be installed, so a
-message feature with no real responder was misleading. All of its JS/CSS/content
-and the `chatWidget*` config fields are gone; the bottom-right corner is now empty.
-A non-chat replacement — quick links + a question→answer search that routes to
-existing pages — is under consideration but **not yet built**.
+Bottom-right on every page. **Roxy is a menu, not a chat.** She carries **five actions and
+nothing else** — Rafael's instruction: "three to five extremely prominent things that customers
+need to know", no AI agent. There is no message box anywhere in the widget (a scripted check
+asserts `panel.querySelector('input, textarea')` is null on every page).
+
+The five, in order, each with a one-line explanation of what actually happens:
+
+| Action | Goes to | Why it's separate |
+|---|---|---|
+| Book a call with Ingrid | `GHL.calendarUrl`, new tab | the visitor picks the time |
+| Have Ingrid call you | `/contact/#contact-form` | Ingrid picks the time |
+| Call or text Ingrid now | `tel:` from `person.phoneHref` | no waiting at all |
+| See the loan options | `/loan-options/` | what she can do |
+| Who Ingrid is | `/about/` | who she is |
+
+The three "reach her" rows look redundant and are not: they are the three different ways a
+person is willing to start a conversation, and the subtitle on each says which one they're
+choosing. The phone row prints the real number so a desktop visitor can read it without a
+`tel:` handler.
+
+**History.** The original "Roxy" (2026-07-17) was a hand-coded messenger with an AI-assistant
+persona and a fake message box; it was removed 2026-07-23 (`d29589a`) because nothing answered
+it. Its replacement, a neutral **"Quick Help"** launcher with a `?` icon, a search box and a
+Questions tab (`eafa3f7`), shipped the same day. This pass restores the **name and the face**
+Ingrid asked for while keeping the no-AI ruling: `quickhelp` → `roxy` in both `global.json`
+files, `qh-` → `roxy-` across `site.css` and `main.js`, the search box dropped (real keyword
+search over 8 items is machinery nobody needs), and the two-tab bar replaced by one quiet
+**"Common questions"** link in the panel footer. **The 8 curated FAQs are carried over byte-identical
+in EN and ES** and still deep-link to the matching page; they are now a second layer rather than
+half the widget.
+
+Roxy has **no photo**. She is not Ingrid and is not a real person, so she gets a gold monogram
+`R` in the site's serif rather than a face a visitor could mistake for staff.
+
+**Content:** `roxy` block in `src/content/{en,es}/global.json`. The phone subtitle interpolates
+`{phone}` from `person.phone` at render time, so the number still lives in exactly one place
+(see "Phone number" below). **Build payload:** `build.mjs` ships `roxy`, `phone` and `phoneHref`
+into `window.SITE_I18N`.
+
+**Verified 2026-08-21** by scripted browser run over EN home / contact / about and ES home /
+contacto: launcher opens, five cards present, every `href` resolves (no `#`), no message box,
+FAQ layer opens, an article renders, both back steps work, zero console errors. Rendered and
+looked at on 1440px desktop and a 390px phone in Spanish (the longer language) — all five
+actions fit without scrolling.
 
 ## Newsletter signup — REMOVED 2026-07-25 · LIVE 2026-07-26 (`57a9ab4`)
 

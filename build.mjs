@@ -435,7 +435,7 @@ function footer(g, loans, pageType, altPath) {
     + `<a href="${contactHref}" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>`
     + `<a href="${contactHref}#contact-form">${esc(g.cta.callback)}</a>`
     + `<a class="footer-lang" href="${altPath}" hreflang="${g.lang === 'en' ? 'es' : 'en'}" title="${esc(g.microbar.switchHint)}">${esc(g.footer.language)}</a>`;
-  const i18n = { lang: g.lang, quickhelp: g.quickhelp, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path };
+  const i18n = { lang: g.lang, roxy: g.roxy, nudge: { ...g.nudge, page: pageType }, calendarFallback: g.nav[4].path, phone: g.person.phone, phoneHref: g.person.phoneHref };
   return `</main>
 <a class="book-bar" href="#" data-ghl="calendar" data-fallback="contact">${esc(g.cta.secondary)}</a>
 <footer class="site-footer">

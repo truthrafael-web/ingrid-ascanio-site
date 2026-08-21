@@ -70,20 +70,21 @@
     "terms": "Términos y Condiciones",
     "disclaimer": "Aviso legal"
   },
-  "quickhelp": {
-    "title": "Ayuda rápida",
-    "home": {
-      "hi": "Hola, ¿en qué te ayudamos?",
-      "searchPh": "Busca preguntas frecuentes",
-      "cards": [
-        { "label": "Agenda una llamada de 15 minutos con Ingrid", "to": "book" },
-        { "label": "Comienza tu preaprobación", "to": "preapproval" },
-        { "label": "Explora las opciones de préstamo", "to": "loans" },
-        { "label": "Contacta a Ingrid", "to": "contact" }
-      ]
-    },
-    "tabs": { "home": "Inicio", "help": "Preguntas" },
-    "helpTitle": "Preguntas frecuentes",
+  "roxy": {
+    "name": "Roxy",
+    "greeting": "Hola, soy Roxy.",
+    "sub": "Las formas más rápidas de comunicarte con Ingrid, en un solo lugar.",
+    "close": "Cerrar",
+    "actions": [
+      { "to": "book", "icon": "calendar", "label": "Agenda una llamada con Ingrid", "desc": "Elige un espacio de 15 minutos en su calendario." },
+      { "to": "callback", "icon": "callback", "label": "Haz que Ingrid te llame", "desc": "Deja tu número. Ella te devuelve la llamada, casi siempre el mismo día." },
+      { "to": "phone", "icon": "phone", "label": "Llama o escribe a Ingrid ahora", "desc": "{phone} · lo más rápido para algo urgente." },
+      { "to": "loans", "icon": "loans", "label": "Ve las opciones de préstamo", "desc": "Convencional, FHA, VA, jumbo, inversión, extranjeros." },
+      { "to": "about", "icon": "person", "label": "Quién es Ingrid", "desc": "20+ años en préstamos, ex underwriter de banco. Su historia." }
+    ],
+    "faqLink": "Preguntas frecuentes",
+    "faqTitle": "Preguntas frecuentes",
+    "back": "Atrás",
     "articles": [
       { "q": "¿En qué se diferencia trabajar con Ingrid de un banco?",
         "a": "Un banco solo puede ofrecer sus propios productos. A través de Pioneer Mortgage Funding, Ingrid compara tu expediente entre más de 50 prestamistas (bancos, cooperativas y prestamistas mayoristas) y te conecta con el que mejor se ajusta a tu perfil y precio. Tú tienes opciones; ella hace el trabajo.",
@@ -117,12 +118,7 @@
         "a": "Sí. Toca 'English' en la parte superior para ver todo el sitio en inglés.",
         "keywords": "ingles english idioma cambiar sitio bilingue",
         "link": { "label": "Ver en inglés →", "to": "en" } }
-    ],
-    "noMatch": {
-      "text": "No hay coincidencia exacta, pero estas son justo las preguntas que Ingrid contesta mejor en una llamada rápida. Normalmente responde el mismo día.",
-      "short": "Sin coincidencia. Prueba otra palabra o contacta a Ingrid abajo.",
-      "cta": "Agenda una llamada de 15 minutos"
-    }
+    ]
   },
   "nudge": {
     "delaySeconds": 16,
