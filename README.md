@@ -42,18 +42,53 @@ Every CRM link plugs in there (then rebuild + redeploy):
 | `uploadFormEmbedUrl` | GHL form (with file-upload field) embed URL | Replaces the link-based upload form with true file upload |
 | `ga4Id` / `gtmId` / `metaPixelId` | Tracking IDs | GA4 / Tag Manager / Meta Pixel on every page |
 
-**Status (2026-07-20): `webhookUrl` is SET and live** — contact/upload
-forms POST every submission to the GHL inbound webhook (verified: real live form
-fill → HTTP 200 + success message). ⚠️ **But a submission only becomes a CRM
-contact if the GHL inbound-webhook *workflow* creates/updates a contact from the
-payload AND is published.** As of launch, the webhook returns 200 but no contact
-was created (her workflows are still draft) — that's a GHL-side workflow fix, not
-a website fix.
+### ⚠️ SEVERED 2026-09-09 — every CRM field is now empty, on purpose
 
-**Fallbacks until the other links are provided (working today):** CTA buttons route
-to the contact form; if `webhookUrl` were ever cleared, submissions open a
-pre-filled email to Ingrid so no lead is dropped. Webhook payloads include `type`
-(contact / document-upload), `page`, `language`, and all form fields.
+The engagement ended, so the site was disconnected from the GoHighLevel sub-account
+entirely. `webhookUrl` and `calendarUrl` are `""`. **Do not put a LeadConnector or
+GoHighLevel URL back into `ghl-config.js`.** What the site does now, all verified in
+a real browser across all 30 pages, EN and ES:
+
+| Was | Now |
+|---|---|
+| Forms POSTed to the GHL inbound webhook | Forms open a pre-filled email to `ingrid.ascanio@pmfmortgage.com`. Zero POSTs to any server. |
+| "Book a call" opened the GHL calendar | "Book a call" routes to the contact form on the page (or `/contact/`). No dead links. |
+| `/api/upload` forwarded to `GHL_WEBHOOK_URL` | The forward is deleted **in code**; the env var is no longer read at all. |
+| Sitewide phone was the GHL tracking number | Sitewide phone is Ingrid's own direct line. |
+
+**Two things outside this repo still need doing** (they are not website changes):
+
+1. **Vercel** → Settings → Environment Variables → delete `GHL_WEBHOOK_URL`. The code
+   no longer reads it, so this is cleanup rather than a fix.
+2. **DNS on `miamipmf.com`** still authorises LeadConnector to send email as her domain:
+   `info.miamipmf.com` carries `v=spf1 include:spf.leadconnectorhq.com include:mailgun.org ~all`,
+   a DKIM key at `mx._domainkey.info`, and Mailgun MX records. Removing these breaks her
+   GHL email sending, so it is only correct if the sub-account is being shut down too.
+   Decide that before touching DNS.
+
+**The old integration, for reference.** `webhookUrl` was set and live from 2026-07-20;
+payloads carried `type` (contact / document-upload), `page`, `language` and all form
+fields. Fallback behaviour was always built in, which is why severing it degraded
+cleanly rather than breaking anything.
+
+### Phone number reverted to her own, 2026-09-09
+
+Sitewide number is **(786) 554-8830**, Ingrid's own direct line, replacing the GHL
+tracking number **(786) 250-0922** that had been sitewide since 2026-07-27. Sourced from
+her own email signature (`D 786-554-8830`), corroborated by the GHL number's forwarding
+target and by the pre-2026-07-27 value of this site. **20 source occurrences swapped, 0
+left**; rendered check across all 31 built pages shows 88 `tel:` hrefs, every one of them
+`tel:+17865548830`, and 107 structured-data `telephone`/`servicePhone` fields, all hers.
+
+Her email was **never** changed by us: `ingrid.ascanio@pmfmortgage.com` throughout, before
+and after (confirmed with `git log -S`). Nothing to revert there.
+
+One copy line changed, because severing the calendar made it false. Roxy's first row read
+"Pick a 15-minute slot on her calendar" (ES: "Elige un espacio de 15 minutos en su
+calendario"), which is no longer possible. It now reads "Ask for a 15-minute call. She
+confirms the time with you" (ES: "Pide una llamada de 15 minutos. Ella confirma la hora
+contigo"). **Still worth a decision:** the site says "Book a call with Ingrid" in several
+places and there is no calendar behind it any more; those buttons land on the contact form.
 
 ## Roxy — the corner widget · REBUILT 2026-08-21 · LIVE (`fda9a58`)
 
