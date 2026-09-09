@@ -1,7 +1,7 @@
 // Direct file upload relay. Runs as a Vercel serverless function.
 // Stores attached files in Vercel Blob and returns their links to the page.
 //
-// DISCONNECTED 2026-09-09 (Rafael's instruction). This relay used to forward
+// DISCONNECTED 2026-09-09. This relay used to forward
 // every submission to a GoHighLevel inbound webhook held in GHL_WEBHOOK_URL.
 // That engagement has ended, so the forward is removed at the code level and
 // the environment variable is deliberately no longer read. Deleting the var in

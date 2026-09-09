@@ -7,7 +7,7 @@
   "hero": {
     "eyebrow": "Contact",
     "title": "Start the conversation.",
-    "body": "Two easy ways to start: book a 15-minute call at a time that suits you, or leave your details and Ingrid will call you within one business day, usually much faster. Prefer to talk right now? Call or text and skip the form entirely."
+    "body": "Leave your details and Ingrid will call you within one business day, usually much faster. Name a time that suits you and she will confirm a 15-minute call. Prefer to talk right now? Call or text and skip the form entirely."
   },
   "form": {
     "title": "Have Ingrid call you",
@@ -45,7 +45,7 @@
     "visitTitle": "Office",
     "visitDesc": "By appointment.",
     "bookTitle": "Book a call",
-    "bookDesc": "Pick a time that suits you. 15 minutes, no preparation needed.",
-    "bookButton": "Open the calendar"
+    "bookDesc": "Tell her a time that suits you in the form above. 15 minutes, no preparation needed.",
+    "bookButton": "Go to the form"
   }
 }

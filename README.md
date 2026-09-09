@@ -83,12 +83,24 @@ left**; rendered check across all 31 built pages shows 88 `tel:` hrefs, every on
 Her email was **never** changed by us: `ingrid.ascanio@pmfmortgage.com` throughout, before
 and after (confirmed with `git log -S`). Nothing to revert there.
 
-One copy line changed, because severing the calendar made it false. Roxy's first row read
-"Pick a 15-minute slot on her calendar" (ES: "Elige un espacio de 15 minutos en su
-calendario"), which is no longer possible. It now reads "Ask for a 15-minute call. She
-confirms the time with you" (ES: "Pide una llamada de 15 minutos. Ella confirma la hora
-contigo"). **Still worth a decision:** the site says "Book a call with Ingrid" in several
-places and there is no calendar behind it any more; those buttons land on the contact form.
+**Copy that promised the calendar.** Severing it made three places false, in both
+languages. The line drawn: copy naming a **mechanism** ("her calendar", "pick a slot",
+"open the calendar") is now false and was changed; copy naming an **outcome** ("Book a
+call") is still true, because you can still arrange one, and was left alone.
+
+| Where | Was | Now |
+|---|---|---|
+| Roxy, first row | "Pick a 15-minute slot on her calendar" | "Ask for a 15-minute call. She confirms the time with you" |
+| `/contact/` book tile | "Pick a time that suits you." + button "Open the calendar" | "Tell her a time that suits you in the form above." + button "Go to the form" |
+| `/contact/` hero | "Two easy ways to start: book a 15-minute call at a time that suits you, or leave your details..." | "Leave your details and Ingrid will call you within one business day... Name a time that suits you and she will confirm a 15-minute call." |
+
+Spanish siblings changed identically. The contact tile's button also had
+`data-fallback="phone"`, so with the calendar gone it dialled her, duplicating the "Call
+or text" tile directly beneath it; it now points at `#contact-form`.
+
+**Still worth a decision:** several buttons still read "Book a call with Ingrid" and land
+on the contact form. That is honest but no longer a distinct route from "Have Ingrid call
+you". Consolidating them is a copy decision, not a correctness one.
 
 ## Roxy — the corner widget · REBUILT 2026-08-21 · LIVE (`fda9a58`)
 

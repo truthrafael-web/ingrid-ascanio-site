@@ -788,7 +788,7 @@ function renderContact(lang) {
   <aside class="contact-direct reveal">
     <h2>${esc(c.direct.title)}</h2>
     <div class="direct-item direct-book"><h3>${esc(c.direct.bookTitle)}</h3><p>${esc(c.direct.bookDesc)}</p>
-      <a class="btn btn-gold btn-xl" href="#" data-ghl="calendar" data-fallback="phone">${esc(c.direct.bookButton)}</a></div>
+      <a class="btn btn-gold btn-xl" href="#" data-ghl="calendar" data-fallback="contact">${esc(c.direct.bookButton)}</a></div>
     <div class="direct-item"><h3>${esc(c.direct.callTitle)}</h3><a class="direct-big" href="${g.person.phoneHref}">${esc(g.person.phone)}</a><p>${esc(c.direct.callDesc)}</p></div>
     <div class="direct-item"><h3>${esc(c.direct.emailTitle)}</h3><a class="direct-big direct-email" href="mailto:${g.person.email}">${esc(g.person.email)}</a><p>${esc(c.direct.emailDesc)}</p></div>
     <div class="direct-item"><h3>${esc(c.direct.visitTitle)}</h3><p class="direct-big-sm">${esc(g.person.address)}</p><p>${esc(c.direct.visitDesc)}</p></div>
