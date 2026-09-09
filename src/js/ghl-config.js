@@ -1,26 +1,34 @@
 // ============================================================
-//  GHL integration config - Ingrid Ascanio · Miami Mortgage
-//  ONE place for every GoHighLevel link, embed, and tracking ID.
-//  Fill these in as Ingrid provides them; everything on the site
-//  picks them up automatically. Leave "" to use the built-in
-//  fallback (buttons route to the contact form / phone).
+//  Integration config - Ingrid Ascanio · Miami Mortgage
+//
+//  All CRM integrations are OFF. Every field below is empty on
+//  purpose, and the site runs on its own built-in fallbacks:
+//
+//    webhookUrl ""  -> contact and upload forms open a pre-filled
+//                      email to ingrid.ascanio@pmfmortgage.com
+//    calendarUrl "" -> every "Book a call" button routes to the
+//                      contact form on the same page (or /contact/)
+//    formUrl ""     -> "Start your pre-approval" routes to /contact/
+//
+//  Do not put a third-party CRM URL back in here. If Ingrid adopts
+//  her own scheduler or CRM, her own URLs drop straight in and the
+//  buttons pick them up on the next build.
 // ============================================================
 window.GHL = {
-  // Inbound webhook that receives ALL site form submissions as JSON
-  // (contact form, upload form). From GHL:
-  // Automation → Workflow → Inbound Webhook trigger → copy URL.
-  webhookUrl: "https://services.leadconnectorhq.com/hooks/cpmixVyQPia8RJXe7Ukw/webhook-trigger/1d5b0053-9df3-4616-91f7-d95e3f28b13d",
+  // Inbound webhook that would receive site form submissions as JSON.
+  // Empty: submissions become an email to Ingrid instead.
+  webhookUrl: "",
 
-  // Full URL of the GHL form for "Start your pre-approval" CTAs.
-  // Opens in a new tab. Leave "" to send clicks to the contact form.
+  // Full URL of a form for "Start your pre-approval" CTAs.
+  // Empty: clicks go to the contact form.
   formUrl: "",
 
-  // Full URL of the GHL calendar for "Book a call" CTAs.
-  calendarUrl: "https://api.leadconnectorhq.com/widget/booking/B1KgNV7FXLUZgTkudzqE",
+  // Full URL of a booking calendar for "Book a call" CTAs.
+  // Empty: clicks go to the contact form.
+  calendarUrl: "",
 
-  // GHL form (with file-upload field) to EMBED on /upload-documents/.
-  // Paste the iframe embed URL. When set, it replaces the built-in
-  // link-based upload form.
+  // Form (with file-upload field) to EMBED on /upload-documents/.
+  // Empty: the built-in native upload form is used.
   uploadFormEmbedUrl: "",
 
   // Tracking IDs - injected on every page when non-empty.

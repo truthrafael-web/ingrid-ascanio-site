@@ -1,10 +1,15 @@
-// Direct file upload relay — runs as a Vercel serverless function.
-// Stores attached files in Vercel Blob, then forwards the submission
-// (with file links) as JSON to the GHL inbound webhook.
+// Direct file upload relay. Runs as a Vercel serverless function.
+// Stores attached files in Vercel Blob and returns their links to the page.
+//
+// DISCONNECTED 2026-09-09. This relay used to forward
+// every submission to a GoHighLevel inbound webhook held in GHL_WEBHOOK_URL.
+// That engagement has ended, so the forward is removed at the code level and
+// the environment variable is deliberately no longer read. Deleting the var in
+// the Vercel dashboard is still worth doing, but this file no longer depends
+// on anyone remembering to.
 //
 // Setup (one-time, in the Vercel dashboard):
-//   1. Storage → Create → Blob  (auto-sets BLOB_READ_WRITE_TOKEN)
-//   2. Settings → Environment Variables → GHL_WEBHOOK_URL = Ingrid's inbound webhook
+//   1. Storage -> Create -> Blob  (auto-sets BLOB_READ_WRITE_TOKEN)
 // Without Blob the endpoint returns 501 and the site falls back gracefully.
 
 import { put } from '@vercel/blob';
@@ -58,16 +63,9 @@ export default async function handler(req, res) {
       files_summary: uploaded.map(u => `${u.name}: ${u.url}`).join('\n'),
     };
 
-    if (process.env.GHL_WEBHOOK_URL) {
-      const r = await fetch(process.env.GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!r.ok) console.error('GHL webhook responded', r.status);
-    } else {
-      console.warn('GHL_WEBHOOK_URL not set — upload stored but not forwarded', payload.files_summary);
-    }
+    // No outbound forward. Files are stored and their links returned to the
+    // page, which reports success to the visitor. Nothing leaves for a CRM.
+    console.info('upload stored, not forwarded', payload.files_summary);
 
     return res.status(200).json({ ok: true, files: uploaded.length });
   } catch (err) {

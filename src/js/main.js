@@ -67,7 +67,7 @@
       a.setAttribute('rel', 'noopener');
     } else if (a.getAttribute('href') === '#' || !a.getAttribute('href')) {
       var fb = a.getAttribute('data-fallback');
-      a.setAttribute('href', fb === 'phone' ? 'tel:+17862500922'
+      a.setAttribute('href', fb === 'phone' ? 'tel:+17865548830'
         : (document.getElementById('contact-form') ? '#contact-form' : contactPath));
     }
   });
@@ -249,7 +249,7 @@
       switch (to) {
         case 'book': return calendarHref();
         case 'callback': return document.getElementById('contact-form') ? '#contact-form' : contactPath + '#contact-form';
-        case 'phone': return I18N.phoneHref || 'tel:+17862500922';
+        case 'phone': return I18N.phoneHref || 'tel:+17865548830';
         case 'preapproval': return GHL.formUrl || contactPath;
         case 'loans': return rxEs ? '/es/opciones-de-prestamo/' : '/loan-options/';
         case 'contact': return contactPath;

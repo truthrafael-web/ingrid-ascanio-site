@@ -5,7 +5,7 @@
  *   BASE=https://<preview>.vercel.app SHARE='?_vercel_share=...' node <path to this file>
  *
  * The bubble runs on a MOCKED clock (page.clock), so the 5-minute beat is checked in
- * milliseconds rather than by waiting it out. The form's webhook is intercepted, so running
+ * milliseconds rather than by waiting it out. The CRM webhook was removed 2026-09-09, so running
  * this never posts to Ingrid's real GHL. This suite caught the bubble/booking-nudge corner
  * collision on 2026-08-21. Keep it green.
  */
@@ -85,8 +85,21 @@ for (const [name, url] of [['EN contact', BASE + '/contact/'], ['ES contact', BA
   const page = await browser.newPage();
   const errs = [];
   page.on('pageerror', e => errs.push(String(e)));
-  let posted = 0;
-  await page.route('**/hooks/**', route => { posted++; route.fulfill({ status: 200, body: 'ok' }); });
+  // The CRM was severed 2026-09-09: the form now leaves as a mailto to Ingrid and
+  // posts to no server at all. We watch BOTH, so a silent regression that starts
+  // POSTing to a CRM again, or one that sends nowhere, both fail loudly.
+  let posted = 0, crmPosted = 0;
+  page.on('request', r => {
+    if (r.method() !== 'POST') return;
+    posted++;
+    if (/leadconnector|gohighlevel|msgsndr/i.test(r.url())) crmPosted++;
+  });
+  const mailtos = [];
+  const client = await page.context().newCDPSession(page);
+  await client.send('Page.enable');
+  client.on('Page.frameRequestedNavigation', e => {
+    if (/^mailto:/i.test(e.url)) mailtos.push(e.url);
+  });
   await page.goto(url + SHARE, { waitUntil: 'networkidle' });
 
   console.log('\n=== ' + name + ' · consent gate ===');
@@ -112,20 +125,25 @@ for (const [name, url] of [['EN contact', BASE + '/contact/'], ['ES contact', BA
   await page.waitForTimeout(400);
 
   const blockedMsg = (await page.locator('#contact-form .form-status').innerText()).trim();
-  console.log('  submit with box unticked -> posted:', posted, '| message:', JSON.stringify(blockedMsg));
-  if (posted !== 0) fail('form SENT without consent');
+  console.log('  submit with box unticked -> posted:', posted, '| mailto:', mailtos.length, '| message:', JSON.stringify(blockedMsg));
+  if (posted !== 0 || mailtos.length !== 0) fail('form SENT without consent');
   if (!blockedMsg) fail('no error message shown to the visitor');
 
   // tick it and send again
   await page.check('[name="consent_sms"]');
   await page.click('#contact-form [type="submit"]');
   await page.waitForTimeout(800);
-  console.log('  submit with box ticked  -> posted:', posted);
-  if (posted !== 1) fail('form did not send after consent was given');
+  console.log('  submit with box ticked  -> server POSTs:', posted, '| mailto fired:', mailtos.length);
+  if (mailtos.length !== 1) fail('form did not send after consent was given (expected one mailto to Ingrid)');
+  const to = decodeURIComponent(mailtos[0]).slice(7).split('?')[0].toLowerCase();
+  console.log('  it goes to              :', to);
+  if (to !== 'ingrid.ascanio@pmfmortgage.com') fail('submission goes to ' + to + ', not Ingrid');
+  if (crmPosted !== 0) fail('form still POSTs to a CRM (' + crmPosted + ')');
+  if (posted !== 0) fail('form POSTed to a server; it should leave only as a mailto');
 
   // and marketing genuinely stays optional: that send just happened with it unticked
   const mktAtSend = await page.evaluate(() => document.querySelector('[name="consent_marketing"]').checked);
-  console.log('  it sent with marketing left unticked:', !mktAtSend && posted === 1);
+  console.log('  it sent with marketing left unticked:', !mktAtSend && mailtos.length === 1);
   if (mktAtSend) fail('marketing box got ticked somehow');
 
   if (errs.length) fail('JS errors: ' + errs.join(' | '));

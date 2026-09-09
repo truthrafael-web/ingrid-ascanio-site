@@ -10,8 +10,8 @@
     "company": "Pioneer Mortgage Funding, Inc.",
     "nmls": "1030712",
     "companyNmls": "1980",
-    "phone": "(786) 250-0922",
-    "phoneHref": "tel:+17862500922",
+    "phone": "(786) 554-8830",
+    "phoneHref": "tel:+17865548830",
     "email": "ingrid.ascanio@pmfmortgage.com",
     "address": "3325 Hollywood Blvd, Ste 402, Hollywood, FL 33021",
     "serving": "Miami · Hollywood · toda la Florida"
@@ -54,7 +54,7 @@
     "consent": "Por favor marca la casilla de consentimiento y envía tu mensaje de nuevo.",
     "loading": "Enviando…",
     "success": "¡Recibido! El equipo de Ingrid te contacta dentro de un día hábil.",
-    "error": "Algo falló al enviar tu mensaje. Mejor llama o escribe al (786) 250-0922."
+    "error": "Algo falló al enviar tu mensaje. Mejor llama o escribe al (786) 554-8830."
   },
   "footer": {
     "blurb": "Asesoría hipotecaria local para Miami, Hollywood y toda la Florida, con acceso a más de 50 prestamistas bajo un mismo techo.",
@@ -78,7 +78,7 @@
     "close": "Cerrar",
     "teaser": { "title": "Hola, soy Roxy.", "body": "La asistente de Ingrid. Ábreme para las formas más rápidas de comunicarte con ella.", "close": "Cerrar", "everyMinutes": 5 },
     "actions": [
-      { "to": "book", "icon": "calendar", "label": "Agenda una llamada con Ingrid", "desc": "Elige un espacio de 15 minutos en su calendario." },
+      { "to": "book", "icon": "calendar", "label": "Agenda una llamada con Ingrid", "desc": "Pide una llamada de 15 minutos. Ella confirma la hora contigo." },
       { "to": "callback", "icon": "callback", "label": "Haz que Ingrid te llame", "desc": "Deja tu número. Ella te devuelve la llamada, casi siempre el mismo día." },
       { "to": "phone", "icon": "phone", "label": "Llama o escribe a Ingrid ahora", "desc": "{phone} · lo más rápido para algo urgente." },
       { "to": "loans", "icon": "loans", "label": "Ve las opciones de préstamo", "desc": "Convencional, FHA, VA, jumbo, inversión, extranjeros." },
